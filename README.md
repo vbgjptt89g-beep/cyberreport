@@ -1,81 +1,42 @@
-# Informe Semanal de Ciberseguridad con IA
+# Informe semanal de ciberseguridad
 
-Cada semana este proyecto:
+El proyecto recopila novedades de fuentes de ciberseguridad a diario, conserva una ventana de siete días y genera un PDF cada viernes a las 23:15, hora de Honduras. GitHub Actions guarda el archivo de recopilación entre ejecuciones y publica el PDF como artefacto descargable. El envío por correo es opcional.
 
-1. Recopila novedades de fuentes oficiales de ciberseguridad (CISA, NIST, OWASP, The Hacker News, Krebs on Security).
-2. Usa la API de Claude (Anthropic) para redactar un informe de recomendaciones en español.
-3. Genera un PDF con el informe.
-4. Lo envía por correo automáticamente y lo guarda en `reportes/`.
+## Activar GitHub Actions
 
-Todo corre solo, gratis, mediante **GitHub Actions** (no necesitas tener tu PC encendida).
+1. Crea una clave gratuita en [OpenRouter](https://openrouter.ai/settings/keys).
+2. En GitHub abre el repositorio y ve a **Settings → Secrets and variables → Actions → New repository secret**.
+3. Pon `OPENROUTER_API_KEY` como nombre y pega allí la clave. El README anterior pedía `ANTHROPIC_API_KEY`, pero el código de este proyecto usa OpenRouter y necesita exactamente `OPENROUTER_API_KEY`.
+4. En **Settings → Actions → General → Workflow permissions**, activa **Read and write permissions** para que la tarea pueda guardar la recopilación semanal.
+5. Sube la carpeta `.github/workflows/weekly-report.yml` junto con los demás archivos.
 
-## 1. Crear el repositorio en GitHub
+El modelo predeterminado es `openrouter/free`. El nivel gratuito tiene límites de uso y disponibilidad variables; si el modelo no está disponible, el informe puede fallar y habrá que reintentarlo. [Modelos gratuitos y límites de OpenRouter](https://openrouter.ai/collections/free-models/).
 
-1. Crea un repositorio nuevo (público o privado) en GitHub, por ejemplo `informe-ciberseguridad-ia`.
-2. Sube estos archivos:
+El workflow corre diariamente a las 23:15 en Honduras. Cada ejecución recopila y conserva novedades de los últimos siete días. Los viernes genera el informe en `reportes/`, lo publica en **Actions → ejecución → Artifacts** y lo envía por correo solo si configuras los secretos `EMAIL_ADDRESS`, `EMAIL_PASSWORD` y `EMAIL_TO`. Una ejecución manual desde **Actions → Informe semanal de ciberseguridad → Run workflow** también crea un informe.
 
-```bash
-cd cyberreport
-git init
-git add .
-git commit -m "Proyecto inicial: informe semanal de ciberseguridad"
-git branch -M main
-git remote add origin https://github.com/TU_USUARIO/informe-ciberseguridad-ia.git
-git push -u origin main
+## Probar localmente
+
+Necesitas Python 3.10 o posterior. En la carpeta del proyecto:
+
+```powershell
+python -m venv .venv
+.\.venv\Scripts\python.exe -m pip install -r requirements.txt
+Copy-Item .env.example .env
+notepad .env
 ```
 
-## 2. Configurar los secretos (Settings → Secrets and variables → Actions)
+Pega tu clave de OpenRouter en `OPENROUTER_API_KEY` dentro de `.env`. No subas ese archivo a GitHub. Ejecuta la recopilación diaria:
 
-Agrega estos "Repository secrets":
-
-| Nombre | Valor |
-|---|---|
-| `ANTHROPIC_API_KEY` | Tu API key de [console.anthropic.com](https://console.anthropic.com) |
-| `EMAIL_ADDRESS` | El correo desde el que se enviará (ej. Gmail) |
-| `EMAIL_PASSWORD` | Una "contraseña de aplicación" (no tu contraseña normal, ver abajo) |
-| `EMAIL_TO` | El/los correo(s) que recibirán el PDF |
-
-### Cómo obtener una "contraseña de aplicación" de Gmail
-1. Activa la verificación en dos pasos en tu cuenta de Google.
-2. Ve a https://myaccount.google.com/apppasswords
-3. Genera una contraseña para "Correo" y úsala en `EMAIL_PASSWORD`.
-
-## 3. Activar el workflow
-
-El workflow (`.github/workflows/weekly-report.yml`) ya está configurado para correr:
-- **Automáticamente** todos los lunes a las 08:00 UTC.
-- **Manualmente** cuando quieras, desde la pestaña **Actions → Informe semanal de ciberseguridad → Run workflow**.
-
-Para probarlo de inmediato: ve a la pestaña "Actions" del repo y ejecútalo manualmente una vez, así verificas que los secretos estén bien puestos antes de esperar al lunes.
-
-## 4. Probarlo en tu computadora (opcional)
-
-```bash
-python -m venv venv
-source venv/bin/activate   # en Windows: venv\Scripts\activate
-pip install -r requirements.txt
-cp .env.example .env       # y rellena tus datos reales
-python main.py
+```powershell
+.\.venv\Scripts\python.exe main.py collect
 ```
 
-## Estructura del proyecto
+Genera el PDF a partir de lo recopilado:
 
-```
-cyberreport/
-├── main.py                          # Orquesta todo el flujo
-├── src/
-│   ├── fetch_sources.py             # Descarga noticias de fuentes fijas (RSS)
-│   ├── summarize.py                 # Usa Claude para redactar el informe
-│   ├── generate_pdf.py              # Convierte el informe a PDF
-│   └── send_email.py                # Envía el PDF por correo
-├── reportes/                        # Aquí se guardan los PDFs generados
-├── .github/workflows/weekly-report.yml  # Automatización semanal
-├── requirements.txt
-└── .env.example
+```powershell
+.\.venv\Scripts\python.exe main.py report
 ```
 
-## Personalizar
+## Fuentes y límites
 
-- **Cambiar el día/hora de ejecución**: edita el `cron` en `weekly-report.yml` ([ayuda con cron](https://crontab.guru/)).
-- **Agregar más fuentes**: edita el diccionario `SOURCES` en `src/fetch_sources.py`.
-- **Cambiar el tono/formato del informe**: edita `SYSTEM_PROMPT` en `src/summarize.py`.
+Las fuentes se configuran en `src/fetch_sources.py`: CISA, NIST, OWASP, The Hacker News y Krebs on Security. Se conservan entradas de los últimos siete días y se deduplican por enlace. El informe prioriza recomendaciones defensivas basadas en esos resúmenes y enlaces; no descarga el texto completo de cada artículo. Las fuentes RSS pueden omitir publicaciones o dejar de estar disponibles.
