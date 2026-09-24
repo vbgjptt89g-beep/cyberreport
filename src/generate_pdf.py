@@ -8,6 +8,8 @@ from pathlib import Path
 from fpdf import FPDF
 
 MARGIN = 18
+MAX_REPORT_PAGES = 6
+MAX_PUBLICATIONS_IN_PDF = 12
 _CORE_FONT_REPLACEMENTS = str.maketrans({
     "—": "-", "–": "-", "−": "-", "‑": "-",
     "‘": "'", "’": "'", "“": '"', "”": '"',
@@ -68,16 +70,59 @@ def _write_markdown_line(pdf: ReportPDF, line: str) -> None:
         pdf.multi_cell(0, 6.5, line, wrapmode="CHAR")
 
 
+def _limit_publications(markdown: str, limit: int = MAX_PUBLICATIONS_IN_PDF) -> str:
+    """Conserva el análisis y limita las publicaciones detalladas del PDF."""
+    lines = markdown.splitlines()
+    output: list[str] = []
+    in_publications = False
+    shown = 0
+    omitted = 0
+    total = 0
+
+    for line in lines:
+        if line.startswith("## "):
+            if in_publications and omitted:
+                output.append(f"Se omiten las demás publicaciones de esta sección para mantener el PDF en un máximo de seis páginas.")
+            in_publications = "publicaciones consultadas" in line.casefold() or "registro completo de publicaciones" in line.casefold()
+            shown = omitted = 0
+            output.append(line)
+            continue
+
+        if in_publications and line.startswith("### "):
+            total += 1
+            if shown >= limit:
+                omitted += 1
+                continue
+            shown += 1
+        if in_publications and omitted:
+            continue
+        output.append(line)
+
+    if in_publications and omitted:
+        output.append(f"Se omiten las demás publicaciones de esta sección para mantener el PDF en un máximo de seis páginas.")
+    return "\n".join(output)
+
+
 def build_pdf(report_markdown: str, output_path: str | Path) -> Path:
-    pdf = ReportPDF()
-    pdf.set_auto_page_break(auto=True, margin=18)
-    pdf.set_margins(MARGIN, 16, MARGIN)
-    pdf.add_page()
-
-    for line in report_markdown.splitlines():
-        _write_markdown_line(pdf, line)
-
     output_path = Path(output_path)
     output_path.parent.mkdir(parents=True, exist_ok=True)
+
+    # Reduce el anexo si hace falta y verifica el total antes de guardar el PDF.
+    pdf = None
+    for publication_limit in (MAX_PUBLICATIONS_IN_PDF, 8, 4, 0):
+        compact_markdown = _limit_publications(report_markdown, publication_limit)
+        candidate = ReportPDF()
+        candidate.set_auto_page_break(auto=True, margin=18)
+        candidate.set_margins(MARGIN, 16, MARGIN)
+        candidate.add_page()
+        for line in compact_markdown.splitlines():
+            _write_markdown_line(candidate, line)
+        pdf = candidate
+        if candidate.page_no() <= MAX_REPORT_PAGES:
+            break
+
+    if pdf is None or pdf.page_no() > MAX_REPORT_PAGES:
+        raise ValueError("El contenido principal excede el límite de seis páginas.")
+
     pdf.output(str(output_path))
     return output_path
