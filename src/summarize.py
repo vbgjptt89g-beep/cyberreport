@@ -1,5 +1,5 @@
 """
-Usa la API de Claude (Anthropic) para leer las entradas recopiladas de
+Usa la API de OpenRouter para leer las entradas recopiladas de
 fuentes fijas y redactar un informe de recomendaciones de ciberseguridad
 en español, listo para convertir a PDF.
 """
@@ -8,11 +8,13 @@ from __future__ import annotations
 
 import os
 
-import anthropic
+from openai import OpenAI
 
 from .fetch_sources import Entry
 
-MODEL = "claude-sonnet-4-6"
+# Copia aquí el nombre EXACTO del modelo desde openrouter.ai/models
+# (los gratuitos terminan en ":free"; la lista cambia con el tiempo).
+MODEL = "openai/gpt-oss-120b:free"
 
 SYSTEM_PROMPT = """\
 Eres un analista senior de ciberseguridad. Recibes una lista de titulares y \
@@ -51,24 +53,29 @@ def build_source_material(entries: list[Entry]) -> str:
 
 
 def generate_report(entries: list[Entry]) -> str:
-    api_key = os.environ.get("ANTHROPIC_API_KEY")
+    api_key = os.environ.get("OPENROUTER_API_KEY")
     if not api_key:
-        raise RuntimeError("Falta la variable de entorno ANTHROPIC_API_KEY")
+        raise RuntimeError("Falta la variable de entorno OPENROUTER_API_KEY")
 
-    client = anthropic.Anthropic(api_key=api_key)
+    client = OpenAI(
+        base_url="https://openrouter.ai/api/v1",
+        api_key=api_key,
+    )
     material = build_source_material(entries)
 
-    response = client.messages.create(
+    response = client.chat.completions.create(
         model=MODEL,
         max_tokens=2000,
-        system=SYSTEM_PROMPT,
         messages=[
+            {"role": "system", "content": SYSTEM_PROMPT},
             {
                 "role": "user",
                 "content": f"Material recopilado esta semana:\n\n{material}",
-            }
+            },
         ],
     )
 
-    text_parts = [block.text for block in response.content if block.type == "text"]
-    return "\n".join(text_parts).strip()
+    text = response.choices[0].message.content
+    if not text:
+        raise RuntimeError("El modelo devolvió una respuesta vacía")
+    return text.strip()
