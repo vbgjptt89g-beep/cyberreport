@@ -128,11 +128,11 @@ def generate_report(entries: list[Entry]) -> str:
         print(f"[WARN] {reason}; usando informe de respaldo.")
         return _fallback_report(entries, reason)
 
-    client = OpenAI(base_url="https://openrouter.ai/api/v1", api_key=api_key, timeout=75.0, max_retries=0)
+    client = OpenAI(base_url="https://openrouter.ai/api/v1", api_key=api_key, timeout=45.0, max_retries=0)
     material = f"Material recopilado esta semana:\n\n{build_source_material(entries)}"
     validation_error = "respuesta vacía"
 
-    for attempt in range(2):
+    for attempt in range(1):
         messages = [
             {"role": "system", "content": SYSTEM_PROMPT},
             {"role": "user", "content": material},

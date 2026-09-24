@@ -27,7 +27,7 @@ def send_report_email(pdf_path: str | Path) -> bool:
     msg.add_attachment(
         pdf_path.read_bytes(), maintype="application", subtype="pdf", filename=pdf_path.name,
     )
-    with smtplib.SMTP_SSL(smtp_host, smtp_port) as server:
+    with smtplib.SMTP_SSL(smtp_host, smtp_port, timeout=20) as server:
         server.login(email_from, email_password)
         server.send_message(msg)
     print(f"Correo enviado a {email_to} con el adjunto {pdf_path.name}")
