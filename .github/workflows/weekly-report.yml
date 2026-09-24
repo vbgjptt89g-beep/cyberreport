@@ -1,6 +1,11 @@
 name: Informe semanal de ciberseguridad
 
 on:
+  push:
+    branches: [main]
+    paths:
+      - 'site/index.html'
+      - '.github/workflows/weekly-report.yml'
   schedule:
     # 05:15 UTC equivale a las 23:15 del día anterior en Honduras.
     - cron: "15 5 * * *"
@@ -8,10 +13,15 @@ on:
 
 permissions:
   contents: write
+  pages: write
+  id-token: write
 
 jobs:
   collect-and-report:
     runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     timeout-minutes: 10
     steps:
       - name: Obtener el proyecto
@@ -45,6 +55,7 @@ jobs:
         timeout-minutes: 2
 
       - name: Generar PDF semanal y enviar correo si está configurado
+        id: report
         env:
           OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
           OPENROUTER_MODEL: ${{ vars.OPENROUTER_MODEL }}
@@ -56,8 +67,10 @@ jobs:
         run: |
           if [ "$GITHUB_EVENT_NAME" = "workflow_dispatch" ] || [ "$(date -u +%u)" -eq 6 ]; then
             python -u main.py report
+            echo "generated=true" >> "$GITHUB_OUTPUT"
           else
             echo "Recopilación diaria terminada. El PDF se genera los viernes por la noche en Honduras."
+            echo "generated=false" >> "$GITHUB_OUTPUT"
           fi
         timeout-minutes: 3
 
@@ -70,3 +83,31 @@ jobs:
           if-no-files-found: ignore
           retention-days: 90
         timeout-minutes: 2
+      - name: Preparar la página y el PDF para GitHub Pages
+        if: steps.report.outputs.generated == 'true' || github.event_name == 'push'
+        run: |
+          mkdir -p site-build
+          report_date="Aún no publicado"
+          if [ "${{ steps.report.outputs.generated }}" = "true" ]; then
+            pdf_path="$(find reportes -maxdepth 1 -type f -name 'informe-ciberseguridad-*.pdf' -print | sort | tail -n 1)"
+            test -n "$pdf_path"
+            cp "$pdf_path" site-build/informe.pdf
+            report_date="$(basename "$pdf_path" .pdf | sed 's/^informe-ciberseguridad-//')"
+          fi
+          sed "s/@@REPORT_DATE@@/$report_date/g" site/index.html > site-build/index.html
+        timeout-minutes: 1
+
+      - name: Configurar GitHub Pages
+        if: steps.report.outputs.generated == 'true' || github.event_name == 'push'
+        uses: actions/configure-pages@v5
+
+      - name: Subir el sitio a GitHub Pages
+        if: steps.report.outputs.generated == 'true' || github.event_name == 'push'
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: site-build
+
+      - name: Publicar el sitio en GitHub Pages
+        id: deployment
+        if: steps.report.outputs.generated == 'true' || github.event_name == 'push'
+        uses: actions/deploy-pages@v4
