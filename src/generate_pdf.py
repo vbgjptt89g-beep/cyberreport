@@ -9,7 +9,7 @@ from fpdf import FPDF
 
 MARGIN = 18
 MAX_REPORT_PAGES = 6
-MAX_PUBLICATIONS_IN_PDF = 12
+MAX_PUBLICATIONS_IN_PDF = 8
 _CORE_FONT_REPLACEMENTS = str.maketrans({
     "—": "-", "–": "-", "−": "-", "‑": "-",
     "‘": "'", "’": "'", "“": '"', "”": '"',
@@ -44,7 +44,10 @@ class ReportPDF(FPDF):
 
 
 def _write_markdown_line(pdf: ReportPDF, line: str) -> None:
-    line = _core_font_text(line.rstrip())
+    line = line.rstrip()
+    if len(line) > 500:
+        line = line[:497] + "..."
+    line = _core_font_text(line)
 
     if line.startswith("# "):
         pdf.set_font("Helvetica", "B", 16)
@@ -77,7 +80,6 @@ def _limit_publications(markdown: str, limit: int = MAX_PUBLICATIONS_IN_PDF) -> 
     in_publications = False
     shown = 0
     omitted = 0
-    total = 0
 
     for line in lines:
         if line.startswith("## "):
@@ -89,7 +91,6 @@ def _limit_publications(markdown: str, limit: int = MAX_PUBLICATIONS_IN_PDF) -> 
             continue
 
         if in_publications and line.startswith("### "):
-            total += 1
             if shown >= limit:
                 omitted += 1
                 continue
@@ -107,9 +108,10 @@ def build_pdf(report_markdown: str, output_path: str | Path) -> Path:
     output_path = Path(output_path)
     output_path.parent.mkdir(parents=True, exist_ok=True)
 
-    # Reduce el anexo si hace falta y verifica el total antes de guardar el PDF.
+    # Prueba como máximo dos versiones y conserva seis páginas o menos.
     pdf = None
-    for publication_limit in (MAX_PUBLICATIONS_IN_PDF, 8, 4, 0):
+    for publication_limit in (MAX_PUBLICATIONS_IN_PDF, 0):
+        print(f"Preparando PDF: hasta {publication_limit} publicaciones detalladas...", flush=True)
         compact_markdown = _limit_publications(report_markdown, publication_limit)
         candidate = ReportPDF()
         candidate.set_auto_page_break(auto=True, margin=18)
@@ -118,6 +120,7 @@ def build_pdf(report_markdown: str, output_path: str | Path) -> Path:
         for line in compact_markdown.splitlines():
             _write_markdown_line(candidate, line)
         pdf = candidate
+        print(f"    -> Maquetación terminada: {candidate.page_no()} páginas.", flush=True)
         if candidate.page_no() <= MAX_REPORT_PAGES:
             break
 
@@ -125,4 +128,5 @@ def build_pdf(report_markdown: str, output_path: str | Path) -> Path:
         raise ValueError("El contenido principal excede el límite de seis páginas.")
 
     pdf.output(str(output_path))
+    print("    -> Archivo PDF escrito correctamente.", flush=True)
     return output_path
