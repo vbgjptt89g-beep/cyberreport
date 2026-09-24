@@ -62,10 +62,15 @@ def _fallback_report(entries: list[Entry], reason: str) -> str:
         "",
         "## Resumen ejecutivo",
         "",
-        f"Se recopilaron {len(entries)} publicaciones recientes de fuentes de ciberseguridad. "
-        "No se pudo generar una síntesis de IA válida, por lo que este documento presenta "
-        "las publicaciones originales y una lista breve de controles defensivos de referencia. "
-        "Consulta las fuentes antes de aplicar cambios.",
+        (
+            f"Se recopilaron {len(entries)} publicaciones recientes. "
+            if entries else
+            "No se recibieron publicaciones recientes de las fuentes RSS. "
+        ) + (
+            "El PDF incluye recomendaciones defensivas de referencia; consulta las fuentes antes de aplicar cambios."
+            if not entries else
+            "La IA no produjo una síntesis válida; el PDF incluye las publicaciones originales y controles defensivos de referencia."
+        ),
         "",
         "## Recomendaciones principales",
         "",
@@ -82,8 +87,12 @@ def _fallback_report(entries: list[Entry], reason: str) -> str:
         "",
         "## Amenazas y vulnerabilidades destacadas",
         "",
-        "La síntesis de IA no estuvo disponible. No se atribuyen amenazas específicas sin análisis válido; "
-        "revisa los títulos y resúmenes originales en la sección de publicaciones.",
+        (
+            "No se recopilaron publicaciones recientes; revisa las fuentes oficiales indicadas abajo."
+            if not entries else
+            "La síntesis de IA no estuvo disponible. No se atribuyen amenazas específicas sin análisis válido; "
+            "revisa los títulos y resúmenes originales en la sección de publicaciones."
+        ),
         "",
         "## Buenas prácticas para reforzar esta semana",
         "",
@@ -95,7 +104,7 @@ def _fallback_report(entries: list[Entry], reason: str) -> str:
         "## Publicaciones consultadas",
         "",
     ]
-    for entry in entries[:30]:
+    for entry in entries:
         summary = entry.summary.strip() or "La fuente no proporcionó un resumen."
         lines.extend([
             f"### {entry.title}",
@@ -115,12 +124,29 @@ def _fallback_report(entries: list[Entry], reason: str) -> str:
     return "\n".join(lines)
 
 
+def _all_publications_appendix(entries: list[Entry]) -> str:
+    lines = [
+        f"## Registro completo de publicaciones recolectadas ({len(entries)})",
+        "",
+    ]
+    for entry in entries:
+        summary = entry.summary.strip() or "La fuente no proporcionó un resumen."
+        lines.extend([
+            f"### {entry.title}",
+            f"- Fuente: {entry.source}",
+            f"- Fecha: {entry.published:%Y-%m-%d}",
+            f"- Enlace: {entry.link}",
+            f"- Resumen: {summary}",
+            "",
+        ])
+    return "\n".join(lines)
+
+
 def generate_report(entries: list[Entry]) -> str:
     if not entries:
-        raise RuntimeError(
-            "No hay publicaciones de los últimos 7 días para crear el informe. "
-            "Ejecuta primero 'python main.py collect' y vuelve a intentarlo."
-        )
+        reason = "no se recopilaron publicaciones recientes en las fuentes RSS"
+        print(f"[WARN] {reason}; se creará un PDF con recomendaciones oficiales.")
+        return _fallback_report([], reason)
 
     api_key = os.environ.get("OPENROUTER_API_KEY")
     if not api_key:
@@ -129,7 +155,7 @@ def generate_report(entries: list[Entry]) -> str:
         return _fallback_report(entries, reason)
 
     client = OpenAI(base_url="https://openrouter.ai/api/v1", api_key=api_key, timeout=45.0, max_retries=0)
-    material = f"Material recopilado esta semana:\n\n{build_source_material(entries)}"
+    material = f"Material recopilado esta semana (las 20 publicaciones más recientes):\n\n{build_source_material(entries[:20])}"
     validation_error = "respuesta vacía"
 
     for attempt in range(1):
@@ -148,7 +174,7 @@ def generate_report(entries: list[Entry]) -> str:
         try:
             response = client.chat.completions.create(
                 model=MODEL,
-                max_tokens=3500,
+                max_tokens=2200,
                 messages=messages,
                 temperature=0.2,
             )
@@ -168,7 +194,7 @@ def generate_report(entries: list[Entry]) -> str:
         content = response.choices[0].message.content
         if isinstance(content, str) and content.strip():
             try:
-                return _validate_report(content)
+                return _validate_report(content) + "\n\n" + _all_publications_appendix(entries)
             except ValueError as exc:
                 validation_error = str(exc)
 

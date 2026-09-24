@@ -16,14 +16,34 @@ jobs:
     steps:
       - name: Obtener el proyecto
         uses: actions/checkout@v4
+        timeout-minutes: 2
+
       - name: Preparar Python
         uses: actions/setup-python@v5
         with:
           python-version: "3.12"
+          cache: pip
+        timeout-minutes: 2
+
       - name: Instalar dependencias
         run: python -m pip install -r requirements.txt
+        timeout-minutes: 3
+
       - name: Recopilar publicaciones recientes y conservar la semana
         run: python -u main.py collect
+        timeout-minutes: 2
+
+      - name: Guardar la recopilación semanal en el repositorio
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/weekly_entries.json
+          if ! git diff --cached --quiet; then
+            git commit -m "Actualiza publicaciones de ciberseguridad"
+            git push
+          fi
+        timeout-minutes: 2
+
       - name: Generar PDF semanal y enviar correo si está configurado
         env:
           OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
@@ -39,15 +59,8 @@ jobs:
           else
             echo "Recopilación diaria terminada. El PDF se genera los viernes por la noche en Honduras."
           fi
-      - name: Guardar la recopilación semanal en el repositorio
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/weekly_entries.json
-          if ! git diff --cached --quiet; then
-            git commit -m "Actualiza publicaciones de ciberseguridad"
-            git push
-          fi
+        timeout-minutes: 3
+
       - name: Subir el PDF como artefacto descargable
         if: always()
         uses: actions/upload-artifact@v4
@@ -56,3 +69,4 @@ jobs:
           path: reportes/*.pdf
           if-no-files-found: ignore
           retention-days: 90
+        timeout-minutes: 2
