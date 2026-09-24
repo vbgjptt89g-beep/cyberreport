@@ -12,6 +12,7 @@ permissions:
 jobs:
   collect-and-report:
     runs-on: ubuntu-latest
+    timeout-minutes: 10
     steps:
       - name: Obtener el proyecto
         uses: actions/checkout@v4
@@ -22,7 +23,7 @@ jobs:
       - name: Instalar dependencias
         run: python -m pip install -r requirements.txt
       - name: Recopilar publicaciones recientes y conservar la semana
-        run: python main.py collect
+        run: python -u main.py collect
       - name: Generar PDF semanal y enviar correo si está configurado
         env:
           OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
@@ -34,7 +35,7 @@ jobs:
           SMTP_PORT: ${{ vars.SMTP_PORT }}
         run: |
           if [ "$GITHUB_EVENT_NAME" = "workflow_dispatch" ] || [ "$(date -u +%u)" -eq 6 ]; then
-            python main.py report
+            python -u main.py report
           else
             echo "Recopilación diaria terminada. El PDF se genera los viernes por la noche en Honduras."
           fi

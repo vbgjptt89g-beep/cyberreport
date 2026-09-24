@@ -10,6 +10,7 @@ from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
 import feedparser
+from urllib.request import Request, urlopen
 
 SOURCES = {
     "CISA - Alertas": "https://www.cisa.gov/cybersecurity-advisories/all.xml",
@@ -49,7 +50,12 @@ def fetch_weekly_entries(days: int = 7) -> list[Entry]:
     results: dict[str, Entry] = {}
     for source_name, url in SOURCES.items():
         try:
-            parsed = feedparser.parse(url)
+            print(f"Consultando {source_name}...", flush=True)
+            request = Request(url, headers={"User-Agent": "cyberreport/1.0"})
+            with urlopen(request, timeout=12) as response:
+                payload = response.read(2_000_000)
+            parsed = feedparser.parse(payload)
+            print(f"    -> {len(parsed.entries)} entradas recibidas", flush=True)
             if parsed.bozo and not parsed.entries:
                 print(f"[WARN] No se pudo leer {source_name}: {parsed.bozo_exception}")
                 continue
