@@ -50,7 +50,7 @@ def _fetch_one_source(source_name: str, url: str, cutoff: datetime) -> list[Entr
     try:
         print(f"Consultando {source_name}...", flush=True)
         request = Request(url, headers={"User-Agent": "cyberreport/1.0"})
-        with urlopen(request, timeout=8) as response:
+        with urlopen(request, timeout=5) as response:
             payload = response.read(2_000_000)
         parsed = feedparser.parse(payload)
         recent = []

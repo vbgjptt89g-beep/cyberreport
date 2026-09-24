@@ -27,7 +27,6 @@ REQUIRED_HEADINGS = (
     "## resumen ejecutivo",
     "## recomendaciones principales",
     "## amenazas y vulnerabilidades destacadas",
-    "## buenas prácticas para reforzar esta semana",
 )
 
 
@@ -36,10 +35,16 @@ def build_source_material(entries: list[Entry]) -> str:
         return "No se encontraron publicaciones nuevas esta semana en las fuentes monitoreadas."
     return "\n\n".join(
         f"- [{entry.source}] {entry.title}\n  Publicado: {entry.published:%Y-%m-%d}\n"
-        f"  Resumen: {entry.summary}\n  Enlace: {entry.link}"
+        f"  Resumen: {entry.summary[:500]}\n  Enlace: {entry.link}"
         for entry in entries
     )
 
+
+def _short_summary(text: str, limit: int = 180) -> str:
+    compact = text.strip() or "La fuente no proporcionó un resumen."
+    if len(compact) <= limit:
+        return compact
+    return compact[: limit - 3].rsplit(" ", 1)[0] + "..."
 
 def _validate_report(text: str) -> str:
     cleaned = text.strip()
@@ -52,6 +57,14 @@ def _validate_report(text: str) -> str:
         raise ValueError(reason)
     if "user safety:" in lowered and len(cleaned) < 1000:
         raise ValueError("el modelo devolvió una etiqueta de seguridad en vez del informe")
+    if "## buenas prácticas para reforzar esta semana" not in lowered:
+        cleaned += (
+            "\n\n## Buenas prácticas para reforzar esta semana\n\n"
+            "- Activa MFA en correo, cuentas administrativas y acceso remoto.\n"
+            "- Instala actualizaciones de seguridad y prioriza vulnerabilidades explotadas.\n"
+            "- Usa contraseñas únicas con un gestor y prueba tus copias de seguridad.\n"
+            "- Guía oficial: https://www.cisa.gov/secure-our-world"
+        )
     return cleaned
 
 
@@ -94,7 +107,6 @@ def _fallback_report(entries: list[Entry], reason: str) -> str:
             "revisa los títulos y resúmenes originales en la sección de publicaciones."
         ),
         "",
-        "## Buenas prácticas para reforzar esta semana",
         "",
         "- Revisa MFA y permisos de las cuentas con privilegios.",
         "- Comprueba que las actualizaciones críticas estén instaladas.",
@@ -105,7 +117,7 @@ def _fallback_report(entries: list[Entry], reason: str) -> str:
         "",
     ]
     for entry in entries:
-        summary = entry.summary.strip() or "La fuente no proporcionó un resumen."
+        summary = _short_summary(entry.summary)
         lines.extend([
             f"### {entry.title}",
             f"- Fuente: {entry.source}",
@@ -130,7 +142,7 @@ def _all_publications_appendix(entries: list[Entry]) -> str:
         "",
     ]
     for entry in entries:
-        summary = entry.summary.strip() or "La fuente no proporcionó un resumen."
+        summary = _short_summary(entry.summary)
         lines.extend([
             f"### {entry.title}",
             f"- Fuente: {entry.source}",
@@ -154,7 +166,7 @@ def generate_report(entries: list[Entry]) -> str:
         print(f"[WARN] {reason}; usando informe de respaldo.")
         return _fallback_report(entries, reason)
 
-    client = OpenAI(base_url="https://openrouter.ai/api/v1", api_key=api_key, timeout=45.0, max_retries=0)
+    client = OpenAI(base_url="https://openrouter.ai/api/v1", api_key=api_key, timeout=15.0, max_retries=0)
     material = f"Material recopilado esta semana (las 20 publicaciones más recientes):\n\n{build_source_material(entries[:20])}"
     validation_error = "respuesta vacía"
 
@@ -171,10 +183,11 @@ def generate_report(entries: list[Entry]) -> str:
                     "cumple todos los encabezados solicitados y entrega contenido sustancial en español."
                 ),
             })
+        print("Consultando OpenRouter (límite de 15 segundos)...", flush=True)
         try:
             response = client.chat.completions.create(
                 model=MODEL,
-                max_tokens=2200,
+                max_tokens=1600,
                 messages=messages,
                 temperature=0.2,
             )
