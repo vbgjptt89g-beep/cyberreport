@@ -1,6 +1,4 @@
-"""
-Convierte el informe (texto en Markdown simple) a un PDF con formato legible.
-"""
+"""Convierte Markdown a un PDF compatible con las fuentes estándar de FPDF."""
 
 from __future__ import annotations
 
@@ -10,6 +8,17 @@ from pathlib import Path
 from fpdf import FPDF
 
 MARGIN = 18
+_CORE_FONT_REPLACEMENTS = str.maketrans({
+    "—": "-", "–": "-", "−": "-", "‑": "-",
+    "‘": "'", "’": "'", "“": '"', "”": '"',
+    "…": "...", "•": "-", "\u00a0": " ",
+})
+
+
+def _core_font_text(text: str) -> str:
+    """Preserva español latino y reemplaza símbolos que Helvetica no codifica."""
+    translated = text.translate(_CORE_FONT_REPLACEMENTS)
+    return translated.encode("latin-1", errors="replace").decode("latin-1")
 
 
 class ReportPDF(FPDF):
@@ -33,7 +42,7 @@ class ReportPDF(FPDF):
 
 
 def _write_markdown_line(pdf: ReportPDF, line: str) -> None:
-    line = line.rstrip()
+    line = _core_font_text(line.rstrip())
 
     if line.startswith("# "):
         pdf.set_font("Helvetica", "B", 16)
