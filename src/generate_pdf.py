@@ -335,6 +335,42 @@ def _draw_page_one(pdf: ReportPDF, markdown: str, publications: list[dict[str, s
     pdf.cell(110, 6, "La seguridad comienza con una decisión informada.", align="R")
 
 
+def _spanish_publication(item: dict[str, str]) -> tuple[str, str]:
+    """Devuelve títulos y extractos breves en español, incluso sin una API de traducción."""
+    original = item.get("title", "").strip()
+    key = original.casefold()
+    translated: list[tuple[str, str, str]] = [
+        ("compromised github actions", "Acciones de GitHub comprometidas vuelven a ejecutar malware Mini Shai-Hulud", "Se deshabilitaron nuevamente acciones de GitHub comprometidas que habían vuelto a estar disponibles. Verifica las dependencias y revisa los avisos de seguridad de tus repositorios."),
+        ("pamstealer", "PamStealer refuerza el cifrado y la persistencia de su malware para macOS", "Investigadores detectaron una nueva versión de PamStealer con cambios en la entrega y recuperación de su carga maliciosa. Evita instaladores y archivos de origen dudoso."),
+        ("soc doesn't need", "El centro de operaciones de seguridad no debe empezar de cero con cada alerta", "El artículo explica cómo la inteligencia artificial puede facilitar que los atacantes repitan intentos fallidos. Correlacionar alertas y contexto ayuda a detectar esa actividad."),
+        ("bitget says", "Bitget reporta un robo de 351,6 millones de dólares tras una intrusión", "Bitget informó de transferencias no autorizadas desde algunas billeteras activas y tibias. La empresa indicó que sus billeteras frías y la mayoría de los activos no se vieron afectados."),
+        ("roundcube pre-auth", "Se explota activamente una vulnerabilidad de inyección SQL en Roundcube", "El Centro Canadiense de Ciberseguridad advirtió que la vulnerabilidad CVE-2026-48842, ya corregida, está siendo explotada. Actualiza Roundcube a una versión corregida."),
+        ("cloudflare fixes flaw", "Cloudflare corrige una falla que podía exponer datos residuales entre clientes", "La falla en Cloudflare Containers podía permitir leer datos que otros contenedores habían dejado en el disco del mismo servidor. Revisa el aviso del proveedor y sus medidas aplicadas."),
+        ("wso2 and adobe commerce", "CISA añade fallas explotadas de WSO2 y Adobe Commerce a su catálogo", "CISA incorporó vulnerabilidades de WSO2 y Adobe Commerce/Magento al catálogo KEV por evidencia de explotación activa. Comprueba si tus sistemas están afectados y aplica las correcciones."),
+        ("unpatched oneplus", "Fallas de OnePlus podían dar permisos de administrador a aplicaciones Android", "Un investigador mostró que fallas en software de OnePlus podían permitir a una aplicación instalada obtener acceso de administrador. Comprueba las actualizaciones del fabricante."),
+        ("threatsday:", "Resumen semanal: riesgos en buscadores y herramientas de programación con IA", "El resumen reúne riesgos de envenenamiento de búsquedas, exposición de repositorios y ejecución de código. Revisa permisos, fuentes y controles antes de confiar en herramientas automatizadas."),
+        ("placeholder third-party", "Un dominio de ejemplo aparece en repositorios y ahora distribuye contenido malicioso", "El dominio third-party[.]com, usado como marcador de posición en documentación, fue observado mostrando señuelos maliciosos a navegadores Windows. Comprueba y sustituye referencias inseguras."),
+    ]
+    for needle, title, summary in translated:
+        if needle in key:
+            return title, summary
+
+    # Para noticias nuevas, ofrece un encabezado y contexto defensivo en español.
+    if any(word in key for word in ("malware", "stealer", "backdoor", "spyware", "trojan", "rat ")):
+        category = "Nueva actividad de malware"
+        summary = "La publicación describe malware o una campaña relacionada. Verifica los indicadores en la fuente original y aplica las medidas preventivas recomendadas."
+    elif any(word in key for word in ("flaw", "vulnerab", "cve-", "zero-day", "0-day", "rce")):
+        category = "Aviso de vulnerabilidad y seguridad"
+        summary = "La publicación describe una falla de seguridad. Identifica los productos afectados y revisa si hay actualizaciones o mitigaciones disponibles."
+    elif any(word in key for word in ("attack", "hacked", "compromis", "stole", "breach", "phishing")):
+        category = "Alerta sobre ataques e intrusiones"
+        summary = "La publicación reporta actividad de ataque o una posible intrusión. Consulta la fuente original para confirmar el alcance y las acciones recomendadas."
+    else:
+        category = "Actualización de ciberseguridad"
+        summary = "Consulta la fuente original para conocer los detalles, los productos afectados y las medidas recomendadas."
+    return category, summary
+
+
 def _draw_publication_card(
     pdf: ReportPDF,
     x: float,
@@ -350,12 +386,12 @@ def _draw_publication_card(
     pdf.rect(x, y, width, height, style="DF")
     pdf.set_fill_color(*accent)
     pdf.rect(x, y, 2, height, style="F")
-    _write_text(pdf, x + 6, y + 3, width - 12, _truncate(item.get("title", "Publicación consultada"), 82), 8.7, INK, True, 4)
+    title, summary = _spanish_publication(item)
+    _write_text(pdf, x + 6, y + 2.7, width - 12, _truncate(title, 90), 8.5, INK, True, 3.8)
     source = item.get("source", "Fuente consultada")
     published = item.get("date", "")
     _write_text(pdf, x + 6, y + 12, width - 12, f"{source}  |  {published}", 7.5, accent, True, 3.5)
-    summary = item.get("summary") or "Consulta la publicación original para revisar sus detalles."
-    _write_text(pdf, x + 6, y + 17, width - 12, _truncate(summary, 94), 7.6, MUTED, line_height=3.5)
+    _write_text(pdf, x + 6, y + 17, width - 12, _truncate(summary, 115), 7.4, MUTED, line_height=3.4)
     if item.get("url"):
         pdf.set_xy(x + width - 30, y + 27.5)
         pdf.set_font("Helvetica", "B", 7)
