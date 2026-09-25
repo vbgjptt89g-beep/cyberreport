@@ -300,15 +300,6 @@ def _draw_header(pdf: ReportPDF, title: str, subtitle: str, page_number: int) ->
     pdf.cell(30, 3, f"{date.today():%d/%m/%Y}  |  {page_number}/2", align="R")
 
 
-def _draw_stat(pdf: ReportPDF, x: float, y: float, value: str, label: str, color: tuple[int, int, int]) -> None:
-    pdf.set_xy(x, y)
-    pdf.set_font("Helvetica", "B", 13)
-    pdf.set_text_color(*color)
-    pdf.cell(24, 7, value, new_x="RIGHT", new_y="TOP")
-    pdf.set_xy(x + 26, y + 0.7)
-    pdf.set_font("Helvetica", "B", 8)
-    pdf.set_text_color(*INK)
-    pdf.cell(60, 6, label.upper())
 
 
 def _draw_page_one(pdf: ReportPDF, markdown: str, publications: list[dict[str, str]]) -> None:
@@ -329,39 +320,27 @@ def _draw_page_one(pdf: ReportPDF, markdown: str, publications: list[dict[str, s
             "Verifica mensajes inesperados antes de abrir enlaces.",
         ]
 
-    source_count = len({item["source"] for item in publications if item["source"]})
-    article_count = len(publications)
     pdf.set_fill_color(*PALE)
     pdf.rect(0, 34, PAGE_W, PAGE_H - 34, style="F")
 
-    pdf.set_fill_color(*WHITE)
-    pdf.set_draw_color(*BORDER)
-    pdf.rect(10, 38, 277, 18, style="DF")
-    _draw_stat(pdf, 17, 43, str(article_count), "publicaciones esta semana", RED)
-    pdf.set_draw_color(*BORDER)
-    pdf.line(103, 41, 103, 53)
-    _draw_stat(pdf, 111, 43, str(source_count), "fuentes citadas", BLUE)
-    pdf.line(195, 41, 195, 53)
-    _draw_stat(pdf, 203, 43, "7", "días observados", TEAL)
+    _panel(pdf, 10, 42, 74, 48, "Panorama de la semana", BLUE)
+    _write_text(pdf, 14, 55, 66, _truncate(summary, 175), 9.2, TEXT, line_height=4.4)
 
-    _panel(pdf, 10, 62, 74, 48, "Panorama de la semana", BLUE)
-    _write_text(pdf, 14, 75, 66, _truncate(summary, 175), 9.2, TEXT, line_height=4.4)
-
-    _panel(pdf, 10, 116, 74, 63, "Riesgo a vigilar", RED)
+    _panel(pdf, 10, 96, 74, 83, "Riesgo a vigilar", RED)
     pdf.set_fill_color(255, 240, 220)
-    pdf.ellipse(15, 129, 13, 13, style="F")
-    pdf.set_xy(18.9, 131.7)
+    pdf.ellipse(15, 109, 13, 13, style="F")
+    pdf.set_xy(18.9, 111.7)
     pdf.set_font("Helvetica", "B", 13)
     pdf.set_text_color(*GOLD)
     pdf.cell(5, 6, "!")
-    _write_text(pdf, 32, 128, 47, _truncate(threat, 185), 8.5, TEXT, line_height=4.1)
-    pdf.set_xy(15, 164)
+    _write_text(pdf, 32, 108, 47, _truncate(threat, 185), 8.5, TEXT, line_height=4.1)
+    pdf.set_xy(15, 162)
     pdf.set_font("Helvetica", "B", 7.5)
     pdf.set_text_color(*RED)
     pdf.cell(62, 4, "DETENTE - VERIFICA - REPORTA")
 
-    _panel(pdf, 90, 62, 112, 117, "Acciones prioritarias", GOLD)
-    row_y = 74
+    _panel(pdf, 90, 42, 112, 137, "Acciones prioritarias", GOLD)
+    row_y = 54
     for index, recommendation in enumerate(recommendations, 1):
         accent = (RED, BLUE, TEAL, GOLD)[(index - 1) % 4]
         pdf.set_fill_color(*accent)
@@ -374,18 +353,18 @@ def _draw_page_one(pdf: ReportPDF, markdown: str, publications: list[dict[str, s
         if index < len(recommendations):
             pdf.set_draw_color(*BORDER)
             pdf.line(96, row_y + 23, 196, row_y + 23)
-        row_y += 24
+        row_y += 31
 
-    _panel(pdf, 208, 62, 79, 117, "Protege tu día a día", TEAL)
-    _draw_device_illustration(pdf, 212, 76)
+    _panel(pdf, 208, 42, 79, 137, "Protege tu día a día", TEAL)
+    _draw_device_illustration(pdf, 212, 56)
     pdf.set_draw_color(*BORDER)
-    pdf.line(213, 125, 282, 125)
+    pdf.line(213, 105, 282, 105)
     quick_tips = [
         ("1", "No abras enlaces inesperados."),
         ("2", "Confirma al remitente por otro canal."),
         ("3", "Reporta mensajes sospechosos."),
     ]
-    tip_y = 131
+    tip_y = 111
     for number, tip in quick_tips:
         pdf.set_fill_color(*TEAL)
         pdf.ellipse(214, tip_y, 7, 7, style="F")
@@ -394,7 +373,7 @@ def _draw_page_one(pdf: ReportPDF, markdown: str, publications: list[dict[str, s
         pdf.set_text_color(*WHITE)
         pdf.cell(7, 4, number, align="C")
         _write_text(pdf, 224, tip_y - 0.2, 57, tip, 7.8, TEXT, line_height=3.6)
-        tip_y += 15
+        tip_y += 21
 
     pdf.set_fill_color(*INK)
     pdf.rect(10, 185, 277, 15, style="F")
