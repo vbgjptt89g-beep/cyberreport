@@ -22,6 +22,10 @@ def _core_font_text(text: str) -> str:
     translated = text.translate(_CORE_FONT_REPLACEMENTS)
     return translated.encode("latin-1", errors="replace").decode("latin-1")
 
+def _write_multicell(pdf: ReportPDF, height: float, text: str) -> None:
+    """Usa ajuste por caracteres solo para enlaces o palabras sin espacios largas."""
+    has_long_token = any(len(token) > 60 for token in text.split())
+    pdf.multi_cell(0, height, text, wrapmode="CHAR" if has_long_token else "WORD")
 
 class ReportPDF(FPDF):
     def header(self) -> None:  # noqa: D102
@@ -52,25 +56,25 @@ def _write_markdown_line(pdf: ReportPDF, line: str) -> None:
     if line.startswith("# "):
         pdf.set_font("Helvetica", "B", 16)
         pdf.set_text_color(15, 15, 15)
-        pdf.multi_cell(0, 9, line[2:])
+        _write_multicell(pdf, 9, line[2:])
         pdf.ln(2)
     elif line.startswith("## "):
         pdf.ln(2)
         pdf.set_font("Helvetica", "B", 13)
         pdf.set_text_color(30, 60, 110)
-        pdf.multi_cell(0, 8, line[3:])
+        _write_multicell(pdf, 8, line[3:])
         pdf.ln(1)
     elif line.startswith(("- ", "* ")):
         pdf.set_font("Helvetica", "", 11)
         pdf.set_text_color(30, 30, 30)
         pdf.set_x(MARGIN + 4)
-        pdf.multi_cell(0, 6.5, f"-  {line[2:]}")
+        _write_multicell(pdf, 6.5, f"-  {line[2:]}")
     elif line == "":
         pdf.ln(2)
     else:
         pdf.set_font("Helvetica", "", 11)
         pdf.set_text_color(30, 30, 30)
-        pdf.multi_cell(0, 6.5, line)
+        _write_multicell(pdf, 6.5, line)
 
 
 def _limit_publications(markdown: str, limit: int = MAX_PUBLICATIONS_IN_PDF) -> str:

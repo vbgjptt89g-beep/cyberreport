@@ -58,7 +58,7 @@ jobs:
           SMTP_HOST: ${{ vars.SMTP_HOST }}
           SMTP_PORT: ${{ vars.SMTP_PORT }}
         run: |
-          if [ "$GITHUB_EVENT_NAME" = "workflow_dispatch" ] || { [ "$GITHUB_EVENT_NAME" = "schedule" ] && [ "$(date -u +%u)" -eq 6 ]; }; then
+          if [ "$GITHUB_EVENT_NAME" = "workflow_dispatch" ] || { [ "$GITHUB_EVENT_NAME" = "schedule" ] && [ "$(date -u +%u)" -eq 6 ]; } || { [ "$GITHUB_EVENT_NAME" = "push" ] && [ ! -f site/informe.pdf ]; }; then
             python -u main.py report
             echo "generated=true" >> "$GITHUB_OUTPUT"
           else
