@@ -5,6 +5,9 @@ on:
     branches: [main]
     paths:
       - 'site/index.html'
+      - 'site/weekly_entries.json'
+      - 'site/informe.pdf'
+      - 'data/weekly_entries.json'
       - '.github/workflows/weekly-report.yml'
   schedule:
     # 05:15 UTC equivale a las 23:15 del día anterior en Honduras.
@@ -22,7 +25,7 @@ jobs:
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
-    timeout-minutes: 10
+    timeout-minutes: 20
     steps:
       - name: Obtener el proyecto
         uses: actions/checkout@v4
@@ -43,17 +46,6 @@ jobs:
         run: python -u main.py collect
         timeout-minutes: 2
 
-      - name: Guardar la recopilación semanal en el repositorio
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/weekly_entries.json
-          if ! git diff --cached --quiet; then
-            git commit -m "Actualiza publicaciones de ciberseguridad"
-            git push
-          fi
-        timeout-minutes: 2
-
       - name: Generar PDF semanal y enviar correo si está configurado
         id: report
         env:
@@ -72,7 +64,7 @@ jobs:
             echo "Recopilación diaria terminada. El PDF se genera los viernes por la noche en Honduras."
             echo "generated=false" >> "$GITHUB_OUTPUT"
           fi
-        timeout-minutes: 3
+        timeout-minutes: 10
 
       - name: Subir el PDF como artefacto descargable
         if: always()
@@ -83,31 +75,39 @@ jobs:
           if-no-files-found: ignore
           retention-days: 90
         timeout-minutes: 2
-      - name: Preparar la página y el PDF para GitHub Pages
-        if: steps.report.outputs.generated == 'true' || github.event_name == 'push'
+      - name: Guardar publicaciones y el último informe
         run: |
-          mkdir -p site-build
-          report_date="Aún no publicado"
           if [ "${{ steps.report.outputs.generated }}" = "true" ]; then
             pdf_path="$(find reportes -maxdepth 1 -type f -name 'informe-ciberseguridad-*.pdf' -print | sort | tail -n 1)"
             test -n "$pdf_path"
-            cp "$pdf_path" site-build/informe.pdf
-            report_date="$(basename "$pdf_path" .pdf | sed 's/^informe-ciberseguridad-//')"
+            cp "$pdf_path" site/informe.pdf
           fi
-          sed "s/@@REPORT_DATE@@/$report_date/g" site/index.html > site-build/index.html
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/weekly_entries.json
+          if [ -f site/informe.pdf ]; then git add site/informe.pdf; fi
+          if ! git diff --cached --quiet; then
+            git commit -m "Actualiza publicaciones e informe semanal"
+            git push
+          fi
+        timeout-minutes: 2
+
+      - name: Preparar la página y los datos para GitHub Pages
+        run: |
+          mkdir -p site-build
+          cp site/index.html site-build/index.html
+          cp data/weekly_entries.json site-build/weekly_entries.json
+          if [ -f site/informe.pdf ]; then cp site/informe.pdf site-build/informe.pdf; fi
         timeout-minutes: 1
 
       - name: Configurar GitHub Pages
-        if: steps.report.outputs.generated == 'true' || github.event_name == 'push'
         uses: actions/configure-pages@v5
 
       - name: Subir el sitio a GitHub Pages
-        if: steps.report.outputs.generated == 'true' || github.event_name == 'push'
         uses: actions/upload-pages-artifact@v4
         with:
           path: site-build
 
       - name: Publicar el sitio en GitHub Pages
         id: deployment
-        if: steps.report.outputs.generated == 'true' || github.event_name == 'push'
         uses: actions/deploy-pages@v4
