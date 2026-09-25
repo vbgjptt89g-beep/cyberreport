@@ -141,58 +141,98 @@ def _draw_shield(pdf: ReportPDF, x: float, y: float, size: float, color: tuple[i
 
 
 def _draw_device_illustration(pdf: ReportPDF, x: float, y: float) -> None:
-    """Ilustración principal: escudo digital con candado y nodos conectados."""
-    # Fondo suave para destacar la única ilustración del boletín.
-    pdf.set_fill_color(232, 241, 246)
-    pdf.rect(x, y, 61, 33, style="F")
-    pdf.set_draw_color(213, 224, 231)
-    pdf.set_line_width(0.55)
-    pdf.ellipse(x + 18, y + 1, 29, 29, style="D")
-    pdf.ellipse(x + 22, y + 3, 21, 21, style="D")
+    """Escena ilustrada: estación de trabajo, móvil y escudo frente a amenazas."""
+    # Fondo oscuro y halos de color, inspirado en una infografía editorial.
+    pdf.set_fill_color(*INK)
+    pdf.rect(x, y, 71, 45, style="F")
+    pdf.set_fill_color(50, 58, 74)
+    pdf.ellipse(x + 21, y + 3, 35, 35, style="F")
+    pdf.set_draw_color(80, 94, 112)
+    pdf.set_line_width(0.45)
+    pdf.ellipse(x + 24, y + 4, 29, 29, style="D")
 
-    # Conexiones y nodos que representan dispositivos protegidos.
-    pdf.set_draw_color(*BLUE)
-    pdf.set_line_width(0.8)
-    pdf.line(x + 10, y + 10, x + 23, y + 15)
-    pdf.line(x + 10, y + 25, x + 23, y + 20)
-    pdf.line(x + 42, y + 15, x + 54, y + 9)
-    pdf.line(x + 42, y + 20, x + 54, y + 26)
-    for nx, ny, color in ((8, 8, TEAL), (8, 24, GOLD), (53, 7, GOLD), (53, 24, TEAL)):
-        pdf.set_fill_color(*color)
-        pdf.ellipse(x + nx, y + ny, 5, 5, style="F")
-        pdf.set_fill_color(*WHITE)
-        pdf.ellipse(x + nx + 1.7, y + ny + 1.7, 1.6, 1.6, style="F")
+    # Ventana de seguridad dentro del monitor.
+    pdf.set_draw_color(91, 105, 124)
+    pdf.set_fill_color(29, 34, 45)
+    pdf.rect(x + 4, y + 13, 31, 21, style="DF")
+    pdf.set_fill_color(232, 239, 244)
+    pdf.rect(x + 5.8, y + 15, 27.4, 16.2, style="F")
+    pdf.set_fill_color(*RED)
+    pdf.ellipse(x + 7.5, y + 16.4, 2.2, 2.2, style="F")
+    pdf.set_fill_color(*GOLD)
+    pdf.ellipse(x + 10.7, y + 16.4, 2.2, 2.2, style="F")
+    pdf.set_fill_color(*TEAL)
+    pdf.ellipse(x + 13.9, y + 16.4, 2.2, 2.2, style="F")
+    pdf.set_draw_color(190, 202, 211)
+    pdf.set_line_width(0.7)
+    pdf.line(x + 8, y + 21, x + 18, y + 21)
+    pdf.line(x + 8, y + 24, x + 15, y + 24)
+    pdf.line(x + 8, y + 27, x + 19, y + 27)
+    pdf.set_fill_color(255, 230, 230)
+    pdf.ellipse(x + 23.5, y + 21, 6.5, 6.5, style="F")
+    pdf.set_xy(x + 25.2, y + 22.2)
+    pdf.set_font("Helvetica", "B", 8)
+    pdf.set_text_color(*RED)
+    pdf.cell(3, 4, "!")
+    pdf.set_fill_color(144, 158, 172)
+    pdf.polygon([(x + 17, y + 34), (x + 22, y + 34), (x + 24, y + 38), (x + 15, y + 38)], style="F")
+    pdf.rect(x + 11, y + 38, 17, 1.5, style="F")
 
-    # Sombra y escudo rojo con borde dorado.
+    # Teléfono con una alerta de acceso protegido.
+    pdf.set_draw_color(100, 111, 127)
+    pdf.set_fill_color(19, 23, 32)
+    pdf.rect(x + 54, y + 16, 11, 23, style="DF")
+    pdf.set_fill_color(239, 243, 246)
+    pdf.rect(x + 55.3, y + 18, 8.4, 18.5, style="F")
+    pdf.set_fill_color(*BLUE)
+    pdf.rect(x + 56.5, y + 20, 5.8, 1.2, style="F")
+    pdf.set_fill_color(219, 231, 239)
+    pdf.rect(x + 56.5, y + 23, 5.8, 1, style="F")
+    pdf.rect(x + 56.5, y + 25.5, 4.2, 1, style="F")
+    pdf.set_fill_color(*GOLD)
+    pdf.ellipse(x + 58.5, y + 37, 2, 1, style="F")
+
+    # Pequeño mensaje sospechoso flotando sobre el monitor.
+    pdf.set_fill_color(255, 245, 224)
+    pdf.set_draw_color(*GOLD)
+    pdf.rect(x + 5, y + 4, 14, 8, style="DF")
+    pdf.set_draw_color(*RED)
+    pdf.line(x + 5.5, y + 4.8, x + 12, y + 9)
+    pdf.line(x + 18.5, y + 4.8, x + 12, y + 9)
+    pdf.set_fill_color(*RED)
+    pdf.ellipse(x + 15.5, y + 2, 5, 5, style="F")
+    pdf.set_xy(x + 16.4, y + 2.2)
+    pdf.set_font("Helvetica", "B", 6)
+    pdf.set_text_color(*WHITE)
+    pdf.cell(3, 4, "!")
+
+    # Escudo en primer plano, con volumen, borde dorado y candado blanco.
     shield = [
-        (x + 32, y + 2), (x + 43, y + 6), (x + 41.5, y + 19),
-        (x + 32, y + 29), (x + 22.5, y + 19), (x + 21, y + 6),
+        (x + 42, y + 5), (x + 52, y + 9), (x + 50, y + 25),
+        (x + 42, y + 34), (x + 34, y + 25), (x + 32, y + 9),
     ]
-    pdf.set_fill_color(183, 25, 39)
-    pdf.set_draw_color(183, 25, 39)
-    pdf.polygon([(px + 1, py + 1) for px, py in shield], style="F")
+    pdf.set_fill_color(20, 24, 34)
+    pdf.polygon([(px + 1.2, py + 1.5) for px, py in shield], style="F")
     pdf.set_fill_color(*RED)
     pdf.set_draw_color(*GOLD)
-    pdf.set_line_width(1.2)
+    pdf.set_line_width(1.1)
     pdf.polygon(shield, style="DF")
     inner = [
-        (x + 32, y + 5), (x + 40, y + 8), (x + 38.7, y + 18),
-        (x + 32, y + 25), (x + 25.3, y + 18), (x + 24, y + 8),
+        (x + 42, y + 8), (x + 49, y + 11), (x + 47.5, y + 24),
+        (x + 42, y + 30), (x + 36.5, y + 24), (x + 35, y + 11),
     ]
-    pdf.set_fill_color(239, 64, 72)
-    pdf.set_draw_color(239, 64, 72)
+    pdf.set_fill_color(231, 49, 62)
+    pdf.set_draw_color(231, 49, 62)
     pdf.polygon(inner, style="F")
-
-    # Candado central en color claro para dar contraste.
     pdf.set_draw_color(*WHITE)
-    pdf.set_line_width(1.35)
-    pdf.ellipse(x + 28.5, y + 10, 7, 8, style="D")
+    pdf.set_line_width(1.25)
+    pdf.ellipse(x + 38, y + 15, 8, 9, style="D")
     pdf.set_fill_color(*WHITE)
-    pdf.rect(x + 27, y + 14, 10, 8, style="F")
+    pdf.rect(x + 36.5, y + 19, 11, 8, style="F")
     pdf.set_fill_color(*RED)
-    pdf.ellipse(x + 31, y + 16.2, 2, 2, style="F")
+    pdf.ellipse(x + 41, y + 21, 2, 2, style="F")
     pdf.set_fill_color(*WHITE)
-    pdf.rect(x + 31.7, y + 17.7, 0.6, 2.1, style="F")
+    pdf.rect(x + 41.7, y + 22.5, 0.6, 2.1, style="F")
     pdf.set_line_width(0.2)
 
 
@@ -320,7 +360,7 @@ def _draw_page_one(pdf: ReportPDF, markdown: str, publications: list[dict[str, s
     pdf.set_text_color(*RED)
     pdf.cell(62, 4, "DETENTE - VERIFICA - REPORTA")
 
-    _panel(pdf, 90, 62, 126, 117, "Acciones prioritarias", GOLD)
+    _panel(pdf, 90, 62, 112, 117, "Acciones prioritarias", GOLD)
     row_y = 74
     for index, recommendation in enumerate(recommendations, 1):
         accent = (RED, BLUE, TEAL, GOLD)[(index - 1) % 4]
@@ -330,31 +370,31 @@ def _draw_page_one(pdf: ReportPDF, markdown: str, publications: list[dict[str, s
         pdf.set_font("Helvetica", "B", 8)
         pdf.set_text_color(*WHITE)
         pdf.cell(9, 4, str(index), align="C")
-        _write_text(pdf, 109, row_y, 101, _truncate(recommendation, 125), 9.2, TEXT, bold=True, line_height=4.3)
+        _write_text(pdf, 109, row_y, 87, _truncate(recommendation, 110), 8.8, TEXT, bold=True, line_height=4.1)
         if index < len(recommendations):
             pdf.set_draw_color(*BORDER)
-            pdf.line(96, row_y + 23, 210, row_y + 23)
+            pdf.line(96, row_y + 23, 196, row_y + 23)
         row_y += 24
 
-    _panel(pdf, 222, 62, 65, 117, "Protege tu día a día", TEAL)
-    _draw_device_illustration(pdf, 225, 76)
+    _panel(pdf, 208, 62, 79, 117, "Protege tu día a día", TEAL)
+    _draw_device_illustration(pdf, 212, 76)
     pdf.set_draw_color(*BORDER)
-    pdf.line(227, 113, 282, 113)
+    pdf.line(213, 125, 282, 125)
     quick_tips = [
         ("1", "No abras enlaces inesperados."),
         ("2", "Confirma al remitente por otro canal."),
         ("3", "Reporta mensajes sospechosos."),
     ]
-    tip_y = 119
+    tip_y = 131
     for number, tip in quick_tips:
         pdf.set_fill_color(*TEAL)
-        pdf.ellipse(228, tip_y, 7, 7, style="F")
-        pdf.set_xy(228, tip_y + 1.5)
+        pdf.ellipse(214, tip_y, 7, 7, style="F")
+        pdf.set_xy(214, tip_y + 1.5)
         pdf.set_font("Helvetica", "B", 7)
         pdf.set_text_color(*WHITE)
         pdf.cell(7, 4, number, align="C")
-        _write_text(pdf, 238, tip_y - 0.2, 43, tip, 8.1, TEXT, line_height=3.8)
-        tip_y += 18
+        _write_text(pdf, 224, tip_y - 0.2, 57, tip, 7.8, TEXT, line_height=3.6)
+        tip_y += 15
 
     pdf.set_fill_color(*INK)
     pdf.rect(10, 185, 277, 15, style="F")
