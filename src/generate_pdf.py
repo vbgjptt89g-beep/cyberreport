@@ -298,7 +298,7 @@ def _draw_header(pdf: ReportPDF, title: str, subtitle: str, page_number: int) ->
     pdf.set_xy(257, 29)
     pdf.set_font("Helvetica", "", 7)
     pdf.set_text_color(220, 224, 230)
-    pdf.cell(30, 3, f"{date.today():%d/%m/%Y}  |  {page_number}/2", align="R")
+    pdf.cell(30, 3, f"{date.today():%d/%m/%Y}  |  {page_number}/1", align="R")
 
 
 
@@ -471,10 +471,6 @@ def build_pdf(report_markdown: str, output_path: str | Path) -> Path:
     _draw_header(pdf, "Boletín de seguridad informática", "Ciberseguridad - radar semanal y acciones", 1)
     _draw_page_one(pdf, report_markdown, publications)
 
-    pdf.add_page()
-    _draw_header(pdf, "Fuentes y actualidad", "Noticias destacadas - seleccionadas para una lectura rápida", 2)
-    _draw_page_two(pdf, publications)
-
     pdf.output(str(output_path))
-    print("    -> Infografia PDF de dos paginas escrita correctamente.", flush=True)
+    print("    -> Infografia PDF de una pagina escrita correctamente.", flush=True)
     return output_path
