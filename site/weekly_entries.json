@@ -1,6 +1,41 @@
 [
   {
     "source": "The Hacker News",
+    "title": "The SOC Doesn't Need to Start Over with Every Alert",
+    "link": "https://thehackernews.com/2026/09/the-soc-doesnt-need-to-start-over-with.html",
+    "summary": "Security leaders keep debating whether AI will produce an entirely new class of cyberattack. The nearer change is quieter and already visible: AI has made a failed attack cheap to retry. The routine version looks like this. An attacker lands on a low-privilege cloud account, and the first try at privilege escalation goes nowhere. That dead end used to cost hours of documentation reading,",
+    "published": "2026-09-25T11:30:00+00:00"
+  },
+  {
+    "source": "The Hacker News",
+    "title": "Bitget Says Suspected North Korean Hackers Stole $351.6M After Backend Compromise",
+    "link": "https://thehackernews.com/2026/09/bitget-says-suspected-north-korean.html",
+    "summary": "Cryptocurrency exchange Bitget said suspected North Korean threat actors have stolen $351.6 million from its hot and warm wallets. \"At 18:31 UTC on September 24, 2026, Bitget's security systems identified unauthorized transfers involving a limited number of hot wallets,\" BitGet said in a post shared on X. \"Bitget's cold wallets and the overwhelming majority of platform assets remain",
+    "published": "2026-09-25T10:35:55+00:00"
+  },
+  {
+    "source": "The Hacker News",
+    "title": "Roundcube Pre-Auth SQL Injection Flaw Actively Exploited in the Wild",
+    "link": "https://thehackernews.com/2026/09/roundcube-pre-auth-sql-injection-flaw.html",
+    "summary": "The Canadian Centre for Cyber Security has warned that a now-patched Roundcube Webmail vulnerability is being actively exploited in the wild. The vulnerability in question is CVE-2026-48842 (CVSS score: 8.1), a pre-authentication SQL injection in the virtuser_query plugin of Roundcube Webmail versions 1.6.x before 1.6.16 and 1.7.x before 1.7.1. The issue stems from a preg_replace() backslash",
+    "published": "2026-09-25T10:14:02+00:00"
+  },
+  {
+    "source": "The Hacker News",
+    "title": "Cloudflare Fixes Flaw That Let One Container Read Another Customer's Leftover Disk Data",
+    "link": "https://thehackernews.com/2026/09/cloudflare-fixes-flaw-that-let-one.html",
+    "summary": "A flaw in Cloudflare Containers let a paying customer read data that other customers' containers had left behind on the same server, Cloudflare and the researchers who found it said on Thursday. The data came from disk space that earlier containers had used and given up, not from any live workload, and an attacker could not choose whose data they got, according to Cloudflare. The company",
+    "published": "2026-09-25T04:49:22+00:00"
+  },
+  {
+    "source": "The Hacker News",
+    "title": "WSO2 and Adobe Commerce Flaws Exploited in Attacks, Added to CISA KEV",
+    "link": "https://thehackernews.com/2026/09/wso2-and-adobe-commerce-flaws-exploited.html",
+    "summary": "The U.S. Cybersecurity and Infrastructure Security Agency (CISA), on Thursday, added two critical security flaws impacting WSO2 and Adobe Commerce and Magento to its Known Exploited Vulnerabilities (KEV) catalog, based on evidence of active exploitation. The vulnerabilities are listed below - CVE-2026-5430 (CVS score: 9.8) - A path traversal vulnerability in WSO2 API Control Plane,",
+    "published": "2026-09-25T04:46:34+00:00"
+  },
+  {
+    "source": "The Hacker News",
     "title": "Unpatched OnePlus Flaws Let Installed Android Apps Gain Root Without Permissions",
     "link": "https://thehackernews.com/2026/09/unpatched-oneplus-flaws-let-installed.html",
     "summary": "A OnePlus 15 running the latest OxygenOS can be rooted by a malicious app the owner installs, one that asks for no special permissions. A researcher, Rasmus Moorats, chained two flaws in OnePlus's own software to gain root access, the highest level of control over an Android phone. OnePlus told him the same flaws affect many more of its own devices and those of OPPO, though it has not",
