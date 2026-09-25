@@ -11,8 +11,8 @@ on:
       - 'data/weekly_entries.json'
       - '.github/workflows/weekly-report.yml'
   schedule:
-    # 05:15 UTC equivale a las 23:15 del día anterior en Honduras.
-    - cron: "15 5 * * *"
+    # Honduras usa UTC-6: 13:00 UTC equivale a las 07:00 del martes.
+    - cron: "0 13 * * 2"
   workflow_dispatch:
 
 permissions:
@@ -58,11 +58,11 @@ jobs:
           SMTP_HOST: ${{ vars.SMTP_HOST }}
           SMTP_PORT: ${{ vars.SMTP_PORT }}
         run: |
-          if [ "$GITHUB_EVENT_NAME" = "workflow_dispatch" ] || { [ "$GITHUB_EVENT_NAME" = "schedule" ] && [ "$(date -u +%u)" -eq 6 ]; } || { [ "$GITHUB_EVENT_NAME" = "push" ] && [ ! -f site/informe.pdf ]; }; then
+          if [ "$GITHUB_EVENT_NAME" = "workflow_dispatch" ] || { [ "$GITHUB_EVENT_NAME" = "schedule" ] && [ "$(date -u +%u)" -eq 2 ]; } || { [ "$GITHUB_EVENT_NAME" = "push" ] && [ ! -f site/informe.pdf ]; }; then
             python -u main.py report
             echo "generated=true" >> "$GITHUB_OUTPUT"
           else
-            echo "Recopilación diaria terminada. El boletín PDF se genera los viernes por la noche en Honduras."
+            echo "Recopilación diaria terminada. El boletín PDF se genera los martes a las 07:00 en Honduras."
             echo "generated=false" >> "$GITHUB_OUTPUT"
           fi
         timeout-minutes: 10
@@ -114,3 +114,5 @@ jobs:
       - name: Publicar el sitio en GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+
+
