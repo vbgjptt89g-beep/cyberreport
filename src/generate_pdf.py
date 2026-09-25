@@ -141,26 +141,59 @@ def _draw_shield(pdf: ReportPDF, x: float, y: float, size: float, color: tuple[i
 
 
 def _draw_device_illustration(pdf: ReportPDF, x: float, y: float) -> None:
-    pdf.set_draw_color(*INK_SOFT)
-    pdf.set_fill_color(232, 237, 242)
-    pdf.rect(x + 2, y + 2, 34, 22, style="DF")
-    pdf.set_fill_color(250, 251, 252)
-    pdf.rect(x + 4, y + 4, 30, 16, style="F")
-    pdf.line(x + 19, y + 24, x + 19, y + 28)
-    pdf.line(x + 12, y + 28, x + 26, y + 28)
+    """Ilustración principal: escudo digital con candado y nodos conectados."""
+    # Fondo suave para destacar la única ilustración del boletín.
+    pdf.set_fill_color(232, 241, 246)
+    pdf.rect(x, y, 61, 33, style="F")
+    pdf.set_draw_color(213, 224, 231)
+    pdf.set_line_width(0.55)
+    pdf.ellipse(x + 18, y + 1, 29, 29, style="D")
+    pdf.ellipse(x + 22, y + 3, 21, 21, style="D")
+
+    # Conexiones y nodos que representan dispositivos protegidos.
+    pdf.set_draw_color(*BLUE)
+    pdf.set_line_width(0.8)
+    pdf.line(x + 10, y + 10, x + 23, y + 15)
+    pdf.line(x + 10, y + 25, x + 23, y + 20)
+    pdf.line(x + 42, y + 15, x + 54, y + 9)
+    pdf.line(x + 42, y + 20, x + 54, y + 26)
+    for nx, ny, color in ((8, 8, TEAL), (8, 24, GOLD), (53, 7, GOLD), (53, 24, TEAL)):
+        pdf.set_fill_color(*color)
+        pdf.ellipse(x + nx, y + ny, 5, 5, style="F")
+        pdf.set_fill_color(*WHITE)
+        pdf.ellipse(x + nx + 1.7, y + ny + 1.7, 1.6, 1.6, style="F")
+
+    # Sombra y escudo rojo con borde dorado.
+    shield = [
+        (x + 32, y + 2), (x + 43, y + 6), (x + 41.5, y + 19),
+        (x + 32, y + 29), (x + 22.5, y + 19), (x + 21, y + 6),
+    ]
+    pdf.set_fill_color(183, 25, 39)
+    pdf.set_draw_color(183, 25, 39)
+    pdf.polygon([(px + 1, py + 1) for px, py in shield], style="F")
     pdf.set_fill_color(*RED)
-    pdf.ellipse(x + 8, y + 8, 5, 5, style="F")
-    pdf.set_fill_color(*GOLD)
-    pdf.ellipse(x + 15, y + 8, 5, 5, style="F")
-    pdf.set_fill_color(*TEAL)
-    pdf.ellipse(x + 22, y + 8, 5, 5, style="F")
-    pdf.set_fill_color(*INK)
-    pdf.rect(x + 39, y + 7, 10, 21, style="F")
-    pdf.set_fill_color(240, 243, 246)
-    pdf.rect(x + 40.5, y + 9, 7, 16, style="F")
-    pdf.set_fill_color(*GOLD)
-    pdf.ellipse(x + 43.3, y + 26, 1.6, 1.2, style="F")
-    _draw_shield(pdf, x + 49, y + 10, 12, RED)
+    pdf.set_draw_color(*GOLD)
+    pdf.set_line_width(1.2)
+    pdf.polygon(shield, style="DF")
+    inner = [
+        (x + 32, y + 5), (x + 40, y + 8), (x + 38.7, y + 18),
+        (x + 32, y + 25), (x + 25.3, y + 18), (x + 24, y + 8),
+    ]
+    pdf.set_fill_color(239, 64, 72)
+    pdf.set_draw_color(239, 64, 72)
+    pdf.polygon(inner, style="F")
+
+    # Candado central en color claro para dar contraste.
+    pdf.set_draw_color(*WHITE)
+    pdf.set_line_width(1.35)
+    pdf.ellipse(x + 28.5, y + 10, 7, 8, style="D")
+    pdf.set_fill_color(*WHITE)
+    pdf.rect(x + 27, y + 14, 10, 8, style="F")
+    pdf.set_fill_color(*RED)
+    pdf.ellipse(x + 31, y + 16.2, 2, 2, style="F")
+    pdf.set_fill_color(*WHITE)
+    pdf.rect(x + 31.7, y + 17.7, 0.6, 2.1, style="F")
+    pdf.set_line_width(0.2)
 
 
 def _parse_publications(markdown: str) -> list[dict[str, str]]:
