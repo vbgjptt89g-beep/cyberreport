@@ -20,10 +20,10 @@ def send_report_email(pdf_path: str | Path) -> bool:
     smtp_port = int(os.environ.get("SMTP_PORT", "465"))
     pdf_path = Path(pdf_path)
     msg = EmailMessage()
-    msg["Subject"] = f"Informe semanal de ciberseguridad - {pdf_path.stem}"
+    msg["Subject"] = f"Boletín semanal de tecnología - {pdf_path.stem}"
     msg["From"] = email_from
     msg["To"] = email_to
-    msg.set_content("Hola,\n\nAdjunto el informe semanal de ciberseguridad.\n")
+    msg.set_content("Hola,\n\nAdjunto el boletín semanal de tecnología.\n")
     msg.add_attachment(
         pdf_path.read_bytes(), maintype="application", subtype="pdf", filename=pdf_path.name,
     )

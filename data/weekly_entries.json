@@ -1,401 +1,514 @@
 [
   {
-    "source": "The Hacker News",
-    "title": "Compromised GitHub Actions Came Back Online and Resumed Executing Mini Shai-Hulud Malware",
-    "link": "https://thehackernews.com/2026/09/compromised-github-actions-came-back.html",
-    "summary": "Two actions-cool GitHub Actions have been disabled for a second time after the repositories became accessible last week, months after they were compromised during the May 2026 Mini Shai-Hulud campaign. The affected GitHub Actions are listed below - actions-cool/issues-helper actions-cool/maintain-one-comment Visiting either of the repositories now shows the message: \"Access to this",
-    "published": "2026-09-25T14:44:41+00:00"
+    "source": "Hipertextual",
+    "title": "Microsoft mata los portátiles con los que buscaba dominar en la era de la IA",
+    "link": "https://hipertextual.com/inteligencia-artificial/microsoft-abandona-marca-copilot-plus-pc/",
+    "summary": "A dos años de presentarse como el futuro de los ordenadores portátiles, los Copilot+ PC están por desaparecer. Microsoft ha comenzado a eliminar la marca en sus especificaciones y campañas actuales, lo que deja entrever que su muerte está cerca. La prueba más reciente de esta estrategia está en los nuevos Surface, que cumplen con […] Seguir leyendo: Microsoft mata los portátiles con los que buscaba dominar en la era de la IA",
+    "published": "2026-09-25T17:45:46+00:00",
+    "image": "https://i0.wp.com/imgs.hipertextual.com/wp-content/uploads/2026/09/copilot-plus-pc.jpg?fit=1024%2C577&quality=70&strip=all&ssl=1"
   },
   {
-    "source": "The Hacker News",
-    "title": "PamStealer macOS Malware Adds Live C2 Payload Decryption and Multi-Layer Persistence",
-    "link": "https://thehackernews.com/2026/09/pamstealer-macos-malware-adds-live-c2.html",
-    "summary": "Cybersecurity researchers have flagged a new version of PamStealer that ensures that the main payload can only be recovered using a server-side decryption chain. The latest artifacts, per Jamf Threat Labs, continue to rely on the same JavaScript for Automation (JXA) dropper mechanism, but modify the lure and the delivery method. \"Where earlier variants embedded their payload key material",
-    "published": "2026-09-25T13:18:06+00:00"
+    "source": "Xataka",
+    "title": "El mundo tiene uranio suficiente para la expansión nuclear. El problema es llegar a tiempo para extraerlo",
+    "link": "https://www.xataka.com/energia/mundo-tiene-uranio-suficiente-para-expansion-nuclear-problema-llegar-a-tiempo-para-extraerlo",
+    "summary": "El mundo no se está quedando sin uranio. Ni siquiera frente a una expansión importante de la energía nuclear . Según el último informe elaborado conjuntamente por la OCDE (Organización para la Cooperación y el Desarrollo Económicos) y el OIEA (Organismo Internacional de Energía Atómica) titulado \"Uranio 2026: recursos, producción y demanda\" , a 1 de enero de 2025 había más de 8,1 millones de toneladas de uranio identificado y recuperable por debajo de 260 dólares/kgU. Esta última cifra es importante porque refleja que la extracción de ese uranio es viable asumiendo un coste competitivo, una buena noticia en un contexto en el que se espera que la demanda mundial de uranio se dispare hasta al menos 2050. El OIEA ha predicho que la potencia nuclear mundial se multiplicará por 2,5 en esa fecha. No obstante, esta predicción describe el escenario más favorable al desarrollo de la energía nuclear, en el que los 372 GW de potencia nuclear mundial existentes en 2023 se incrementarán paulatinamente hasta los 950 GW en 2050. En este escenario esta forma de generación de energía se verá impulsada por los objetivos climáticos y la necesidad de sostener el suministro eléctrico. No obstante, el O",
+    "published": "2026-09-25T17:31:08+00:00",
+    "image": "https://i.blogs.es/a2d4b8/uranio-ap/1024_2000.jpeg"
   },
   {
-    "source": "The Hacker News",
-    "title": "The SOC Doesn't Need to Start Over with Every Alert",
-    "link": "https://thehackernews.com/2026/09/the-soc-doesnt-need-to-start-over-with.html",
-    "summary": "Security leaders keep debating whether AI will produce an entirely new class of cyberattack. The nearer change is quieter and already visible: AI has made a failed attack cheap to retry. The routine version looks like this. An attacker lands on a low-privilege cloud account, and the first try at privilege escalation goes nowhere. That dead end used to cost hours of documentation reading,",
-    "published": "2026-09-25T11:30:00+00:00"
+    "source": "Xataka",
+    "title": "\"No puedes pasar un día sin recibir alguna crítica\": el modelo de liderazgo de Jensen Huang que no da tregua a sus empleados",
+    "link": "https://www.xataka.com/empresas-y-economia/no-puedes-pasar-dia-recibir-alguna-critica-modelo-liderazgo-jensen-huang-que-no-da-tregua-a-sus-empleados",
+    "summary": "No se puede negar que Jensen Huang se sale del estereotipo de CEO de una gran empresa tecnológica: viste chaqueta de cuero, se deja ver comiendo en puestos de comida callejera en sus viajes y ha convertido a Nvidia en la empresa más valiosa del planeta. Pero detrás de esa imagen de \"rockstar\" hay una forma de liderar muy personal . El propio Huang ha contado sin tapujos que su receta para el éxito de Nvidia incluye ingredientes que rozan lo tóxico: crítica constante a sus empleados, jornadas maratonianas y cero tolerancia con la mediocridad . Y aun así, casi ninguno de sus empleados quiere irse de Nvidia. La tortura como camino para mejorar. Huang lo llama, medio en broma, su \"forma de tortura\". Preguntado por la cadena CNA en una entrevista sobre su fama de jefe exigente, Huang respondió: \"No puedes mostrarme nada sin que te lo critique. Supongo que, en cierto modo, esa es mi forma de tortura\". La comparación que usa deriva de la educación tradicional taiwanesa: nada es nunca suficiente. Lo curioso es que Huang presenta esa dureza como un acto de confianza, no de castigo . \"Al igual que un padre taiwanés, una vez que se da la retroalimentación, uno vuelve a querer a la persona\", e",
+    "published": "2026-09-25T17:15:08+00:00",
+    "image": "https://i.blogs.es/7c7bcc/jensen-huang/1024_2000.jpeg"
   },
   {
-    "source": "The Hacker News",
-    "title": "Bitget Says Suspected North Korean Hackers Stole $351.6M After Backend Compromise",
-    "link": "https://thehackernews.com/2026/09/bitget-says-suspected-north-korean.html",
-    "summary": "Cryptocurrency exchange Bitget said suspected North Korean threat actors have stolen $351.6 million from its hot and warm wallets. \"At 18:31 UTC on September 24, 2026, Bitget's security systems identified unauthorized transfers involving a limited number of hot wallets,\" BitGet said in a post shared on X. \"Bitget's cold wallets and the overwhelming majority of platform assets remain",
-    "published": "2026-09-25T10:35:55+00:00"
+    "source": "Applesfera",
+    "title": "\"No tengo ninguna disculpa.\" Aparece un vídeo de Steve Jobs dando la cara por los fallos del iPhone 4",
+    "link": "https://www.applesfera.com/curiosidades/no-tengo-ninguna-disculpa-aparece-video-steve-jobs-dando-cara-fallos-iphone-4",
+    "summary": "Pocos momentos de fiasco se recuerdan como aquel verano del iPhone 4 y sus problemas de cobertura . Un producto diseñado con tanto mimo y de repente medio mundo hablando de barras de señal que desaparecían solo por sujetarlo con la mano. Apple tuvo que convocar una rueda de prensa de emergencia , Steve Jobs subió al escenario y soltó aquella frase que quedó grabada a fuego: lo estábamos sujetando mal. Apple grabó aquel evento y colgó después un vídeo con la presentación, pero la parte de preguntas y respuestas con la prensa se quedó sin publicar. Ahora, dieciséis años después, esa parte ha aparecido en YouTube . Son 47 minutos de grabación en los que Steve Jobs, Tim Cook y Bob Mansfield (el entonces responsable de ingeniería de hardware de Apple) responden sin filtro a las preguntas de los periodistas. El vídeo no cuenta con autorización de Apple, así que nadie sabe cuánto tiempo seguirá disponible antes de que alguien pida retirarlo. Los cuarenta y siete minutos que faltaban del vídeo Quien ha destapado la grabación es John Gruber , periodista que estuvo presente en aquella rueda de prensa de julio de 2010. El propio Gruber reconoce que no sabe de dónde ha salido la grabación ni p",
+    "published": "2026-09-25T17:01:09+00:00",
+    "image": "https://i.blogs.es/e37582/steve-jobs/1024_2000.jpeg"
   },
   {
-    "source": "The Hacker News",
-    "title": "Roundcube Pre-Auth SQL Injection Flaw Actively Exploited in the Wild",
-    "link": "https://thehackernews.com/2026/09/roundcube-pre-auth-sql-injection-flaw.html",
-    "summary": "The Canadian Centre for Cyber Security has warned that a now-patched Roundcube Webmail vulnerability is being actively exploited in the wild. The vulnerability in question is CVE-2026-48842 (CVSS score: 8.1), a pre-authentication SQL injection in the virtuser_query plugin of Roundcube Webmail versions 1.6.x before 1.6.16 and 1.7.x before 1.7.1. The issue stems from a preg_replace() backslash",
-    "published": "2026-09-25T10:14:02+00:00"
+    "source": "MuyComputer",
+    "title": "Zenbook 14: OLED, 1,1 kg y más de 21 horas lejos del enchufe",
+    "link": "https://www.muycomputer.com/2026/09/25/zenbook-14-oled-11-kg-y-mas-de-21-horas-lejos-del-enchufe/",
+    "summary": "La movilidad real de un portátil no depende únicamente de que sea fino o pueda meterse con facilidad en una mochila. También cuenta cuánto pesa después de varias horas cargándolo, cuánto tiempo puede pasar lejos del enchufe y hasta qué punto sigue siendo cómodo cuando toca trabajar, crear o simplemente consumir contenidos durante toda una […] La entrada Zenbook 14: OLED, 1,1 kg y más de 21 horas lejos del enchufe se publicó primero en MuyComputer .",
+    "published": "2026-09-25T16:52:40+00:00",
+    "image": ""
   },
   {
-    "source": "The Hacker News",
-    "title": "Cloudflare Fixes Flaw That Let One Container Read Another Customer's Leftover Disk Data",
-    "link": "https://thehackernews.com/2026/09/cloudflare-fixes-flaw-that-let-one.html",
-    "summary": "A flaw in Cloudflare Containers let a paying customer read data that other customers' containers had left behind on the same server, Cloudflare and the researchers who found it said on Thursday. The data came from disk space that earlier containers had used and given up, not from any live workload, and an attacker could not choose whose data they got, according to Cloudflare. The company",
-    "published": "2026-09-25T04:49:22+00:00"
+    "source": "Xataka",
+    "title": "Hemos encontrado un fenómeno cósmico que desafía las leyes conocidas de la física estelar. Todo empieza con una estrella muerta",
+    "link": "https://www.xataka.com/espacio/hemos-encontrado-fenomeno-cosmico-que-desafia-leyes-conocidas-fisica-estelar-todo-empieza-estrella-muerta",
+    "summary": "Aunque tendemos a pensar en el espacio como un lugar inmenso donde reina la paz, en realidad está plagado de procesos violentísimos: explosiones , vientos cargados de partículas iónicas, cuerpos celestes robándose materia los unos a los otros… La mayoría siguen una serie de normas bien conocidas. Sin embargo, de vez en cuando nos encontramos con alguno que nos sorprende . Es justamente lo que acaba de ocurrir con la inesperada onda de choque lanzada desde una estrella muerta situada a 730 años luz de nosotros. El arco que no debería estar allí. Todo empezó en España , en el Telescopio Isaac Newton, ubicado en la Palma, con el que se detectó una estructura inusual. Se trataba de una onda de choque de proa, procedente de la enana blanca RXJ0528+2838. Estas perturbaciones tienen forma de arco y una apariencia similar a la de las ondas que se generan en el agua en frente de un barco. Normalmente se forman cuando una gran cantidad de material sale disparado de una estrella e impacta con el medio circundante. Dicho material puede tener tres orígenes : los vientos estelares de la estrella compañera, una explosión termonuclear en la superficie de la propia enana blanca o un disco de acreci",
+    "published": "2026-09-25T16:45:09+00:00",
+    "image": "https://i.blogs.es/4cd93f/ondas-de-choque-enana-blanca/1024_2000.jpeg"
   },
   {
-    "source": "The Hacker News",
-    "title": "WSO2 and Adobe Commerce Flaws Exploited in Attacks, Added to CISA KEV",
-    "link": "https://thehackernews.com/2026/09/wso2-and-adobe-commerce-flaws-exploited.html",
-    "summary": "The U.S. Cybersecurity and Infrastructure Security Agency (CISA), on Thursday, added two critical security flaws impacting WSO2 and Adobe Commerce and Magento to its Known Exploited Vulnerabilities (KEV) catalog, based on evidence of active exploitation. The vulnerabilities are listed below - CVE-2026-5430 (CVS score: 9.8) - A path traversal vulnerability in WSO2 API Control Plane,",
-    "published": "2026-09-25T04:46:34+00:00"
+    "source": "Xataka",
+    "title": "Arabia Saudí ha desterrado los delirios arquitectónicos de NEOM e inicia un nuevo reto: entrar en la guerra del coche eléctrico por la puerta grande",
+    "link": "https://www.xataka.com/movilidad/arabia-saudi-ha-desterrado-delirios-arquitectonicos-neom-e-inicia-nuevo-reto-entrar-guerra-coche-electrico-puerta-grande",
+    "summary": "El príncipe heredero de Arabia Saudí, Mohammed bin Salman, quería convencer al mundo de que NEOM, su futurística y desproporciondada ciudad en forma de línea, tenía algún tipo de sentido. Este proyecto arquitectónico distópico, al igual que otros que los complementan, están ahora sumidos en una profunda reestructuración y priorización de gasto. Pero esta semana, el foco de atención pasó más bien al asfalto, cuando el Reino presentó sus primeros coches eléctricos para el mercado de masas, justo cuando las ambiciones de sus gigaproyectos se van reduciendo en segundo plano. Qué ha ocurrido. Hace unos días, Ceer, la primera marca automovilística propia de Arabia Saudí , presentó su berlina eléctrica y su SUV insignia, ambos llamados Exobot, en un evento liderado por el propio príncipe heredero, quien también preside el consejo de administración del Fondo de Inversión Pública (PIF), propietario de Ceer. “El lanzamiento de los primeros vehículos de CEER representa un paso más en el avance de Arabia Saudí para construir un ecosistema industrial sostenible y próspero”, contaba el príncipe heredero durante la ocasión. Cabe destacar que Arabia Saudí está poco a poco tejiendo un plan B para c",
+    "published": "2026-09-25T16:31:08+00:00",
+    "image": "https://i.blogs.es/cdf886/coches-arabia/1024_2000.jpeg"
   },
   {
-    "source": "The Hacker News",
-    "title": "Unpatched OnePlus Flaws Let Installed Android Apps Gain Root Without Permissions",
-    "link": "https://thehackernews.com/2026/09/unpatched-oneplus-flaws-let-installed.html",
-    "summary": "A OnePlus 15 running the latest OxygenOS can be rooted by a malicious app the owner installs, one that asks for no special permissions. A researcher, Rasmus Moorats, chained two flaws in OnePlus's own software to gain root access, the highest level of control over an Android phone. OnePlus told him the same flaws affect many more of its own devices and those of OPPO, though it has not",
-    "published": "2026-09-24T18:10:18+00:00"
+    "source": "Xataka",
+    "title": "La energía nuclear vuelve a Europa. Italia acaba de dar un paso que parecía impensable hace unos años",
+    "link": "https://www.xataka.com/energia/energia-nuclear-vuelve-a-europa-italia-acaba-dar-paso-que-parecia-impensable-hace-unos-anos",
+    "summary": "Hace tan solo unos meses, la presidenta de la Comisión Europea Ursula von der Leyen calificaba de “error estratégico” el retroceso de la energía nuclear que durante décadas se ha llevado a cabo desde la UE. Esto rompía con la tendencia en nuestro continente de apostar por el cierre de las centrales y la sustitución de esta fuente de generación por energías renovables. Ahora, y en un contexto de enorme volatilidad en los precios de los combustibles y las materias primas, algunos países se están sumando a esta forma de pensar. La nuclear se presenta, según sus defensores, como una fuente de energía fiable , constante y con bajas emisiones. El último en sumarse al carro ha sido Italia, con la tramitación de una ley que le permitirá volver a construir reactores, casi cuatro décadas después de que se cerraran las últimas centrales en el país, según cuenta el Financial Times . Adiós al tabú de la energía atómica . Escribe el eurodiputado Diego Solier en Demócrata que durante mucho tiempo en Bruselas se repetía un mantra: el de las renovables. Ahora que la soberanía energética de la Unión está en juego, parece que ha llegado el momento de replantearse si las renovables, imprescindibles en",
+    "published": "2026-09-25T16:15:08+00:00",
+    "image": "https://i.blogs.es/98509f/hansjorg-keller-wmqgu73hngg-unsplash/1024_2000.jpeg"
   },
   {
-    "source": "The Hacker News",
-    "title": "ThreatsDay: AI Search Poisoning, AI Coding Tool Leaking Repos, One-Click Code Execution and 13 More Stories",
-    "link": "https://thehackernews.com/2026/09/threatsday-ai-search-poisoning-ai.html",
-    "summary": "This week, the dangerous stuff keeps arriving dressed as something boring. An update. A login box. A search answer. A coding tool. A link you have clicked a hundred times before. That is the thread running through the pile. Trusted paths get poisoned. Old bugs find new jobs. AI tools leak more than expected. Fake prompts look real enough. And some attacks barely need an exploit at all — just",
-    "published": "2026-09-24T17:52:43+00:00"
+    "source": "Xataka",
+    "title": "Microsoft pasó dos años diciéndonos que el futuro era el “Copilot+ PC”. Ahora está enterrando la marca",
+    "link": "https://www.xataka.com/ordenadores/microsoft-paso-dos-anos-diciendonos-que-futuro-era-copilot-pc-ahora-esta-enterrando-marca",
+    "summary": "Microsoft nos pasó buena parte de los últimos dos años explicándonos que había una nueva clase de ordenador que debíamos aprender a reconocer. Se llamaba Copilot+ PC y, cuando apareció en 2024, la compañía lo presentó como el comienzo de una nueva etapa para Windows, con la inteligencia artificial ejecutándose también dentro del propio dispositivo. Aquella apuesta tecnológica no ha desaparecido. Lo extraño es otra cosa: los nuevos Surface siguen avanzando precisamente en esa dirección, pero Microsoft ya no los llama Copilot+ PC. No era solo una pegatina. Cuando veíamos Copilot+ PC en un ordenador, aquella denominación nos decía algo concreto sobre el hardware que había dentro. Microsoft exigía un procesador compatible con una NPU capaz de alcanzar al menos 40 TOPS , además de 16 GB de RAM y 256 GB de almacenamiento. Esa NPU, un procesador especializado en cargas de inteligencia artificial, era la pieza central para acelerar determinadas tareas directamente en el equipo. En otras palabras, el sello servía para identificar los PC que superaban el listón fijado por la compañía para sus experiencias de IA. Los nuevos Surface rompen el patrón. La señal más clara llega con los nuevos Sur",
+    "published": "2026-09-25T16:01:08+00:00",
+    "image": "https://i.blogs.es/526fef/copilot-pc-hero/1024_2000.jpeg"
   },
   {
-    "source": "The Hacker News",
-    "title": "Placeholder third-party[.]com Referenced Across 1,700+ Repositories Now Serves Malicious Content",
-    "link": "https://thehackernews.com/2026/09/placeholder-third-partycom-referenced.html",
-    "summary": "The \"third-party[.]com\" domain, commonly used as a documentation placeholder, has been observed serving a ClickFix lure to Windows browsers while displaying a harmless decoy to other users. \"third-party[.]com has been a generic documentation placeholder for years, the same role example.com plays,\" Manifold Security's Head of Research, Ax Sharma, said. \"Unlike 'example[.]com,' third-party[.]com",
-    "published": "2026-09-24T15:27:32+00:00"
+    "source": "Hipertextual",
+    "title": "No eres solo tú: Google rompe el desbloqueo de los Pixel con su última actualización",
+    "link": "https://hipertextual.com/mobile/google-rompe-desbloqueo-pixel-ultima-actualizacion/",
+    "summary": "Si tienes un Google Pixel y no puedes desbloquearlo con un PIN o patrón tras la más reciente actualización de Android, no estás solo. Usuarios de los móviles de la firma californiana están reportando fallos en los métodos de desbloqueo después de instalar el Pixel Drop de septiembre. Según publicaciones que se están replicando en […] Seguir leyendo: No eres solo tú: Google rompe el desbloqueo de los Pixel con su última actualización",
+    "published": "2026-09-25T15:29:08+00:00",
+    "image": "https://i0.wp.com/imgs.hipertextual.com/wp-content/uploads/2026/02/pixel-10a-04.jpg?fit=1024%2C684&quality=70&strip=all&ssl=1"
   },
   {
-    "source": "The Hacker News",
-    "title": "Hacked Ukrainian Sites Serve Fake Cloudflare ClickFix Lures for Psychedelic Stealer",
-    "link": "https://thehackernews.com/2026/09/hacked-ukrainian-sites-serve-fake.html",
-    "summary": "An active ClickFix campaign has been observed compromising legitimate Ukrainian business websites to inject bogus Cloudflare verification pages and trick victims into downloading a previously undocumented information stealer called Psychedelic. \"When a visitor interacts with the page, the lure copies a Windows Installer command to the clipboard and instructs the visitor to paste it into the",
-    "published": "2026-09-24T14:29:06+00:00"
+    "source": "Xataka",
+    "title": "El Xiaomi 18 Pro no hace concesiones en ningún apartado. También nos habla del futuro de móviles normales que parecen powerbanks",
+    "link": "https://www.xataka.com/moviles/xiaomi-18-pro-no-hace-concesiones-ningun-apartado-tambien-nos-habla-futuro-moviles-normales-que-parecen-powerbanks",
+    "summary": "Pocos días después de que Apple realizara su clásica keynote para presentar los iPhone 18 Pro Max y el iPhone Duo , Xiaomi ha movido ficha para mostrar al mundo el Xiaomi 18 Pro. Lo ha hecho en un evento en China y si nos hacemos eco es por un doble motivo. El primero es porque han confirmado que se lanzará internacionalmente en algún momento de este año. El segundo es porque es una declaración de intenciones sobre el futuro de sus móviles de alta gama: no renunciar a nada. Una powerbank con forma de móvil Las especificaciones técnicas son las adecuadas para un móvil que pretende ser la punta de lanza de la compañía para los próximos meses. Para empear, habrá dos modelos, uno Pro y otro Pro Max que se diferencian en algo más que en el tamaño y en la diagonal del panel. El Xiaomi 18 Pro montará el Snapdragon 8 Elite Gen 6 , pero el Pro Max contará con la versión más entusiasta del SoC de Qualcomm: el Snapdragon 8 Elite Extreme Gen 6 . La RAM en ambos modelos es de 12 o 16 GB LPDDRX y ambos montan la misma cantidad de memoria RAM con opciones de 2456, 512 GB y 1 TB. Que iba a ser un móvil potente se sabía desde antes de que se presentaran tanto los chips como los propios móviles, ya ",
+    "published": "2026-09-25T15:15:08+00:00",
+    "image": "https://i.blogs.es/dc86c4/original2/1024_2000.jpeg"
   },
   {
-    "source": "The Hacker News",
-    "title": "Corp MDM Spyware Targets Logistics Firms, Steals New SMS and Redirects Calls",
-    "link": "https://thehackernews.com/2026/09/corp-mdm-spyware-targets-logistics.html",
-    "summary": "The logistics sector has become the target of a new malicious cyber campaign that distributes an Android spyware codenamed Corp MDM. According to Have I Been Squatted, the campaign uses fake Google Play pages branded as CEVA and TKW Logistics to distribute an Android Package Kit (APK) file that's dressed up as a system service. The delivered app has the package name \"com.corp.mdm\" Corp MDM",
-    "published": "2026-09-24T12:05:27+00:00"
+    "source": "Applesfera",
+    "title": "Lo mejor y lo peor del iPhone 18 Pro Max tras una semana con él",
+    "link": "https://www.applesfera.com/iphone/mejor-peor-iphone-18-pro-max-semana",
+    "summary": "Hay generaciones de iPhone que se disfrutan distinto según de dónde vengas. Yo llego a este análisis desde un iPhone 17 Pro, y eso hay que ponerlo por delante antes de nada: no es lo mismo saltar al iPhone 18 Pro Max viniendo del modelo del año pasado que hacerlo desde un 12 Pro, un 13 Pro o incluso un 15 Pro. En Applesfera ya hemos hablado sobre qué modelos compensa el salto y en cuáles no. En este artículo voy a quedarme con lo que da de sí el iPhone 18 Pro tras una semana con él . Sin entrar en si el salto entre generaciones ha sido grande o pequeño. Porque lo normal es no cambiar de iPhone cada año. Como referencia, a lo largo de la historia hemos tenido generaciones \"S\" . El iPhone Xs, iPhone 6S, iPhone 4S... Todas estas perfeccionaban lo anterior sin reinventarlo. Y a veces se leen o ven reviews que ponen este iPhone como decepcionante. Y aquí me pregunto, ¿si el año pasado catalogaban el 17 Pro como buenísimo, lo mínimo no sería que el iPhone 18 Pro fuese buenísimo, y un poco más? Yo, después de una semana usándolo a diario, con calor de verano incluido, un viernes de finales de septiembre a 34 grados en mi ciudad, tengo bastante claro qué me ha conquistado y qué le pondría ",
+    "published": "2026-09-25T15:01:08+00:00",
+    "image": "https://i.blogs.es/124065/iphone-18-pro/1024_2000.jpeg"
   },
   {
-    "source": "The Hacker News",
-    "title": "Secrets Sprawl Is an Identity Problem That AI Just Made Impossible to Ignore",
-    "link": "https://thehackernews.com/2026/09/secrets-sprawl-is-identity-problem-that.html",
-    "summary": "AI coding agents are changing how quickly developers can build and ship software as well as how quickly credentials can become exposed. According to GitGuardian’s 2026 State of Secrets Sprawl Report, commits identified as AI-assisted are leaking secrets at approximately twice the rate of human-written ones. Most of the fastest-growing categories of leaked credentials are now connected to AI",
-    "published": "2026-09-24T11:00:00+00:00"
+    "source": "Xataka",
+    "title": "Honor MagicBook 16 2026, análisis: un portátil asequible que lo tiene casi todo en el peor momento de la electrónica de consumo",
+    "link": "https://www.xataka.com/analisis/honor-magicbook-16-2026-analisis-caracteristicas-precio-especificaciones",
+    "summary": "Hay portátiles que se venden exclusivamente por una ficha técnica de impresión y otros donde la relación calidad/precio/utilidad es la clave. El Honor MagicBook 16 2026 es del segundo tipo: un equipo grande de 16 pulgadas para quien necesita mucho espacio de trabajo incluso en movilidad y que cuenta con un procesador Intel Core Ultra 5 , pantalla antirreflejos, cuerpo completamente metálico, teclado numérico completo y una batería de 80 Wh que parece que no se agota nunca. Con la promoción de lanzamiento que lo deja por menos de 900 euros, es una de esas compras muy tentadoras si buscas portátil de gran pantalla y todoterreno, máxime en el momento de tecnología por las nubes en que nos encontramos. ✅ Cómpralo si... Necesitas un portátil de 16 pulgadas con autonomía real muy superior a una jornada completa sin necesidad de estar pendiente del cargador. Valoras una construcción resistente de verdad para el día a día y el extra de un teclado a prueba de salpicaduras. Trabajas principalmente con ofimática, navegadores web y videollamadas. ❌ No los compres si... Necesitas una gran y fiel cobertura de color de la pantalla para tareas de diseño y un panel que destaque por brillo. Buscas e",
+    "published": "2026-09-25T14:01:08+00:00",
+    "image": "https://i.blogs.es/32c1f0/img_1627/1024_2000.jpeg"
   },
   {
-    "source": "The Hacker News",
-    "title": "17,000 URLs Reveal How ClickFix Turns Trusted Websites Into Malware Traps: Report by CTM360",
-    "link": "https://thehackernews.com/2026/09/17000-urls-reveal-how-clickfix-turns.html",
-    "summary": "ClickFix has become the most common way attackers get into enterprise networks, and it does it without an exploit, an attachment, or a file on disk. Our new global threat report traces the technique from a novelty in late 2023 to a subscription product with on-chain infrastructure and a state-sponsored user base, and explains why blocking malicious domains is no longer a useful defense. Read",
-    "published": "2026-09-24T09:14:21+00:00"
+    "source": "Applesfera",
+    "title": "\"El juego que derritió los PCs de la gente hace seis años\" se ejecuta ahora en un iPhone. Y ni siquiera es el modelo más reciente",
+    "link": "https://www.applesfera.com/juegos-ios/juego-que-derritio-pcs-gente-hace-seis-anos-se-ejecuta-ahora-iphone-siquiera-modelo-reciente",
+    "summary": "Que se defina así a 'Cyberpunk 2077' no es tan exagerado como parece. Cuando se lanzó, su alta exigencia gráfica exigía de tener un ordenador bastante potente para moverlo con soltura. Y ahora, sin embargo, se ejecuta sin mayor problema en un iPhone 17 Pro Max , que a tenor de la existencia de los iPhone 18 Pro , ya no es ni el móvil más puntero de Apple. Lo más curioso de todo es que no estamos ante una versión del juego desarrollada para iPhone . La historia la ha compartido un desarrollador en Reddit, el cual logró ejecutar la versión de macOS en su iPhone 17 Pro Max mediante una capa de traducción que adapta el software. Y el resultado es alucinante (para bien, claro). No es un truco: corre perfectamente en iOS Tras su lanzamiento hace ahora seis años, 'Cyberpunk 2077' es considerado uno de los mejores juegos para poner a prueba el rendimiento de una tarjeta gráfica . Generalmente la de un ordenador. Sus requisitos eran elevados incluso para los estándares de la época, especialmente si se quería jugar con gráficos altos y trazado de rayos. No era precisamente el tipo de juego que uno asociaría con un móvil. '' Vídeo de Thisisyouracc0un-t en Reddit La situación ahora es bien dis",
+    "published": "2026-09-25T14:01:08+00:00",
+    "image": "https://i.blogs.es/2af47d/cyberpunk-2077-en-iphone/1024_2000.jpeg"
   },
   {
-    "source": "The Hacker News",
-    "title": "OpenAI Agent Bypassed Australian Medicare Portal Controls to Access Non-Public Files",
-    "link": "https://thehackernews.com/2026/09/openai-agent-bypassed-australian.html",
-    "summary": "An AI agent on an internal OpenAI research task bypassed access controls on an Australian government Medicare statistics portal in June, Prime Minister Anthony Albanese said. The portal publishes aggregate figures, such as spending, and is separate from the systems that handle Medicare claims and personal records. The agent reached files on it that were not public, but no personal",
-    "published": "2026-09-24T07:07:25+00:00"
+    "source": "Xataka",
+    "title": "\"No sé mi dirección y no me importa\". Jensen Huang habla sobre la pérdida de destreza intelectual debido a la IA (y por qué es bueno)",
+    "link": "https://www.xataka.com/robotica-e-ia/no-se-mi-direccion-no-me-importa-jensen-huang-habla-perdida-destreza-intelectual-debido-a-ia-que-bueno",
+    "summary": "El trabajo de Jensen Huang al frente de Nvidia es el de dar entrevistas. Al menos, eso es lo que parece si tenemos en cuenta el largo tour por medios y eventos políticos en los que el mandamás de la compañía lleva meses inmerso. Es una de las personas más interesadas en que la rueda no deje de girar debido a que su compañía se ha convertido en el pegamento de la IA y no desaprovecha ninguna ocasión para quitar hierro a los peligros de la IA en cuanto a seguridad o pérdida de puestos de trabajo . A la vez, deja aún más dudas sobre la IA y sobre el mundo que queremos construir, pero en una reciente entrevista en The New York Times ha demostrado algo más: lo desconectado que está del mundo. El pastel . Ezra Klein es columnista de The New York Times. También tiene un podcast en el que ha podido charlar largo y tendido con Huang y donde se han dado tres grandes bloques. El primero es uno al que Huang lleva tiempo quitando importancia: el de la pérdida de empleos que provocará la IA . Antes de abordar eso, Huang describe la IA como un pastel con varias capas. En la base se sitúa la producción física, esa nueva Revolución Industrial que suponen las fundiciones. La siguiente capa son los c",
+    "published": "2026-09-25T13:01:08+00:00",
+    "image": "https://i.blogs.es/e25579/jensen-huang/1024_2000.png"
   },
   {
-    "source": "The Hacker News",
-    "title": "TeamFiltration Campaign Compromises Seven Microsoft 365 Accounts Using Default Passwords",
-    "link": "https://thehackernews.com/2026/09/teamfiltration-compromises-seven.html",
-    "summary": "Cybersecurity researchers have disclosed details of an active TeamFiltration campaign codenamed UNK_CondorFiltration that has targeted over 5,700 accounts across 28 Microsoft 365 tenants. According to Proofpoint, the activity has primarily focused on Chilean retail and financial institutions. It originated from 1,487 unique AWS EC2 source IP addresses. \"The campaign compromised 7 accounts –",
-    "published": "2026-09-24T06:32:03+00:00"
+    "source": "MuyComputer",
+    "title": "Microsoft quiere que los juegos sean infinitos, así es como piensa conseguirlo",
+    "link": "https://www.muycomputer.com/2026/09/25/microsoft-quiere-que-los-juegos-sean-infinitos-asi-es-como-piensa-conseguirlo/",
+    "summary": "La mayoría de los juegos tienen un principio y un final, es decir, son finitos. En sentido estricto, no existen de verdad los juegos infinitos, porque incluso aquellos en los que podemos seguir jugando una vez que hemos terminado el modo historia se limitan a hacernos repetir misiones, mazmorras o aventuras que al final acaban […] La entrada Microsoft quiere que los juegos sean infinitos, así es como piensa conseguirlo se publicó primero en MuyComputer .",
+    "published": "2026-09-25T12:57:41+00:00",
+    "image": ""
   },
   {
-    "source": "The Hacker News",
-    "title": "Attackers Exploit WordPress CVE-2026-87902 Within Hours of Disclosure",
-    "link": "https://thehackernews.com/2026/09/attackers-exploit-wordpress-cve-2026.html",
-    "summary": "Threat actors have begun to actively exploit a critical security flaw in WordPress within hours of public disclosure. The vulnerability in question is CVE-2026-87902 (CVSS score: 9.2), which could allow an unauthenticated attacker to obtain remote code execution (RCE). \"An unauthenticated attacker can make get_page_template() page-template resolution include a chosen readable local .php file",
-    "published": "2026-09-24T05:36:18+00:00"
+    "source": "Xataka",
+    "title": "Meta lleva veinte años ganando dinero con nuestra atención. Ahora quiere ganarlo con nuestras decisiones",
+    "link": "https://www.xataka.com/empresas-y-economia/meta-lleva-veinte-anos-ganando-dinero-nuestra-atencion-ahora-quiere-ganarlo-nuestras-decisiones",
+    "summary": "Meta ha presentado esta semana unas gafas sin cámara, otras con cámara más finas, un visor de cien gramos y un \"llavero\" con pinta de Tamagotchi y con 5G. Ninguno ha sido el protagonista real aunque las gafas sean pintonas y el Tamagotchi se haya llevado muchas miradas. Zuckerberg abrió y cerró la presentación hablando de Muse, su nuevo agente personal, y explicó cómo piensa ganar dinero con él : dejando que sea gratis para casi todo el mundo y cobrando una \"pequeña\" comisión por cada transacción que complete. Facebook, Instagram y WhatsApp apenas fueron nombradas. Por qué es importante . Casi todo lo que ingresa Meta sale de los anuncios. Su producto más ambicioso de los próximos años con diferencia, Muse, los deja fuera, al menos como promesa inicial, y apuesta por cobrar un peaje. Hasta ahora, Meta ha vendido el tiempo que pasamos usando sus apps. Con Muse, cobraría cada vez que el agente compra, reserva o renegocia algo por nosotros. Si nos consigue un seguro de coche más barato, la aseguradora paga a Meta una comisión por haberlo captado gracias a Muse. Es decir, la segunda mayor empresa publicitaria del mundo ha decidido aparcar los anuncios en su gran apuesta futura justo cu",
+    "published": "2026-09-25T12:45:08+00:00",
+    "image": "https://i.blogs.es/a10552/zuck/1024_2000.jpeg"
   },
   {
-    "source": "The Hacker News",
-    "title": "Attackers Use Malicious Terraform Providers to Deliver Go Malware via HashiCorp Registry",
-    "link": "https://thehackernews.com/2026/09/attackers-use-malicious-terraform.html",
-    "summary": "Cybersecurity researchers have disclosed Go-based malware distributed via two Go Modules and two Terraform providers, marking the first time threat actors are using the centralized repository hosted by HashiCorp as a distribution vector for malicious payloads. According to Aikido, the list of Terraform providers and Go modules is below - gocommunity-io/dockerd (222 downloads) kreuzwenker/",
-    "published": "2026-09-23T18:06:30+00:00"
+    "source": "Xataka",
+    "title": "En 1919, Alemania hundió su propia flota para que no cayera en manos enemigas. La era nuclear convirtió sus restos en un tesoro inédito",
+    "link": "https://www.xataka.com/magnet/1919-alemania-hundio-su-propia-flota-no-cayera-manos-enemigas-era-nuclear-convirtio-sus-restos-tesoro-inedito",
+    "summary": "En 1919, Alemania tomó una decisión desesperada para impedir que los vencedores de la Primera Guerra Mundial se repartieran su flota: hundirla. En apenas unas horas, decenas de acorazados, cruceros y destructores desaparecieron bajo las aguas de Scapa Flow . Lo que nadie podía imaginar era que, 26 años después, el comienzo de la era nuclear transformaría parte del acero de aquellos barcos condenados en un material especialmente valioso para la ciencia. Antes muerto que apresado. Tras el armisticio de noviembre de 1918, 74 buques de la Flota de Alta Mar alemana quedaron internados en Scapa Flow, al norte de Escocia, mientras los vencedores discutían qué hacer con ellos. Francia e Italia querían repartirse parte de los barcos, mientras Reino Unido prefería evitar que reforzaran otras armadas. El contralmirante Ludwig von Reuter temía precisamente que aquellos gigantes acabaran navegando bajo bandera enemiga y decidió impedirlo por su cuenta . En Xataka Alemania soñaba con un buque de guerra que iba a ser la envidia de Europa. Ha terminado con el PowerPoint más caro de su historia militar Una orden para todos. Von Reuter llevaba semanas preparando el hundimiento y había hecho llegar i",
+    "published": "2026-09-25T12:31:07+00:00",
+    "image": "https://i.blogs.es/b0f236/sunk/1024_2000.png"
   },
   {
-    "source": "The Hacker News",
-    "title": "A Leaked GitLab Issue Email Address Lets Anyone Push Code and Run CI Jobs as You",
-    "link": "https://thehackernews.com/2026/09/a-leaked-gitlab-issue-email-address.html",
-    "summary": "The private email address GitLab gives you for filing issues by email is a credential. Anyone who gets it can email a patch that GitLab commits in your name, to any branch you can push to, including main, and can start CI/CD jobs that run as you. GitLab shows each user this address behind a button labeled \"Email work item to this project.\" Mail sent to it opens an issue in that project, authored",
-    "published": "2026-09-23T16:53:10+00:00"
+    "source": "Xataka",
+    "title": "La norma que calculaba las pensiones de las jubilaciones anticipadas ha cambiado: \"hasta 400 euros menos al mes\"",
+    "link": "https://www.xataka.com/empresas-y-economia/norma-que-calculaba-pensiones-jubilaciones-anticipadas-ha-cambiado-400-euros-al-mes",
+    "summary": "El progresivo envejecimiento de la población unido al incremento de la esperanza de vida está obligando a los gobiernos de todo el mundo a retrasar cada vez más la edad de jubilación para asegurar la sostenibilidad de sus sistemas de pensiones. En España, desde 2011 se viene aplicando un periodo de transición que, progresivamente, retrasa la edad de jubilación hasta los 67 años si no se han cotizado los 38 años y seis meses que abre la puerta a jubilarse con 65 años. ¿Pero qué pasa si se han cotizado más de esos 38 años? Para evitar las jubilaciones anticipadas, el Gobierno estableció una serie de penalizaciones: por cada mes que se adelante la jubilación se aplica una penalización en la pensión. Alfonso Muñoz Cuenca, funcionario de la Seguridad Social y experto en jubilaciones, explica en un vídeo publicado en su canal de YouTube la clave para acceder a la jubilación y evitar parte de esas penalizaciones: \"la disposición transitoria 34\". Una norma pensada para un caso muy concreto . La disposición transitoria 34 nació para corregir una rareza del sistema. Antes de 2021, un trabajador con una base de cotización muy alta podía adelantar su jubilación sin apenas perder dinero. Su pen",
+    "published": "2026-09-25T12:15:08+00:00",
+    "image": "https://i.blogs.es/bbd707/jakub-zerdzicki-hibctd-gjqm-unsplash/1024_2000.jpeg"
   },
   {
-    "source": "The Hacker News",
-    "title": "MikroTrick Chain Let Attackers Take Over MikroTik Routers Without a Password or SSH Key",
-    "link": "https://thehackernews.com/2026/09/mikrotrick-chain-let-attackers-take.html",
-    "summary": "Two MikroTik RouterOS SSH vulnerabilities chained together let attackers take full administrative control of Internet-exposed routers without a password, SSH key, or completed authentication. The chain, which CERT Polska calls MikroTrick, combines an SSH state-machine flaw (CVE-2026-67279) with an argument-injection bug in the RouterOS login process (CVE-2026-86060). Attack logs date to at",
-    "published": "2026-09-23T16:06:41+00:00"
+    "source": "Xataka",
+    "title": "La NASA ha enseñado una sombra y la reacción ha sido unánime: quizá estamos ante el sucesor del SR-71 Blackbird",
+    "link": "https://www.xataka.com/espacio/nasa-ha-ensenado-sombra-reaccion-ha-sido-unanime-quiza-estamos-sucesor-sr-71-blackbird",
+    "summary": "Una simple sombra puede dar mucho de sí y la NASA lo sabe. Por eso, el administrador de la agencia, Jared Isaacman, ha usado una recientemente en un discurso en el All-In Summit de Los Ángeles para causar expectación. Mostró una imagen de lo que parece la silueta del SR-71 Blackbird, un famoso avión de reconocimiento estratégico que superó grandes hitos entre 1966 y 1999. Cuando se le preguntó si se trataba de este, Isaacman contestó con evasivas, pero no negó nada, por lo que muchos piensan que esta puede ser toda una declaración de intenciones por parte de la NASA y el Gobierno de Estados Unidos. Los acontecimientos . En la cumbre celebrada entre el 12 y el 14 de septiembre en Los Ángeles, Isaacman mostró una diapositiva con una silueta de avión que recordaba muchísimo al Blackbird, acompañada del mensaje “reconstruyendo nuestra flota de aviones experimentales X”. Todo era muy misterioso, así que no es raro que el copresentador del evento, Chamath Palihapitiya, le preguntase si se trataba del Blackbird, a lo que él contestó: “¿Seguro que es un Blackbird?”. Después, añadió que la NASA está trabajando duro para “volver a volar alto y rápido”. Todo cuadra . El SR-71 Blackbird se hiz",
+    "published": "2026-09-25T12:01:07+00:00",
+    "image": "https://i.blogs.es/c86247/blackbird/1024_2000.jpeg"
   },
   {
-    "source": "The Hacker News",
-    "title": "This Windows Malware is Built to Let Up to Four AI Models Vote on Its Next Move",
-    "link": "https://thehackernews.com/2026/09/windows-malware-is-built-to-let-up-to.html",
-    "summary": "A Windows malware called CLOSEDQUORUM is built to take orders from a vote of up to four AI models instead of an attacker's server, Cisco Talos said on September 22. The models can choose to steal Windows credentials, saved browser passwords, and crypto wallet data. Talos has not seen this setup work from start to finish, and the public version of the malware does not work as it is.",
-    "published": "2026-09-23T14:17:58+00:00"
+    "source": "Applesfera",
+    "title": "Apple canceló la AirPower y este chico ha resucitado el concepto como escritorio de trabajo. Es una pasada",
+    "link": "https://www.applesfera.com/curiosidades/apple-cancelo-airpower-este-chico-ha-resucitado-concepto-como-escritorio-trabajo-pasada",
+    "summary": "Hay pocos accesorios de Apple con los que hayamos soñado tanto como con la AirPower . Parecía un producto venido del futuro y en el futuro se quedó. Porque nunca llegó a salir a la venta. Era esa base de carga en la que podías dejar el iPhone donde te diera la gana (o el Apple Watch, o los AirPods) y todo cargaba a la vez sin importar la posición. Sonaba a utopía y terminó siéndolo : tan difícil de fabricar que ni siquiera Apple consiguió sacarla adelante. Más tarde llegó MagSafe como consuelo, pero la idea original se quedó ahí, flotando en la cabeza de muchos. Ahora esa idea la ha resucitado alguien dispuesto a llevarla mucho más lejos . HTX Studio , un creador de contenido en YouTube, ha cogido el concepto de la AirPower y en vez de construir una base de carga se ha propuesto hacer un escritorio de trabajo capaz de detectar dónde has dejado el iPhone y cargarlo ahí mismo. Seiscientas bobinas vs una que se mueve sola El propio creador cuenta que empezó la universidad justo cuando Apple presentó la AirPower en 2017. Nueve años después de su presentación, decidió que la espera había terminado. Y ya que se ponía, su versión tenía que ser mejor que la original. Si la gracia de la Air",
+    "published": "2026-09-25T12:01:07+00:00",
+    "image": "https://i.blogs.es/6be9b4/bobinas/1024_2000.jpeg"
   },
   {
-    "source": "The Hacker News",
-    "title": "Compromised MemTensor Packages Deliver sckit Credential Stealer via npm and PyPI",
-    "link": "https://thehackernews.com/2026/09/compromised-memtensor-packages-deliver.html",
-    "summary": "Unknown threat actors have managed to compromise two legitimate MemTensor packages across the npm and Python Package Index (PyPI) repositories to push a platform-specific Go-based implant dubbed sckit designed for Windows, Linux, and macOS. According to reports from Aikido, SafeDep, Socket, and StepSecurity, the libraries in question below - @memtensor/memos-cloud-openclaw-plugin versions",
-    "published": "2026-09-23T13:52:46+00:00"
+    "source": "Xataka",
+    "title": "2026 es el año en el que mejores móviles plegables Android hemos visto. La pregunta es qué pasará tras la llegada del iPhone Duo",
+    "link": "https://www.xataka.com/moviles/2026-ano-que-mejores-moviles-plegables-android-hemos-visto-pregunta-que-pasara-llegada-iphone-duo",
+    "summary": "No hace mucho, los móviles plegables eran una rareza que sólo unos pocos atrevidos se aventuraban a comprar. Hacerse con un plegable era carísimo, pero además suponía asumir riesgos como unos diseños toscos y pantallas de dudosa durabilidad. Hoy, hacerse con un plegable sigue siendo muy caro, pero es una apuesta mucho más segura: aquellos primeros experimentos han dado paso a productos mucho más maduros. En 2026 hemos visto los mejores móviles plegables hasta la fecha (sólo faltaba) de la mano de Samsung, Huawei, OPPO, Honor, Motorola, Xiaomi o Vivo. Y lo más relevante: también ha llegado el iPhone Duo , el primer móvil plegable de Apple. Analizamos en qué punto está el sector y hacia dónde va. El hardware ya no es la barrera Honor Magic V6 A lo largo de los años hemos ido viendo como los fabricantes pulían los grandes retos de ingeniería de los plegables. Los diseños super gruesos, las bisagras que crujían, no se cerraban del todo y, sobre todo, el pliegue de la pantalla. El escaparate de plegables en 2026 está lleno de dispositivos ultrafinos, con pantallas que apenas muestran arruga y especificaciones de nivel. Por ejemplo, el Samsung Galaxy Z Fold8 Ultra mide 4,1 milímetros de ",
+    "published": "2026-09-25T11:45:08+00:00",
+    "image": "https://i.blogs.es/6c275c/camino-premios/1024_2000.jpeg"
   },
   {
-    "source": "The Hacker News",
-    "title": "New cPanel Flaw Lets a Hosting Account Run Code as Root, Take Full Server Control",
-    "link": "https://thehackernews.com/2026/09/new-cpanel-flaw-lets-hosting-account_0272795595.html",
-    "summary": "A flaw in cPanel's CalDAV and CardDAV service lets anyone with a cPanel hosting account run code as root and take \"full control of the server,\" the company said on September 22. A second bug in the WP Toolkit plugin, used to install and manage WordPress sites, allows an account holder to change databases that belong to other accounts. cPanel has released fixed versions for both,",
-    "published": "2026-09-23T12:16:00+00:00"
+    "source": "MuyComputer",
+    "title": "ASUS Zenbook 14 2026 ARM análisis completo",
+    "link": "https://www.muycomputer.com/2026/09/25/asus-zenbook-14-2026-arm-analisis-completo/",
+    "summary": "El ASUS Zenbook 14 2026 versión ARM se presenta como un ultraportátil que busca competir de forma directa con el MacBook Neo de Apple, y lo hace con una propuesta que, francamente, me parece muy interesante, porque pretende ofrecer gran parte de los valores que diferencian a la serie Zenbook de ASUS pero con un […] La entrada ASUS Zenbook 14 2026 ARM análisis completo se publicó primero en MuyComputer .",
+    "published": "2026-09-25T11:20:12+00:00",
+    "image": ""
   },
   {
-    "source": "The Hacker News",
-    "title": "545 Hackers Tested It First. Now XRanges for AI Scores Your Security Agent",
-    "link": "https://thehackernews.com/2026/09/545-hackers-tested-it-first-now-xranges.html",
-    "summary": "Autonomous security agents are getting good at finding bugs. Nobody has a good way to measure how good. Point one at a realistic target and what comes back is a report the agent wrote about itself: confident prose, a list of findings, and no way to tell which of them happened. Someone with a security background then sits down and checks every claim against the target. Which findings are real,",
-    "published": "2026-09-23T11:47:19+00:00"
+    "source": "Xataka",
+    "title": "Algo perturbador está pasando en la industria de los juguetes: crece a toda velocidad gracias a... los adultos sin hijos",
+    "link": "https://www.xataka.com/magnet/algo-perturbador-esta-pasando-industria-juguetes-crece-a-toda-velocidad-gracias-a-adultos-hijos",
+    "summary": "Hace poco visité a unos amigos de veintipico años y me quedé con un detalle curioso: en el salón de su casa tenían una sola planta y no era ninguna de las que llevamos décadas viendo en los hogares de nuestros padres. Lo que asomaba de la estantería era una planta Lego . Un juguete, vamos. Quizás parezca una anécdota, pero conecta con una tendencia detectada hace poco por Circana: los adultos se están convirtiendo en un pilar clave de la industria. Y no porque busquen regalos para niños. Visitan Toy \"R\" Us o Juguettos pensando en ellos mismos. Ya hay quien habla del (milmillonario) negocio 'kidult'. ¿Qué es eso de \" kidult\" ? La suma de kids (niños) y adults (adultos). Suena a oxímoron, pero lleva años convirtiéndose en una palabra clave para la industria juguetera de todo el mundo, un sector que hasta hace no tanto tenía claro dónde estaba su negocio: los padres, abuelos y tíos eran quienes compraban, pero su cliente final eran en realidad los pequeños de la casa. Ya no. Los niños siguen en la ecuación, por supuesto, pero cada vez es más común encontrarse con adultos que compran para sí mismos movidos por la nostalgia o el coleccionismo. En Xataka Las reformas de las casas solían ",
+    "published": "2026-09-25T11:01:08+00:00",
+    "image": "https://i.blogs.es/f34588/victoriano-izquierdo-n52rfcd-4ku-unsplash/1024_2000.jpeg"
   },
   {
-    "source": "The Hacker News",
-    "title": "Anthropic and OpenAI Models Still Attempt Restricted Actions in Safety Tests",
-    "link": "https://thehackernews.com/2026/09/anthropic-and-openai-models-still.html",
-    "summary": "Anthropic and OpenAI on Tuesday announced new models, with both artificial intelligence (AI) companies noting that they are continuing to invest in improving alignment to combat risky behavior. Opus 5.5, per Anthropic, is a \"major step up from Opus 5,\" and \"achieves the best scores of any model to date on our automated behavioral audit, our alignment suite that tests Claude across thousands",
-    "published": "2026-09-23T11:47:13+00:00"
+    "source": "Xataka",
+    "title": "Roborock aterriza en España con cuatro nuevos modelos para resolver las asignaturas pendientes: desniveles y alfombras mojadas",
+    "link": "https://www.xataka.com/seleccion/roborock-aterriza-espana-cuatro-nuevos-modelos-para-resolver-asignaturas-pendientes-desniveles-alfombras-mojadas",
+    "summary": "El sector de la limpieza inteligente sigue apretando el acelerador en España. Tras su presentación en IFA, Roborock despliega su nueva hornada de dispositivos con un claro objetivo técnico: atajar los grandes inconvenientes que arrastran los robots tradicionales. Por un lado, la incapacidad de superar escalones o umbrales marcados entre habitaciones y, por otro, el clásico problema de mojar las alfombras al fregar el suelo. roborock Saros 20 Neo Robot Aspirador y Fregasuelos, Succión 36000 Pa Hoy en Amazon — 849,00 € Roborock — 999,00 € El precio podría variar. Obtenemos comisión por estos enlaces Serie Saros 20: potencia y chasis capaz de superar desniveles de casi 9 cm La nueva propuesta está encabezada por la serie Saros 20, donde destacan el Saros 20 Flow Complete ( 1.299 euros ) y el Saros 20 Neo (999 euros, aunque ahora está en oferta por 849 euros ). Ambos modelos rompen esquemas en el apartado de tracción física mediante el chasis elevable AdaptiLift 3.0 , capaz de superar desniveles y resaltes de hasta 8,8 cm sin quedarse atrapados. Además, la versión Flow rebaja su perfil hasta los 8,98 cm de altura equipando una mopa de rodillo SpiraFlow 2.0 que se autolimpia en la base ",
+    "published": "2026-09-25T10:45:08+00:00",
+    "image": "https://i.blogs.es/a8858a/roborock/1024_2000.jpeg"
   },
   {
-    "source": "The Hacker News",
-    "title": "Exploit Released for Unpatched Ubuntu Linux Flaw Enabling Host-Root Container Escape",
-    "link": "https://thehackernews.com/2026/09/exploit-released-for-unpatched-ubuntu.html",
-    "summary": "A use-after-free in the Linux kernel's AF_UNIX socket subsystem can be used to escape a container and gain root on the host, security firm DepthFirst said in research published September 22. The flaw, tracked as CVE-2026-80521 (CVSS score: 7.8), was fixed upstream on August 6, but Ubuntu has not shipped the patch for its 26.04, 24.04, or 22.04 LTS releases. DepthFirst",
-    "published": "2026-09-23T11:12:18+00:00"
+    "source": "Hipertextual",
+    "title": "El teléfono de Xiaomi, con una súper batería que llega a los tres días, ahora cuesta menos de 300 euros",
+    "link": "https://hipertextual.com/ofertas-descuentos/telefono-xiaomi-bateria/",
+    "summary": "Acaba de ser presentado y es posiblemente la recomendación que le haría al 95 por ciento de las personas que me preguntan qué móvil deben comprarse. La nueva serie Xiaomi REDMI Note 17 ataca directamente a la gama media y media alta, comiéndose directamente a la competencia. Con precios que parten de los 350 y […] Seguir leyendo: El teléfono de Xiaomi, con una súper batería que llega a los tres días, ahora cuesta menos de 300 euros",
+    "published": "2026-09-25T10:42:45+00:00",
+    "image": "https://i0.wp.com/imgs.hipertextual.com/wp-content/uploads/2026/09/xiaomi-redmi-note-17-portada.jpg?fit=1024%2C493&quality=70&strip=all&ssl=1"
   },
   {
-    "source": "The Hacker News",
-    "title": "F5 Patches Critical BIG-IP APM Zero-Day Exploited for Unauthenticated RCE on OAuth Servers",
-    "link": "https://thehackernews.com/2026/09/f5-patches-critical-big-ip-apm-zero-day.html",
-    "summary": "Attackers are exploiting a critical flaw in F5 BIG-IP Access Policy Manager (APM) that lets them run code on a BIG-IP system without logging in, F5 says. The flaw, CVE-2026-94127, affects only systems in which APM serves as an OAuth authorization server, issuing access tokens to applications. F5 disclosed it in an advisory on September 22 and has released engineering hotfixes.",
-    "published": "2026-09-23T08:29:48+00:00"
+    "source": "MuyComputer",
+    "title": "Las mejores ofertas de la semana en un nuevo Red Friday",
+    "link": "https://www.muycomputer.com/2026/09/25/las-mejores-ofertas-de-la-semana-en-un-nuevo-red-friday-55/",
+    "summary": "Nos vamos de compras como cada viernes para aprovechar las mejores ofertas Red Friday, una selección variada de tecnología y electrónica donde te ofrecemos los mejores descuentos disponibles con foco en la campaña que tiene en marcha nuestro minorista de cabecera PcComponentes. Y te recomendamos aprovecharlos porque la crisis de las memorias provocada por la IA […] La entrada Las mejores ofertas de la semana en un nuevo Red Friday se publicó primero en MuyComputer .",
+    "published": "2026-09-25T10:36:46+00:00",
+    "image": ""
   },
   {
-    "source": "The Hacker News",
-    "title": "Chinese Hackers Exploit Chrome-Windows Zero-Day Chain to Deploy CLEANGULP Malware",
-    "link": "https://thehackernews.com/2026/09/chinese-hackers-exploit-chrome-windows.html",
-    "summary": "A Chinese threat actor codenamed UTA0565 has been observed exploiting the recently disclosed Google Chrome-Microsoft Windows exploit chain as zero-days through fake websites. The attacks, detected on September 3 and 4, 2026, involved the chaining of two vulnerabilities in Chrome (CVE-2026-85046, CVE-2026-87491) and one impacting Windows Advanced Local Procedure Call (CVE-2026-85880) to break",
-    "published": "2026-09-23T08:29:24+00:00"
+    "source": "Xataka",
+    "title": "La NASA ha detectado una mancha verde gigante desde el espacio en Nueva Zelanda. Y no es contaminación ni un fallo de imagen",
+    "link": "https://www.xataka.com/espacio/nasa-ha-detectado-mancha-verde-gigante-espacio-nueva-zelanda-no-contaminacion-fallo-imagen",
+    "summary": "El 10 de enero de 2026, una imagen publicada por la NASA mostró algo extraordinario en el océano Pacífico: una gigantesca mancha verde y azul que parecía rodear unas pequeñas islas situadas a unos 800 kilómetros de Nueva Zelanda. La estructura medía aproximadamente 200 kilómetros de largo y tenía el aspecto de un enorme vertido que se extendía por el mar. Sin embargo, no era contaminación ni un fallo de los sensores. Una mancha visible desde el espacio. El protagonista de la imagen es el archipiélago de las Chatham , un remoto conjunto de islas situado al este de Nueva Zelanda. A su alrededor apareció una estructura elíptica de unos 200 kilómetros de largo y 120 de ancho, formada por espectaculares remolinos y filamentos de color verde y azul. El satélite estadounidense NOAA-20 la fotografió el 10 de enero, aunque el europeo Sentinel-3 había captado el mismo fenómeno aproximadamente una hora y media antes. Las imágenes permitieron observar una formación de dimensiones extraordinarias que se extendía por buena parte del océano circundante . En Xataka Durante décadas, Star Wars no fue más que una película. EEUU acaba de admitir por primera vez que hay armas sobre nuestras cabezas Mil",
+    "published": "2026-09-25T10:31:07+00:00",
+    "image": "https://i.blogs.es/3ea4b9/une-vaste-tache-verte-au-sud-de-la-nouvelle-zelande-vue-depuis-lespace-la-nasa-devoile-une-efflorescence-de-phytoplancton-sculptee-par-le-relief-sous-marin-1536x864/1024_2000.jpeg"
   },
   {
-    "source": "The Hacker News",
-    "title": "Critical Next.js ImageResponse Flaw Can Lead to Server Code Execution via Crafted SVG Input",
-    "link": "https://thehackernews.com/2026/09/critical-nextjs-imageresponse-flaw-can.html",
-    "summary": "A new security vulnerability in Next.js could allow attackers to run code on a server via ImageResponse, the feature that generates Open Graph and other social preview images, Vercel said. The risk applies when an app puts values an attacker controls, such as text read from the request URL, into the image. Vercel, which develops Next.js, fixed the flaw on September 22 in version",
-    "published": "2026-09-23T07:04:40+00:00"
+    "source": "Xataka",
+    "title": "La carrera por la memoria de PlayStation 6 ha comenzado: Samsung y SK hynix compiten por suministrarla",
+    "link": "https://www.xataka.com/componentes/carrera-memoria-playstation-6-ha-comenzado-samsung-sk-hynix-compiten-suministrarla",
+    "summary": "PlayStation 6, la próxima consola de videojuegos de sobremesa de Sony, está en el horno . Mark Cerny, el responsable del hardware de esta plataforma, confirmó a mediados de 2025 que llevaba bastante tiempo trabajando con AMD en el diseño de esta máquina. Esta declaración es coherente con los plazos utilizados por esta compañía japonesa para lanzar sus anteriores consolas. PS2 llegó 5 años y 3 meses después de PS1. PS3 salió 6 años y 8 meses después de PS2. Por PS4 tuvimos que esperar 7 años. Y por PS5, otros 7 años. Si observamos este patrón llegaremos a la conclusión de que la duración media de cada generación es de 6,5 años, por lo que PS6 debería llegar a mediados de 2027. Sin embargo, es muy poco probable que la tengamos el año que viene. Según documentos de Microsoft , PS6 podría llegar en 2028. Tiene sentido. Sony ha fijado enero de 2028 como el momento en el que abandonará el formato físico y dejará de producir discos físicos para los nuevos juegos de PlayStation. Esto no implica que PS6 vaya a salir en 2028, pero es un punto de inflexión que demuestra que Sony está completando una transición. Y su próxima consola formará parte de ella con toda seguridad. Además, ahora sabem",
+    "published": "2026-09-25T09:45:08+00:00",
+    "image": "https://i.blogs.es/2a731e/samsung-semiconductors-gddr7-dram-industrys-first-24gb-gddr7_main2/1024_2000.jpeg"
   },
   {
-    "source": "The Hacker News",
-    "title": "ShinyHunters Claims FBI Breach, Says It Stole Data on Agents and Job Applicants",
-    "link": "https://thehackernews.com/2026/09/shinyhunters-claims-fbi-breach-says-it.html",
-    "summary": "The cyber extortion group known as ShinyHunters on Tuesday claimed it had breached the U.S. Federal Bureau of Investigation and stolen data belonging to current and former employees at the agency. \"We have compromised the FBI. We hold very sensitive data on almost ALL FBI Agents and individuals who filed an application with the FBI for a job,\" the group said in a statement posted on their dark",
-    "published": "2026-09-23T05:30:09+00:00"
+    "source": "Xataka",
+    "title": "En Soria, un pueblo está desbordado ante la petición de partidas de nacimiento por la Ley de Nietos",
+    "link": "https://www.xataka.com/magnet/soria-pueblo-esta-desbordado-peticion-partidas-nacimiento-ley-nietos",
+    "summary": "Con solo 55 personas empadronadas, Fuentestrún es uno de los pueblos más pequeños de Soria. Su ayuntamiento, en cambio, arrastra una montaña de expedientes: bisabuelos, tatarabuelos y partidas de nacimiento de mediados del siglo XIX, reclamadas desde el otro lado del Atlántico. El motivo es la Ley de Nietos, el procedimiento legal que desde 2022 permite recuperar la nacionalidad española a hijos y nietos de quienes se exiliaron durante y después de la Guerra Civil. Y con 177 votantes viviendo fuera, casi cuadruplica a los electores residentes. Qué es la Ley de Nietos. La norma nació dentro de la Ley de Memoria Democrática de 2022 y da derecho a la nacionalidad española a tres perfiles : descendientes de españoles que se exiliaron por motivos ideológicos, políticos, religiosos o de orientación sexual y perdieron su nacionalidad; hijos de españolas que la perdieron al casarse con extranjeros antes de 1978; e hijos mayores de edad de quienes ya la recuperaron por la Ley de Memoria Histórica de 2007. Una instrucción ministerial posterior amplió el criterio de exilio a cualquiera que saliera de España entre julio de 1936 y diciembre de 1955, lo que multiplicó el universo de posibles sol",
+    "published": "2026-09-25T09:31:07+00:00",
+    "image": "https://i.blogs.es/3445da/4319136031_1d5c2625e3_k/1024_2000.jpeg"
   },
   {
-    "source": "The Hacker News",
-    "title": "Check Point Warns of Management Server Zero-Day Exploited in Targeted Attacks",
-    "link": "https://thehackernews.com/2026/09/check-point-warns-of-management-server.html",
-    "summary": "Attackers exploited a previously unknown flaw in Check Point's Security Management Server in a handful of targeted attacks on July 23, the company said. The flaw, CVE-2026-93616, allows an attacker who can access the server's web service to run scripts on it without logging in. Check Point released a fix on September 22 for the server that controls firewall policies for the Check Point",
-    "published": "2026-09-22T18:29:39+00:00"
+    "source": "Applesfera",
+    "title": "Asaltan la Apple Store de La Maquinista en Barcelona. Ya es la segunda vez en menos de un mes",
+    "link": "https://www.applesfera.com/apple-1/asaltan-apple-store-maquinista-barcelona-segunda-vez-mes",
+    "summary": "La Apple Store de La Maquinista, en Barcelona, ha vuelto a ser escenario de un robo. Ocurrió esta misma mañana . Varios ladrones entraron en la tienda con el fin de llevarse un alijo de dispositivos de la compañía. Lo llamativo de la situación es que no se trata de un hecho aislado. Es el segundo asalto que sufre esta misma tienda en menos de un mes, siendo el primero a finales de agosto. Y el modus operandi guarda bastantes similitudes. Un robo rápido y sin saber el paradero de los ladrones Eran alrededor de las 6.15h de este 25 de septiembre cuando saltaron las alarmas de la tienda de Apple ubicada en el Centro Comercial Westfield La Maquinista. No ha trascendido el número de ladrones, pero sí lo que hicieron. Reventaron el cristal de la entrada de la Apple Store y lograron acceder al interior para llevarse tantos dispositivos como pudieron, probablemente los de exposición. Los Mossos d'Esquadra confirmaron a El Caso que después huyeron en un Range Rover Evoque. Y todo ello antes de que llegaran los agentes, por lo que todavía no han sido detenidos y se continua investigando su paradero. Dado lo reciente de los hechos, no se sabe exactamente a cuánto asciende el botín que se han ",
+    "published": "2026-09-25T09:11:34+00:00",
+    "image": "https://i.blogs.es/45f4ff/apple-la-maquinista/1024_2000.jpeg"
   },
   {
-    "source": "The Hacker News",
-    "title": "WordPress Issues Patch for Critical Flaw That Can Enable Code Execution on Some Servers",
-    "link": "https://thehackernews.com/2026/09/wordpress-issues-patch-for-critical.html",
-    "summary": "WordPress has fixed a critical flaw in its core software that lets an attacker with no account make a site load a PHP file from outside its theme folders. On some servers, that can go further, allowing the attacker to run their own code. The fix shipped on September 22 in WordPress 7.1.2, with fixes for every branch the project still supports, back to 4.7, and WordPress is telling site owners",
-    "published": "2026-09-22T18:03:10+00:00"
+    "source": "Applesfera",
+    "title": "Se vienen cambios (y muy esperados) en las capturas de pantalla del Apple Watch",
+    "link": "https://www.applesfera.com/juegos-para-ios/capturas-pantalla-apple-watch-siempre-han-sido-torpes-se-filtra-gran-cambio-watchos-27-2",
+    "summary": "Llevamos doce generaciones de Apple Watch haciendo capturas de pantalla igual: Corona Digital + botón lateral a la vez . Pero ese mismo gesto es el que se usa para pausar o reanudar un entrenamiento. Por lo que, si tienes las capturas activadas y sales a correr, cada vez que pausas el entreno se guarda una captura de pantalla. Doce generaciones después , y con el Apple Watch Series 12 sumando más datos de salud , capturar una pantalla para enseñarla debería ser más sencillo de lo que es a día de hoy. Pero hay buenas noticias. El indagador de código pdfu ha encontrado en la beta de watchOS 27.2 una funcionalidad oculta que añadiría una previsualización tras la captura de pantalla . Y en ella tendríamos la opción de compartirla o borrarla en el momento. Algo muy parecido a las capturas de pantalla del iPhone. Lo que se ha encontrado en el código de watchOS 27.2 pdfu ha conseguido activar la función y ha grabado un vídeo haciendo una captura de pantalla en watchOS 27.2. Estaba escondida detrás de un interruptor que Apple deja apagado en sus betas. Es un mecanismo interno que le permite meter funciones a medio cocinar sin que aparezcan todavía para el resto de usuarios. @itspdfu En el ",
+    "published": "2026-09-25T09:01:08+00:00",
+    "image": "https://i.blogs.es/4f2451/apple-watch-captura-de-pantalla/1024_2000.jpeg"
   },
   {
-    "source": "The Hacker News",
-    "title": "Malicious npm Package Poses as Twilio Bug-Bounty Probe, Can Exfiltrate Credentials",
-    "link": "https://thehackernews.com/2026/09/malicious-npm-package-poses-as-twilio.html",
-    "summary": "Cybersecurity researchers have disclosed details of a malicious npm package named \"tw-pkgprobe-7731\" that masquerades as a security tool targeting developers integrating Twilio into their applications, while stealthily attempting to harvest sensitive data. The package, named \"tw-pkgprobe-7731,\" was first uploaded to the npm registry in mid-August 2026 by an npm account named \"twdepprobe7731.\"",
-    "published": "2026-09-22T17:58:15+00:00"
+    "source": "Hipertextual",
+    "title": "‘La isla olvidada’ (★★★½☆), la última locura de DreamWorks es una sobredosis de dopamina y emoción",
+    "link": "https://hipertextual.com/cine-television/la-isla-olvidada-critica/",
+    "summary": "DreamWorks, el estudio detrás de obras maestras como Shrek, Cómo entrenar a tu dragón o Robot Salvaje, tiene nueva película: La isla olvidada. El filme prometía ser una de las sorpresas en el cine de animación de este año. Y es que llegaba con la firme idea de ofrecer una aventura salvaje y alocada para […] Seguir leyendo: ‘La isla olvidada’ (★★★½☆), la última locura de DreamWorks es una sobredosis de dopamina y emoción",
+    "published": "2026-09-25T08:30:35+00:00",
+    "image": "https://i0.wp.com/imgs.hipertextual.com/wp-content/uploads/2026/09/La-isla-olvidada.jpg?fit=1024%2C614&quality=70&strip=all&ssl=1"
   },
   {
-    "source": "The Hacker News",
-    "title": "Microsoft Takes Down EvilTokens Device-Code Phishing Service Tied to 12,000 Inbox Compromises",
-    "link": "https://thehackernews.com/2026/09/microsoft-takes-down-eviltokens-device.html",
-    "summary": "Microsoft on Tuesday announced the takedown of the EvilTokens device code phishing service that it said used artificial intelligence (AI) \"at every step of the attack chain.\" The action, carried out with authorization from the U.S. District Court for the Eastern District of Virginia, involved the efforts of Health-ISAC, alongside Cloudflare, Coinbase, OpenAI, Railway, SpyCloud, The Shadowserver",
-    "published": "2026-09-22T17:03:31+00:00"
+    "source": "Applesfera",
+    "title": "Apple invirtió 1.000 millones en el \"Uber chino\". Fue una gran excusa para acercarse al gobierno",
+    "link": "https://www.applesfera.com/apple-1/apple-invirtio-1-000-millones-uber-chino-fue-gran-excusa-para-acercarse-al-gobierno",
+    "summary": "Hace años, Apple invirtió 1.000 millones de dólares (sí, mil millones, tal cual) en una empresa china de transportes. La cifra ya era llamativa, pero había algo aún más extraño, ya que no es una inversión que pueda catalogarse como típica de Apple . Sin embargo, Didi Chuxing, que es como se llamaba ese \"Uber chino\" no era una empresa cualquiera. Todo ocurrió en 2016, justo después de que el gobierno chino cerrase iTunes Movies y iBooks . Detrás de aquella millonaría inversión, la firma dirigida entonces por Tim Cook buscaba hacer una apuesta por tecnología y servicios, pero también por algo mucho más importante: las relaciones con el poder chino . Una inversión extraña en aquel momento Jean Liu, presidenta de Didi Chuxing, se había reunido con Tim Cook en Cupertino pocos días antes del anuncio. Su empresa estaba gastando enormes cantidades de dinero en su guerra contra Uber y necesitaba financiación. Pero Liu quería algo más que un cheque. Quería el respaldo de Apple. Y lo consiguió. Apenas 22 días después de aquella reunión, se confirmó una inversión de 1.000 millones de dólares en Didi por parte de Apple. La operación sorprendió porque aunque la compañía tenía dinero de sobra, no",
+    "published": "2026-09-25T08:01:08+00:00",
+    "image": "https://i.blogs.es/1e85d2/apple-didi-chuxing/1024_2000.jpeg"
   },
   {
-    "source": "The Hacker News",
-    "title": "Critical Bifrost AI Gateway Flaw Lets Attackers Run Commands Without Credentials",
-    "link": "https://thehackernews.com/2026/09/critical-bifrost-ai-gateway-flaw-lets.html",
-    "summary": "A critical vulnerability in Bifrost, an open-source AI gateway that routes requests to more than 20 LLM providers, allows an unauthenticated attacker to run arbitrary commands on the gateway server with a single HTTP request. The flaw, tracked as CVE-2026-90898 (CVSS score: 9.8), affects all versions of the Bifrost HTTP transport before 2.1.0 when management authentication is",
-    "published": "2026-09-22T16:41:12+00:00"
+    "source": "MuyComputer",
+    "title": "Consigue Windows 11 Pro y Office 2024 Pro Plus y lleva la IA a tu PC por menos de 40 euros",
+    "link": "https://www.muycomputer.com/2026/09/25/consigue-windows-11-pro-y-office-2024-pro-plus-y-lleva-la-ia-a-tu-pc-por-menos-de-40-euros/",
+    "summary": "Si utilizas el PC para trabajar o para estudiar te habrás dado cuenta de que muchas tareas rutinarias te quitan mucho tiempo, te ralentizan, y no solo te impiden ser más productivo, sino que además de obligan a invertir más tiempo en tareas monótonas y aburridas. ¿Sabías que con Windows 11 Pro y las funciones […] La entrada Consigue Windows 11 Pro y Office 2024 Pro Plus y lleva la IA a tu PC por menos de 40 euros se publicó primero en MuyComputer .",
+    "published": "2026-09-25T08:00:28+00:00",
+    "image": ""
   },
   {
-    "source": "The Hacker News",
-    "title": "Researcher Drops BigDiskBuster Zero-Day PoC That Blocks Microsoft Defender Updates",
-    "link": "https://thehackernews.com/2026/09/researcher-drops-bigdiskbuster-zero-day.html",
-    "summary": "A zero-day proof-of-concept tool that stops Microsoft Defender from installing platform and signature updates by filling all available disk space was published on GitHub on September 19. The tool, called BigDiskBuster, has no patch, no CVE, and no Microsoft advisory. Its author, Abdelhamid Naceri, is a former Microsoft security researcher whose earlier Defender exploits were used in",
-    "published": "2026-09-22T16:14:04+00:00"
+    "source": "MuyComputer",
+    "title": "Descubre el nuevo Lefant M5 Pro: todo lo que debes saber, comparativa frente al M5 Max y oferta especial por 299 euros",
+    "link": "https://www.muycomputer.com/2026/09/25/descubre-el-nuevo-lefant-m5-pro-todo-lo-que-debes-saber-comparativa-frente-al-m5-max-y-oferta-especial/",
+    "summary": "El Lefant M5 Pro se presenta como un robot aspirador de limpieza con el que la compañía china busca ofrecer un ajustado valor calidad-precio, y posiciona como una alternativa más económica al Lefant M5 Max que mantiene, a pesar de su precio más bajo, un nivel de prestaciones muy similar. Eso es precisamente lo que […] La entrada Descubre el nuevo Lefant M5 Pro: todo lo que debes saber, comparativa frente al M5 Max y oferta especial por 299 euros se publicó primero en MuyComputer .",
+    "published": "2026-09-25T07:49:19+00:00",
+    "image": ""
   },
   {
-    "source": "The Hacker News",
-    "title": "AI Agents Are Rewriting the Rules of Lateral Movement",
-    "link": "https://thehackernews.com/2026/09/ai-agents-are-rewriting-rules-of.html",
-    "summary": "Security teams have spent decades asking whether an identity has too much access. AI agents raise a harder question: how can we determine which paths an autonomous system can discover, given the access it already has? A person may try several ways to complete a task. A deterministic application follows the flow its developer wrote. But an AI agent is relentless in its pursuit of done. In May",
-    "published": "2026-09-22T12:30:00+00:00"
+    "source": "MuyComputer",
+    "title": "GIGABYTE Radeon RX 9060 XT Gaming OC a fondo: rendimiento, tecnologías y ventajas de contar con 16 GB de VRAM",
+    "link": "https://www.muycomputer.com/2026/09/25/gigabyte-radeon-rx-9060-xt-gaming-oc-a-fondo-rendimiento-tecnologias-y-ventajas-de-contar-con-16-gb-de-vram/",
+    "summary": "La GIGABYTE Radeon RX 9060 XT Gaming OC es una tarjeta gráfica diseñada para ofrecer un rendimiento óptimo en juegos con resolución 1440p, aunque debido a su configuración con 16 GB de memoria gráfica y a su soporte completo del ecosistema FSR Redstone de AMD, este modelo también puede defenderse muy bien en resolución 4K. […] La entrada GIGABYTE Radeon RX 9060 XT Gaming OC a fondo: rendimiento, tecnologías y ventajas de contar con 16 GB de VRAM se publicó primero en MuyComputer .",
+    "published": "2026-09-25T07:42:53+00:00",
+    "image": ""
   },
   {
-    "source": "The Hacker News",
-    "title": "New CVSS 10.0 VeloCloud Orchestrator Flaw Actively Exploited in Certificate-Based Setups",
-    "link": "https://thehackernews.com/2026/09/new-cvss-100-velocloud-orchestrator.html",
-    "summary": "Attackers are exploiting a new flaw in on-premises VeloCloud Orchestrator (VCO), the server that manages the Edge devices in a VeloCloud SD-WAN, Arista said on September 22. The flaw, tracked as CVE-2026-93952, may allow a remote attacker with no login access to privilege internal functions and affect the VCO host. Only orchestrators set up to authenticate their Edges with certificates are",
-    "published": "2026-09-22T12:29:00+00:00"
+    "source": "MuyComputer",
+    "title": "Cómo habilitar las claves de acceso en Amazon y mejorar la seguridad",
+    "link": "https://www.muycomputer.com/2026/09/25/amazon-se-une-al-tren-de-las-claves-de-acceso-para-mejorar-la-seguridad/",
+    "summary": "Amazon ha comenzado a implementar el soporte para claves de acceso en los navegadores de Internet de escritorio y en su aplicación de compras móviles, proporcionando una capa adicional de seguridad para todos sus clientes. Todos los grandes proveedores de servicios están impulsando las ‘Passkeys’ para cumplir el prometido futuro sin las odiosas contraseñas. Pero […] La entrada Cómo habilitar las claves de acceso en Amazon y mejorar la seguridad se publicó primero en MuyComputer .",
+    "published": "2026-09-25T07:04:06+00:00",
+    "image": ""
   },
   {
-    "source": "The Hacker News",
-    "title": "DORA Year Two: Can Your SOC Actually See the Attack?",
-    "link": "https://thehackernews.com/2026/09/dora-year-two-can-your-soc-actually-see.html",
-    "summary": "When the Digital Operational Resilience Act (DORA) became enforceable across the European Union in January 2025, it triggered an administrative sprint. Financial entities spent the first year establishing risk governance, assessing third-party service providers, updating contract clauses, and documenting incident escalation workflows. Now in its second year, the harder part of DORA is",
-    "published": "2026-09-22T11:45:00+00:00"
+    "source": "Applesfera",
+    "title": "Apple y Qualcomm extienden su colaboración. Y eso afecta directamente a nuestros iPhone",
+    "link": "https://www.applesfera.com/apple-1/apple-qualcomm-extienden-su-colaboracion-eso-afecta-directamente-a-nuestros-iphone",
+    "summary": "Apple y Qualcomm llevan años en una relación bastante peculiar. Han pasado de ser socios imprescindibles a enfrentarse en los tribunales y, después, a volver a necesitarse. Ahora acaban de renovar uno de sus acuerdos justo cuando Apple está avanzando más que nunca en el desarrollo de sus propios módems 5G. Quién los ha visto y quién los ve. En 2017, ambas compañías comenzaron una batalla judicial por las patentes y las condiciones económicas de las licencias de Qualcomm. La disputa se prolongó durante dos años y llegó a afectar incluso al desarrollo de iPhone con tecnología 5G cuando la competencia ya estaba empezando a incluir módems con esta conectividad. Fue en abril de 2019 cuando sellaron un acuerdo que servía para retirar todos los litigios y negociar el suministro de chips de conectividad. Gracias a ello, en 2020 pudimos ver a los iPhone 12 como los primeros de Apple con tecnología 5G. En Applesfera Tu iPhone esconde una función gratuita que sirve para hablar por teléfono incluso en zonas sin cobertura Acuerdo ampliado. Esta misma semana, Qualcomm ha anunciado que Apple ha renovado su acuerdo global de licencia de patentes. El nuevo contrato entrará en vigor el 1 de abril de",
+    "published": "2026-09-25T07:01:08+00:00",
+    "image": "https://i.blogs.es/8c840b/qualcomm-iphone/1024_2000.jpeg"
   },
   {
-    "source": "The Hacker News",
-    "title": "New Linux Kernel Flaw Gives ARM64 KVM Guests Read-Write Access to Host Memory",
-    "link": "https://thehackernews.com/2026/09/new-linux-kernel-flaw-gives-arm64-kvm.html",
-    "summary": "A new flaw in the Linux kernel's KVM virtualization code for ARM64 processors can leave a freed piece of host memory exposed to a guest virtual machine on hosts with nested virtualization enabled. The bug, tracked as CVE-2026-89775, allows a guest to read and write host kernel memory, and the researcher who found it says it can be used to escape the guest and run code on the host machine.",
-    "published": "2026-09-22T11:38:40+00:00"
+    "source": "MuyComputer",
+    "title": "Microsoft elimina la marca ‘Copilot Plus PC’",
+    "link": "https://www.muycomputer.com/2026/09/25/microsoft-elimina-la-marca-copilot-plus-pc/",
+    "summary": "El lanzamiento de los últimos dispositivos Surface con el que Microsoft ha completado la actualización de su línea de hardware propia para este año, no incluyó -sorprendentemente- la marca PC Copilot Plus salvo para hacer referencia a la presencia del asistente de IA del mismo nombre en los dispositivos ¿Un fallo del departamento de marketing? […] La entrada Microsoft elimina la marca ‘Copilot Plus PC’ se publicó primero en MuyComputer .",
+    "published": "2026-09-25T06:11:47+00:00",
+    "image": ""
   },
   {
-    "source": "The Hacker News",
-    "title": "SharePoint Flaw Initially Listed as Spoofing by Microsoft Enables Authenticated RCE",
-    "link": "https://thehackernews.com/2026/09/sharepoint-flaw-initially-listed-as.html",
-    "summary": "A SharePoint Server vulnerability that Microsoft initially classified as a spoofing flaw with a CVSS score of 6.5 actually enables authenticated remote code execution, according to full technical details published today by Viettel Cyber Security researcher Dinh Ho Anh Khoa. The flaw, CVE-2026-65660, affects SharePoint Server 2016, 2019, and Subscription Edition. Patches have been",
-    "published": "2026-09-22T11:17:41+00:00"
+    "source": "Hipertextual",
+    "title": "Google revela nuevas pistas sobre cuándo llega Gemini 4: qué dijo el jefe de DeepMind",
+    "link": "https://hipertextual.com/inteligencia-artificial/google-nuevas-pistas-cuando-llega-gemini-4/",
+    "summary": "El debut de Gemini 4, la próxima IA insignia de Google, podría estar más cerca de lo que pensamos. Koray Kavukcuoglu, quien recientemente asumió la conducción de DeepMind en reemplazo de Demis Hassabis, le dijo a The Information que el trabajo sobre el nuevo modelo está avanzando de forma positiva con miras a hacerlo debutar […] Seguir leyendo: Google revela nuevas pistas sobre cuándo llega Gemini 4: qué dijo el jefe de DeepMind",
+    "published": "2026-09-24T18:40:00+00:00",
+    "image": "https://i0.wp.com/imgs.hipertextual.com/wp-content/uploads/2026/09/GEMINI-4.jpg?fit=1024%2C576&quality=70&strip=all&ssl=1"
   },
   {
-    "source": "The Hacker News",
-    "title": "Malicious npm Package indexed-btree Hid Its Loader in Runtime Code Before Removal",
-    "link": "https://thehackernews.com/2026/09/malicious-npm-package-indexed-btree-hid.html",
-    "summary": "A malicious npm package named \"indexed-btree\" has been observed hiding its malicious behavior within application code rather than using lifecycle scripts, indicating that threat actors are likely shifting tactics in response to recent security controls. \"Indexed-btree is a malicious npm package mimicking the legit sorted-btree package, an ordinary B-tree/indexing utility,\" Checkmarx said. \"",
-    "published": "2026-09-22T09:38:18+00:00"
+    "source": "Hipertextual",
+    "title": "Gemini estrena una función que hace llamadas por ti desde el móvil",
+    "link": "https://hipertextual.com/inteligencia-artificial/gemini-llamar-por-mi-pixel-11-llamadas-ia/",
+    "summary": "Pedirle a la IA que llame al supermercado para saber si ya llegaron tus galletas favoritas ya no suena a una escena de ciencia ficción. Google implementó una función que permite a Gemini tomar el control de tu móvil para que realice llamadas por ti sin que digas una sola palabra. De acuerdo con 9to5Google, […] Seguir leyendo: Gemini estrena una función que hace llamadas por ti desde el móvil",
+    "published": "2026-09-24T17:48:52+00:00",
+    "image": "https://imgs.hipertextual.com/wp-content/uploads/2026/09/Pixel-Phone-Call-for-Me-1.mp4"
   },
   {
-    "source": "The Hacker News",
-    "title": "SideCopy Broadens India Targeting to Academia With ReverseRAT Spear-Phishing",
-    "link": "https://thehackernews.com/2026/09/sidecopy-broadens-india-targeting-to.html",
-    "summary": "The threat actor known as SideCopy has been observed using spear-phishing lures to target academic institutions in India, expanding their strategic focus beyond government entities. \"SideCopy campaign operations typically initiate through spear-phishing campaigns that leverage the abuse of mshta.exe to execute malicious scripts and circumvent standard security protocols,\" Trellix researchers",
-    "published": "2026-09-22T07:52:03+00:00"
+    "source": "Applesfera",
+    "title": "Este antiguo iPhone te puede hacer de oro si aún lo conservas. Casi tanto como para comprar una casa",
+    "link": "https://www.applesfera.com/iphone/este-antiguo-iphone-te-puede-hacer-oro-conservas-casi-como-para-comprar-casa",
+    "summary": "Lo retro, y más en el ámbito tecnológico, sigue teniendo mucho público. Uno que, además, no le importa gastarse muchos billetes. En los últimos tiempos vemos también como cada vez se abre más hueco a los móviles retro . Y ojo porque no hablamos tampoco de los clásicos ladrillos de Motorola o Nokia. No hace falta irse tan lejos. Sólo hay que irse a hace 19 años, que comparándolo con otros artículos retro no es tanto. Fue en 2007 cuando se lanzó el primer iPhone y que ahora vale una auténtica fortuna si aún se conserva en buen estado. Y aunque en menor medida, su siguiente versión, la del iPhone 3G, también puede valer un pastizal. Un valor incalculable y no por lo que es capaz de ofrecer Los iPhone originales lanzados en el año 2007 son de lo más buscado por parte de coleccionistas. Y no es porque a efectos técnicos sea un dispositivo al que hoy en día se le pueda sacar partido. De hecho, en muchos casos no servirán ni para hacer llamadas por haberse desactivado el 2G por parte de muchas operadoras. Es un dispositivo con un alto valor abstracto . Fue un producto histórico que sirvió para revolucionar la industria de la telefonía móvil y asentar los teléfonos inteligentes. Así mismo,",
+    "published": "2026-09-24T16:01:09+00:00",
+    "image": "https://i.blogs.es/e1c2c7/iphone-2007/1024_2000.jpeg"
   },
   {
-    "source": "The Hacker News",
-    "title": "One Hidden Meta Muse Setting Could Let Attackers Turn the AI Assistant Into a Backdoor",
-    "link": "https://thehackernews.com/2026/09/one-hidden-meta-muse-setting-could-let.html",
-    "summary": "Malware already running on a Mac can quietly take over Meta's Muse assistant and use the broad access its owner granted the app, security researcher Patrick Wardle has shown in a proof-of-concept released on September 21. It works by changing a hidden setting so that when the user taps the microphone and dictates a prompt, the words go to the attacker instead of Meta. The flaw is in",
-    "published": "2026-09-22T06:33:57+00:00"
+    "source": "MuyComputer",
+    "title": "LG OLED evo W6: el Wallpaper TV vuelve nueve años después",
+    "link": "https://www.muycomputer.com/2026/09/24/lg-oled-evo-w6-el-wallpaper-tv-vuelve-nueve-anos-despues/",
+    "summary": "En 2017, LG llevó al extremo una idea que entonces parecía casi de ciencia ficción: un televisor tan fino que, visto de perfil, prácticamente desaparecía sobre la pared. Aquel Wallpaper TV convirtió el grosor en parte esencial del diseño y demostró que una pantalla enorme no tenía por qué dominar visualmente todo el salón. Nueve […] La entrada LG OLED evo W6: el Wallpaper TV vuelve nueve años después se publicó primero en MuyComputer .",
+    "published": "2026-09-24T15:35:11+00:00",
+    "image": ""
   },
   {
-    "source": "The Hacker News",
-    "title": "WordPress Comment2Shell Flaw Can Turn Anonymous Comment XSS Into RCE via Admin Session",
-    "link": "https://thehackernews.com/2026/09/wordpress-comment2shell-flaw-can-turn.html",
-    "summary": "A new flaw in WordPress core let an anonymous visitor leave a comment that planted a hidden script on the page. If a logged-in administrator later opened that page, the script could run code on the site's server. WordPress fixed the flaw, tracked as CVE-2026-93485 and called \"Comment2Shell,\" on September 17 in version 7.1.1 and told site owners to update right away. There is",
-    "published": "2026-09-22T06:03:14+00:00"
+    "source": "Hipertextual",
+    "title": "Filtrado el diseño de los Galaxy Buds On, los primeros auriculares tipo clip de Samsung",
+    "link": "https://hipertextual.com/tecnologia/filtrado-el-diseno-de-los-galaxy-buds-on-los-primeros-auriculares-tipo-clip-de-samsung/",
+    "summary": "Samsung planea lanzar nuevos auriculares con diseños que nunca antes había usado, y se han filtrado su diseño al completo. Según publica Android Headlines, el dispositivo en cuestión se lanzará al mercado bajo el nombre de Galaxy Buds On y son los primeros de la marca en adoptar un formato tipo clip. De la mano […] Seguir leyendo: Filtrado el diseño de los Galaxy Buds On, los primeros auriculares tipo clip de Samsung",
+    "published": "2026-09-24T15:07:43+00:00",
+    "image": "https://i0.wp.com/imgs.hipertextual.com/wp-content/uploads/2026/09/Buds-On.jpg?fit=1024%2C576&quality=70&strip=all&ssl=1"
   },
   {
-    "source": "The Hacker News",
-    "title": "Zyxel and Veeam Flaws Under Active Exploitation With Command and SYSTEM Access",
-    "link": "https://thehackernews.com/2026/09/zyxel-and-veeam-flaws-under-active.html",
-    "summary": "The U.S. Cybersecurity and Infrastructure Security Agency (CISA) on Monday added a now-patched security flaw impacting Zyxel GS1900 series switches to its Known Exploited Vulnerabilities (KEV) catalog, citing evidence of active exploitation. The vulnerability, tracked as CVE-2026-7273 (CVSS score: 8.8), is a stack-based buffer overflow vulnerability that could result in arbitrary operating",
-    "published": "2026-09-22T05:31:59+00:00"
+    "source": "Applesfera",
+    "title": "42 años después, Apple recupera una simple palabra que define su pasado, presente y futuro",
+    "link": "https://www.applesfera.com/curiosidades/apple-esta-recuperando-sello-olvidado-era-steve-jobs-hello-esconde-que-parece",
+    "summary": "Una palabra, cinco letras y un significado que va más allá de lo que muchos entendemos. El \"hello\" (\"Hola\") no es un simple saludo en Apple. Es una bienvenida a un mundo de posibilidades , pero también una forma de decirnos que algo está a punto de empezar. Porque cada vez que Apple ha pronunciado ese \"hello\", normalmente no estaba presentando solo un producto, sino abriendo la puerta a una nueva etapa. Por eso resulta tan especial verlo aparecer de nuevo. En una compañía que ha cambiado varias veces la forma en la que entendemos la tecnología, hay palabras que terminan convirtiéndose en parte de su propia historia. \"hello\" es una de ellas. Una palabra que Steve Jobs convirtió en algo más que un saludo y que, décadas después, sigue teniendo la capacidad de despertar esa sensación tan difícil de explicar . La de estar delante de algo nuevo por primera vez. El origen del \"hello\" La historia del \"hello\" en Apple empieza mucho antes de que se convirtiera en una especie de firma. Era enero de 1984 y Steve Jobs subió al escenario para presentar el Macintosh origina l . Después de una demo que ya forma parte de la historia de la tecnología, apareció en la pantalla una sencilla palabra: \"h",
+    "published": "2026-09-24T15:01:09+00:00",
+    "image": "https://i.blogs.es/fc3976/hello-apple/1024_2000.jpeg"
   },
   {
-    "source": "The Hacker News",
-    "title": "Fake LastPass Authenticator Installer Abuses Microsoft-Signed Driver to Kill Antivirus and EDR",
-    "link": "https://thehackernews.com/2026/09/fake-lastpass-authenticator-installer.html",
-    "summary": "A fake LastPass Authenticator installer offered on GitHub installs a Windows kernel driver that shuts off antivirus and other security software before a password stealer runs if a victim downloads and runs it, researchers at LastPass and Delphos Labs said on September 17. Microsoft's own hardware-compatibility program signs the driver, scored zero detections on VirusTotal when researchers",
-    "published": "2026-09-21T17:31:01+00:00"
+    "source": "MuyComputer",
+    "title": "Un error está haciendo que las licencias de Office 2019 y anteriores dejen de funcionar",
+    "link": "https://www.muycomputer.com/2026/09/24/un-error-esta-haciendo-que-las-licencias-de-office-2019-y-anteriores-dejen-de-funcionar/",
+    "summary": "Se ha identificado un fallo que hace que algunas licencias de Microsoft Office 2019, Office 2016 y Office 2013 se desactiven de forma automática y dejen de funcionar permanentemente. En algunos casos incluso se han reportado casos en los que se ha producido la desinstalación de las aplicaciones de Microsoft Office, algo que la verdad […] La entrada Un error está haciendo que las licencias de Office 2019 y anteriores dejen de funcionar se publicó primero en MuyComputer .",
+    "published": "2026-09-24T14:12:40+00:00",
+    "image": ""
   },
   {
-    "source": "The Hacker News",
-    "title": "Contagious Interview Campaign Compromises 30,000 Devices, Steals $10.71M in Crypto",
-    "link": "https://thehackernews.com/2026/09/contagious-interview-campaign.html",
-    "summary": "The North Korean threat actors behind the Contagious Interview campaign have compromised at least 30,000 devices located in more than 100 countries and siphoned funds or account credentials from over 7,000 cryptocurrency wallets, according to a new joint cybersecurity advisory. The primary targets of the campaign are individual web designers, engineers, and specialists in cryptocurrency,",
-    "published": "2026-09-21T17:19:00+00:00"
+    "source": "Applesfera",
+    "title": "El fracaso que provocó el regreso de Steve Jobs a Apple ahora se puede probar desde casa",
+    "link": "https://www.applesfera.com/os-x/apple-toco-fondo-culpa-esta-version-mac-os-hoy-podemos-probar-aquel-desastre-casa",
+    "summary": "A mediados de los años 90, Apple tenía un serio problema con Windows 95 . Este nuevo sistema de Microsoft estaba a punto de llegar y el Mac arrastraba un sistema operativo con las limitaciones de los años 80. La respuesta a todo esto fue Mac OS Copland . Un proyecto con 500 ingenieros y un presupuesto de 250 millones de dólares al año que prometía multitarea, temas personalizables y búsqueda en tiempo real. Todo esto en los años 90 sonaba muy prometedor. A futuro. Pero de repente, Apple canceló el proyecto en agosto de 1996 sin haberlo lanzado nunca . Michael Steil , que se dedica a hacer ingeniería inversa de software y hardware, ha conseguido que funcione la última beta que Apple repartió a desarrolladores, la D11E4 de junio de 1996, y ha hecho un emulador que funciona desde nuestro navegador. Puedes trastear con él un rato desde el ordenador y descubrir el pasado de Mac OS. Mac OS Copland y su personalización a mediados de los 90 Un sistema con 500 ingenieros que nunca salió Mac OS Copland nació en 1994 con la idea de ser el Mac OS 8 que iba a cambiar el Mac. Apple lo bautizó con el nombre del compositor Aaron Copland, siguiendo su costumbre de la época. Lo dotó de una arquitect",
+    "published": "2026-09-24T14:01:09+00:00",
+    "image": "https://i.blogs.es/b43467/copland-mac/1024_2000.jpeg"
   },
   {
-    "source": "The Hacker News",
-    "title": "Google Fined €403 Million Over GDPR Violations Tied to Location Data",
-    "link": "https://thehackernews.com/2026/09/google-fined-403-million-over-gdpr.html",
-    "summary": "Google has been fined €403 million for breaking the EU's data protection law, the GDPR, in the way three of its features handled people's location data from May 2018 to February 2020. Ireland's Data Protection Commission (DPC), Google's lead regulator in the EU, also ordered the company to make its processing comply with the law within 6 months. The DPC has not said publicly which",
-    "published": "2026-09-21T16:57:31+00:00"
+    "source": "Hipertextual",
+    "title": "Apple promete solucionar un molesto bug que provoca cuelgues en los iPhone 18 Pro",
+    "link": "https://hipertextual.com/apple/apple-resolvera-bug-face-id-cuelgues-iphone-18-pro-y-pro-max/",
+    "summary": "Usuarios de los iPhone 18 Pro y Pro Max se han topado con un molesto bug que provoca cuelgues y reinicios forzados, pero una solución está en camino. Según publica 9to5Mac, Apple ha confirmado que la próxima semana se lanzará una actualización que corregirá un inconveniente vinculado con Face ID. En los últimos días aparecieron […] Seguir leyendo: Apple promete solucionar un molesto bug que provoca cuelgues en los iPhone 18 Pro",
+    "published": "2026-09-24T13:05:11+00:00",
+    "image": "https://i0.wp.com/imgs.hipertextual.com/wp-content/uploads/2026/09/iPhone-18-Pro.jpg?fit=1024%2C576&quality=70&strip=all&ssl=1"
   },
   {
-    "source": "The Hacker News",
-    "title": "⚡ Weekly Recap: Cisco 0-Day, AI Agent RCE, ClickFix Attacks, ClickFix Surge, and Browser Hijacks",
-    "link": "https://thehackernews.com/2026/09/weekly-recap-cisco-0-day-ai-agent-rce.html",
-    "summary": "A browser. A plugin. A package. A login screen. Normal stuff. That is basically the problem this week. The trouble keeps showing up inside things people already trust: code that takes a bad turn, old payloads coming back, exposed systems, weak checks, fake fixes, and attack paths that look almost too easy. Even the research side is getting messy, with more findings, more automation, and not",
-    "published": "2026-09-21T14:24:13+00:00"
+    "source": "MuyComputer",
+    "title": "Ofertas Prime de Otoño de LiberNovo: más comodidad para tu espacio de trabajo",
+    "link": "https://www.muycomputer.com/2026/09/24/ofertas-prime-otono-de-libernovo-invierte-en-ergonomia-invierte-en-comodidad/",
+    "summary": "La silla se ha convertido en el «compañero de trabajo» más importante de millones de profesionales en todo el mundo que, al igual que nosotros, pasan 8 o más horas al día sentados, utilizando su PC para crear contenido, resolver problemas tecnológicos y legales, y también para afrontar otros proyectos que requieren pasar muchas horas […] La entrada Ofertas Prime de Otoño de LiberNovo: más comodidad para tu espacio de trabajo se publicó primero en MuyComputer .",
+    "published": "2026-09-24T12:26:08+00:00",
+    "image": ""
   },
   {
-    "source": "The Hacker News",
-    "title": "TASK#STOMP PowerShell Backdoor Steals Documents, Wi-Fi Passwords, and Clipboard Data",
-    "link": "https://thehackernews.com/2026/09/taskstomp-powershell-backdoor-steals.html",
-    "summary": "Cybersecurity researchers have disclosed details of a new campaign dubbed TASK#STOMP that delivers a PowerShell backdoor designed to harvest sensitive data from compromised hosts. The backdoor \"automatically harvests and exfiltrates business documents, watches the filesystem for new files in real time, steals Wi-Fi passwords and clipboard contents, takes screenshots, and accepts arbitrary",
-    "published": "2026-09-21T14:15:40+00:00"
+    "source": "Applesfera",
+    "title": "\"Temo que esto sea un hervidero\". Los trabajadores de una Apple Store ya prevén la expectación por el iPhone Duo",
+    "link": "https://www.applesfera.com/iphone/todos-dias-me-preguntan-iphone-duo-trabajador-apple-confirma-expectativa-plegable",
+    "summary": "En la leganense Apple Store de Parquesur están acostumbrados al ajetreo ante un nuevo iPhone, aunque pocas veces han vivido lanzamientos de los Grandes (en mayúsculas). Inaugurada en 2011, ha acogido desde el iPhone 4s hasta los iPhone 18 Pro . Entre medias, en 2017, el iPhone X desató colas por todo el centro comercial en el que se ubica. Se recuerda como el momento de mayor apogeo de esta tienda de 600 metros cuadrados. Y solo hay un firme candidato a de sbancar a aquel mítico iPhone . Uno que, además, no es nada barato (2.339 euros de base). El iPhone Duo es el primer plegable de la compañía y, quizás por eso, la expectativa se está disparando, tal y como nos han podido contar algunos trabajadores de la tienda. Muchos quieren ver (y hasta comprar) ya el iPhone Duo Imagen: Javier Lacort en Xataka Mientras en medios y foros especializados discutimos qué le falta al iPhone Duo , si es mejor que los plegables que Samsung lleva abrazando años, si no es demasiado caro o si se va a vender bien, en una de las principales tiendas de Apple lo tienen claro: a los verdaderos interesados les da igual todo eso. Quieren el Duo. Cuando paseamos por esta u otra Apple Store vemos ya gigantescos c",
+    "published": "2026-09-24T12:01:08+00:00",
+    "image": "https://i.blogs.es/67f827/iphone-duo-apple/1024_2000.jpeg"
   },
   {
-    "source": "The Hacker News",
-    "title": "ClickFix Lures Deploy ChainScript RAT Using Polygon to Rotate C2 Infrastructure",
-    "link": "https://thehackernews.com/2026/09/clickfix-lures-deploy-chainscript-rat.html",
-    "summary": "Threat actors are leveraging ClickFix-like lures to deliver a previously undocumented remote access trojan (RAT) called ChainScript. \"ChainScript has appeared under multiple build names, including ComponentTask33, UpdateDigital, HostShared, and OrchidViolet66, while presenting itself as Spotify, Zoom Workplace, and Microsoft Teams software,\" Blackpoint Adversary Pursuit Group (APG)",
-    "published": "2026-09-21T08:39:38+00:00"
+    "source": "MuyComputer",
+    "title": "Xbox Project Helix es un 40% más potente que PS6, pero también será mucho más cara",
+    "link": "https://www.muycomputer.com/2026/09/24/xbox-project-helix-es-un-40-mas-potente-que-ps6-pero-tambien-sera-mucho-mas-cara/",
+    "summary": "Todos los rumores que llevamos tiempo viendo coinciden en una cosa: Xbox Project Helix será más potente que PS6, ¿pero cuánto más? Esta es la pregunta más importante, y gracias a Kepler_L2 tenemos por fin una respuesta clara y precisa, la consola de Microsoft será un 40% más potente que la de Sony, al menos […] La entrada Xbox Project Helix es un 40% más potente que PS6, pero también será mucho más cara se publicó primero en MuyComputer .",
+    "published": "2026-09-24T11:41:19+00:00",
+    "image": ""
   },
   {
-    "source": "The Hacker News",
-    "title": "Jade Sleet Linked to Indian IT Provider Breach With FLATROOF and ROOFDECK Backdoors",
-    "link": "https://thehackernews.com/2026/09/jade-sleet-linked-to-indian-it-provider.html",
-    "summary": "The North Korean threat actor known as Jade Sleet has been attributed to the compromise of an India-based \"much smaller organization\" in the information technology (IT) services industry, once again highlighting how the adversary continues to target developers to breach target networks. Cybersecurity company SentinelOne, which disclosed details of the activity, said it involved the use of Apple",
-    "published": "2026-09-21T06:06:44+00:00"
+    "source": "Hipertextual",
+    "title": "Este es el mejor MacBook que puedes comprar ahora mismo, por calidad y por precio",
+    "link": "https://hipertextual.com/ofertas-descuentos/mejor-macbook-precio/",
+    "summary": "Es el portátil perfecto para la gran mayoría de personas. No es de extrañar que el MacBook Air sea uno de los ordenadores más vendidos de Apple. Diferentes tamaños de pantalla, un diseño muy bonito y un procesador bastante solvente para cualquier tipo de tarea. Pero además ahora puedes hacerte con el de este año, […] Seguir leyendo: Este es el mejor MacBook que puedes comprar ahora mismo, por calidad y por precio",
+    "published": "2026-09-24T11:03:29+00:00",
+    "image": "https://i0.wp.com/imgs.hipertextual.com/wp-content/uploads/2026/03/MacBook-Air-M5-16-scaled.jpg?fit=1024%2C684&quality=70&strip=all&ssl=1"
   },
   {
-    "source": "The Hacker News",
-    "title": "Claude Opus 5 Helped Researchers Take Over OpenAI Staff Accounts via Chained Flaws",
-    "link": "https://thehackernews.com/2026/09/claude-opus-5-helped-researchers-take.html",
-    "summary": "Three researchers at the security firm Hacktron used Anthropic's Claude Opus 5 to chain two flaws and take over the ChatGPT and Codex accounts of several OpenAI employees, then reach an internal OpenAI code repository. The chain began with a bug in the software that runs OpenAI's public help forum and moved through a weakness in OpenAI's own login system. This was security research,",
-    "published": "2026-09-19T18:36:53+00:00"
+    "source": "Applesfera",
+    "title": "El Mac mini M6 ya tiene su primera oferta, y no es en su configuración mínima de almacenamiento",
+    "link": "https://www.applesfera.com/seleccion/mac-mini-m6-tiene-su-primera-oferta-no-su-configuracion-minima-almacenamiento",
+    "summary": "No es habitual que Apple lance sus dispositivos y al poco tiempo los veamos de oferta. La excepción, por lo general, se suele dar en aquellos modelos básicos como ocurrió con el iPhone 16e , pero ahora también lo hemos visto con el nuevo Mac mini M6 que se puede comprar en MediaMarkt por un precio de 1.289 euros . En Amazon también se encuentra por el mismo precio, pero la tienda lo envía en uno o dos meses. Mac mini M6 (24 GB, 512 GB) PVP en MediaMarkt — 1.289,00 € Amazon — 1.289,00 € PcComponentes — 1.509,00 € El precio podría variar. Obtenemos comisión por estos enlaces El nuevo Mac mini M6 ya está de oferta Lo bueno de esta oferta es que el Mac mini M6 viene con una muy buena configuración de 24 GB de memoria unificada y 512 GB de almacenamiento interno , por lo que no se trata de la más básica que ha lanzado Apple. Es, por lo tanto, ideal si se necesita exprimir al máximo todo lo que ofrece el ordenador. En Applesfera iPhone reacondicionados 2026: los mejores móviles usados y qué tener en cuenta antes de comprar uno La diferencia más notable con respecto a su generación anterior reside en el chip M6 , que ofrece un excelente rendimiento y una gran potencia. El uso que podemos ",
+    "published": "2026-09-24T10:31:08+00:00",
+    "image": "https://i.blogs.es/dd681e/mac-mini-m6/1024_2000.jpeg"
   },
   {
-    "source": "The Hacker News",
-    "title": "Can You Prove a New CVE Is Exploitable Before Attackers Do? Learn How in This Webinar",
-    "link": "https://thehackernews.com/2026/09/can-you-prove-new-cve-is-exploitable.html",
-    "summary": "A new CVE drops. Your scanner finds it. The severity score looks ugly. But that still does not answer the question that matters: Can it actually be exploited in your environment? Mythos-class AI is compressing the time between disclosure and working exploitation, while many security programs still validate risk on weekly or quarterly cycles. The dangerous gap is no longer just technical. It is",
-    "published": "2026-09-19T13:28:48+00:00"
+    "source": "Hipertextual",
+    "title": "Las nuevas Meta Ray-Ban eliminan la característica que las hacía más interesantes",
+    "link": "https://hipertextual.com/tecnologia/meta-ray-ban-gen-3/",
+    "summary": "Meta presentó ayer la nueva generación de las Meta Ray-Ban, y hay un nuevo modelo en el que esta vez da portazo a la que quizás era la función más interesante que tenía el dispositivo: su cámara. Son las nuevas Meta Ray-Ban Audio, acabando con un plumazo con muchas de las preocupaciones de muchos usuarios, […] Seguir leyendo: Las nuevas Meta Ray-Ban eliminan la característica que las hacía más interesantes",
+    "published": "2026-09-24T10:03:16+00:00",
+    "image": "https://i0.wp.com/imgs.hipertextual.com/wp-content/uploads/2026/09/meta-rayban.jpg?fit=1024%2C755&quality=70&strip=all&ssl=1"
   },
   {
-    "source": "The Hacker News",
-    "title": "Identity Visibility in 2026: The Foundation of Identity Security",
-    "link": "https://thehackernews.com/2026/09/identity-visibility-in-2026-foundation.html",
-    "summary": "Identity visibility is a starting point for modern identity security, because stolen and misused credentials are among the most frequently reported initial access vectors in breach research, including Verizon's annual Data Breach Investigations Report. This article explains what identity visibility means in IAM, why cloud and multicloud environments complicate it, which capabilities matter in",
-    "published": "2026-09-19T13:28:41+00:00"
+    "source": "MuyComputer",
+    "title": "Meta VR Glasses: adelgazamiento extremo y precio muy elevado",
+    "link": "https://www.muycomputer.com/2026/09/24/meta-vr-glasses-adelgazamiento-extremo-y-precio-muy-elevado/",
+    "summary": "Las Meta VR Glasses han sido el dispositivo más destacado de las novedades presentadas por la firma de Mark Zuckerberg en su evento ‘Meta Connect 2026’. Las gafas de realidad virtual son más ligeras que nunca y prometen una experiencia de usuario mejorada, pero su precio de 1.300 dólares las aleja del gran consumo. Hay […] La entrada Meta VR Glasses: adelgazamiento extremo y precio muy elevado se publicó primero en MuyComputer .",
+    "published": "2026-09-24T09:49:48+00:00",
+    "image": ""
   },
   {
-    "source": "The Hacker News",
-    "title": "SolarWinds Patches ARM Hard-Coded Key Flaw Enabling Unauthenticated RCE",
-    "link": "https://thehackernews.com/2026/09/solarwinds-patches-arm-hard-coded-key.html",
-    "summary": "SolarWinds has released security updates to address a high-severity flaw in Access Rights Manager (ARM) that, if successfully exploited, could lead to an unauthenticated remote code execution vulnerability. The vulnerability, tracked as CVE-2026-28326, is rated 8.8 out of 10.0 on the CVSS scoring system. The issue affects all versions of Access Rights Manager 2026.2 and prior. \"SolarWinds",
-    "published": "2026-09-19T09:31:17+00:00"
+    "source": "Applesfera",
+    "title": "Meta le ha comido la tostada a Apple presentando lo que deberían haber sido las Vision Pro 2",
+    "link": "https://www.applesfera.com/vision-pro/ver-nuevas-gafas-meta-da-rabia-exactamente-que-esperabamos-vision-pro-2",
+    "summary": "Las nuevas VR Glasses de Meta pesan 100 gramos, cuestan 1.300 dólares y llegarán en primavera de 2027 . Basta verlas para pensar que esto es lo que llevábamos años esperando de unas Vision Pro 2 . Técnicamente son un visor y no unas gafas. Pero quien las vea las entenderá como gafas, sobre todo viniendo de una empresa que ya ha conseguido que muchas personas se pongan unas Ray-Ban Meta en sus ojos. Pero dejando las gafas más \"tradicionales\" a un lado, es este visor el que hace que un seguidor de Apple se quede mirándolo con una mezcla de admiración y, por qué no decirlo, envidia . Diseño exterior Meta VR Glasses Porque las Vision Pro siguen siendo una maravilla. Quien las ha probado sabe la sensación que dejan y visionOS sigue sin tener rival . Pero llevan desde 2023 con un precio de 3.699 dólares, un peso y volumen destacables. Y sobre todo una lista de países donde se venden que deja el producto en manos de muy pocos. Y entonces llega Meta , con más de una década de trabajo en realidad virtual a sus espaldas, y presenta un visor casi siete veces más ligero y con un precio por debajo de la mitad. Puedes llamarme fanboy, estamos en Applesfera, pero da rabia que esto no lo haya pres",
+    "published": "2026-09-24T09:31:08+00:00",
+    "image": "https://i.blogs.es/0943dc/meta-vr-glasses-puestas/1024_2000.jpeg"
+  },
+  {
+    "source": "Applesfera",
+    "title": "Si Apple Watch se reinicia solo, Apple ya tiene la solución para arreglarlo",
+    "link": "https://www.applesfera.com/juegos-para-ios/dos-modelos-apple-watch-se-reiniciaban-solos-apple-tiene-solucion-lista",
+    "summary": "Los Apple Watch Series 12 y Apple Watch Ultra 4 llevan muy pocos días en las muñecas de quienes los compramos, y yo me incluyo. Como en cualquier lanzamiento tan masivo, no ha faltado el típico fallo que aparece cuando millones de unidades llegan a la vez. En este caso empezaron a verse hilos en Reddit de personas cuyo reloj se reiniciaba solo, varias veces al día y sin que hubieran tocado nada. A mí no me ha pasado con mi Series 12 ni a mi pareja con el suyo. Pero de las cuatro personas que conozco con uno de estos dos modelos, a dos sí les ocurría. Dos amigos, uno con Series 12 y otro con Ultra 4, tenían este problema. La solución para los reinicios del Apple Watch Lo bueno es que Apple ha lanzado watchOS 27.0.1. Una actualización que llega solo para el Series 12 y el Ultra 4 y cuyas notas hablan de corregir un error que podía provocar que el Apple Watch se reiniciara de forma inesperada. Justo lo que hacía falta. Los primeros Apple Watch llegaron a sus dueños el viernes 18 de septiembre y el parche ha salido el miércoles 23, así que Apple ha tardado cinco días en tener la solución lista . No se conoce qué provocaba los reinicios, pero la solución pasa por actualizar a watchOS 27",
+    "published": "2026-09-24T08:31:08+00:00",
+    "image": "https://i.blogs.es/03e4d7/watchos-27/1024_2000.jpeg"
+  },
+  {
+    "source": "MuyComputer",
+    "title": "Entrevista a Cyril Laurie de AMD: Zen 6 y la importancia de la especialización en IA",
+    "link": "https://www.muycomputer.com/2026/09/24/entrevista-a-cyril-laurie-de-amd-zen-6-y-la-importancia-de-la-especializacion-en-ia/",
+    "summary": "Hace un par de meses tuvimos la oportunidad de asistir al evento Advancing AI 2026 que AMD celebró en San Francisco, un escenario de gala que la compañía de Sunnyvale aprovechó para presentar EPYC Venice, su nueva generación de procesadores basados en la arquitectura Zen 6, y también vimos otros anuncios importantes, como las aceleradoras […] La entrada Entrevista a Cyril Laurie de AMD: Zen 6 y la importancia de la especialización en IA se publicó primero en MuyComputer .",
+    "published": "2026-09-24T08:30:52+00:00",
+    "image": ""
+  },
+  {
+    "source": "MuyComputer",
+    "title": "El hogar inteligente ya no busca comodidad: busca seguridad",
+    "link": "https://www.muycomputer.com/2026/09/24/el-hogar-inteligente-ya-no-busca-comodidad-busca-seguridad/",
+    "summary": "Hace apenas una década, hablar de hogar inteligente era sinónimo de comodidad: encender las luces con el móvil, programar la calefacción antes de llegar a casa o pedirle a un asistente de voz que pusiera música. A día de hoy, ese mismo concepto se ha ampliado hasta convertirse en algo mucho más amplio y, sobre […] La entrada El hogar inteligente ya no busca comodidad: busca seguridad se publicó primero en MuyComputer .",
+    "published": "2026-09-24T07:39:28+00:00",
+    "image": ""
+  },
+  {
+    "source": "MuyComputer",
+    "title": "Microsoft actualiza sus dispositivos Surface de línea de entrada",
+    "link": "https://www.muycomputer.com/2026/09/24/microsoft-actualiza-sus-dispositivos-surface-de-linea-de-entrada/",
+    "summary": "Microsoft ha anunciado el lanzamiento de los dispositivos Surface 2026 de línea de entrada. Dos modelos Surface Pro 12 y Surface Laptop 13 que llegan con diseños conocidos, el uso de los procesadores Snapdragon X2 Plus de Qualcomm como mayor novedad de hardware y un precio sensiblemente más elevado que los modelos de 2025. La […] La entrada Microsoft actualiza sus dispositivos Surface de línea de entrada se publicó primero en MuyComputer .",
+    "published": "2026-09-24T07:26:26+00:00",
+    "image": ""
+  },
+  {
+    "source": "Applesfera",
+    "title": "Filtrado por la propia Apple: Siri AI llegará al HomePod y eso implica varias cosas (y también una duda)",
+    "link": "https://www.applesfera.com/rumores/filtrado-propia-apple-siri-ai-llegara-al-homepod-eso-implica-varias-cosas-tambien-duda",
+    "summary": "Era un secreto a voces tras muchas filtraciones de terceros y ahora tenemos una confirmación explicita en el código de audioOS 27. Los HomePod recibirán pronto Siri AI , aunque no quizás los HomePod que ya conocemos , sino a aquellos que están por llegar . Apple parecía tener listo su primera pantalla inteligente desde hace tiempo, aunque estaba detenida a falta de la nueva Siri . Y ahora que esta renovación del asistente es una realidad (aunque a cuentagotas) parece el momento ideal de lanzarla . Y lo mejor es que no llegaría sola, sino también con nuevos HomePod como los que ya conocemos. Nuevos HomePod a la vista Vídeo de @itspdfu en X Ha sido el analista conocido como Pdfu quien ha revelado a través de X las referencias a Siri AI en el código del nuevo firmware de los HomePod. Más en concreto se habla de Linwood, que es el nombre interno del proyecto de Siri AI. De paso, revela también nuevos juegos de luces acordes a la interfaz de la nueva Siri (blanco, azul y naranja). Sin embargo, que no se haya anunciado su llegada a los HomePod que actualmente vende Apple tiene una razón de peso: no son compatibles. La idea de la compañía de que la mayoría de peticiones se ejecuten en loc",
+    "published": "2026-09-24T07:01:08+00:00",
+    "image": "https://i.blogs.es/203a49/homepod-con-siri-ai/1024_2000.jpeg"
+  },
+  {
+    "source": "Applesfera",
+    "title": "La tecnología caduca rápido, incluso en el Apple Park. Han desmantelado uno de sus rincones icónicos",
+    "link": "https://www.applesfera.com/curiosidades/apple-park-acaba-uno-sus-clasicos-espectacular-2017-casi-inutil-a-dia-hoy",
+    "summary": "Al Apple Park no se entra así como así. El anillo, los jardines, el Steve Jobs Theater... todo eso queda reservado a empleados, invitados y prensa en contadas ocasiones. Lo único que puede visitar el común de los mortales es el Visitor Center . Con su tienda de merchandising, su cafetería y una vista del anillo desde fuera. Dentro de esa tienda se encontraba, desde su apertura en 2017, una gran maqueta del propio Apple Park con la que se podía ver en realidad aumentada con un iPad. Pues esa maqueta ya no está . La icónica maqueta del Apple Park Apple ha renovado el \"Exhibition Space del Visitor Center\" y se ha llevado por delante el modelo 3D que llevaba casi una década recibiendo a los visitantes. En su lugar hay estanterías de pared y mesas redondas para exponer productos. La confirmación llega gracias a un visitante , que tras visitar el Exhibition Space del Apple Park se encontró con los cambios. Lo más llamativo es la desaparición de la maqueta. La remodelación de este centro de visitantes y tiendas empezó en julio y ya está terminada . Zona donde antes estaba la maqueta del Apple Park La Apple Store más exclusiva El Visitor Center funciona a la vez como tienda y como atracció",
+    "published": "2026-09-23T17:01:02+00:00",
+    "image": "https://i.blogs.es/6c6e0a/maqueta/1024_2000.jpeg"
+  },
+  {
+    "source": "Applesfera",
+    "title": "Apple solo ha necesitado un plegable para solucionar un problema que Samsung lleva ocho generaciones sin resolver",
+    "link": "https://www.applesfera.com/iphone/apple-solo-ha-necesitado-plegable-para-solucionar-problema-que-samsung-lleva-ocho-generaciones-resolver",
+    "summary": "Los móviles plegables llevan años intentando resolver el puzle de la interfaz. Y hasta ahora, ningún fabricante había logrado que funcionase igual de bien cerrado que abierto . Ha habido soluciones intermedias, pero prácticamente todas obligan a configurar o reorganizar más cosas de las que se debería. Y ahora Apple ha entrado en escena. El iPhone Duo , que llegará al mercado dentro de un mes exacto, ha planteado una solución sencilla con un iOS 27 que se adapta ambas pantallas para ser coherentes entre sí. Puede parecer un pequeño detalle sin más, pero este es de los que importan y se agradecen en el uso diario. Un iOS 27 tuneado para la continuidad entre pantallas Utilizar un plegable de tipo libro implica convivir con dos formatos de pantalla. Ambas suelen tener formatos diferentes y, para colmo, en muchos casos ambas se alejan de la relación de aspecto de los móviles convencionales. Y eso plantea quebraderos de cabeza a la hora de organizar iconos de apps y widgets. En Applesfera Si dudas en comprar el primer iPhone Duo, esto dicen las filtraciones sobre los siguientes En la mayoría de plegables de Android se tienen diferentes configuraciones para ambas. Es decir, que en la ext",
+    "published": "2026-09-23T16:01:03+00:00",
+    "image": "https://i.blogs.es/32c3a9/iphone-duo/1024_2000.jpeg"
   }
 ]

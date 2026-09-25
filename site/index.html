@@ -4,8 +4,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#d71920">
-  <meta name="description" content="Noticias y recomendaciones semanales de ciberseguridad defensiva, reunidas de fuentes confiables.">
-  <title>CyberReport | Ciberseguridad al día</title>
+  <meta name="description" content="Noticias semanales sobre inteligencia artificial, dispositivos, software, ciencia e innovación.">
+  <title>CyberReport | Tecnología al día</title>
   <style>
     :root {
       color-scheme: light;
@@ -65,8 +65,9 @@
     input::placeholder { color:#8a7d7f; }
     #status { min-height:25px; margin:10px 0 14px; color:var(--muted); font-size:.92rem; }
     .articles { display:grid; grid-template-columns:repeat(2, minmax(0, 1fr)); gap:14px; }
-    .article { display:flex; flex-direction:column; min-height:230px; padding:21px; border:1px solid var(--line); border-radius:16px; background:#fff; box-shadow:0 8px 24px rgba(65,25,25,.04); transition:transform .18s ease,border-color .18s ease; }
+    .article { display:flex; flex-direction:column; min-height:330px; padding:21px; border:1px solid var(--line); border-radius:16px; background:#fff; box-shadow:0 8px 24px rgba(65,25,25,.04); transition:transform .18s ease,border-color .18s ease; }
     .article:hover { transform:translateY(-2px); border-color:#d98286; box-shadow:0 12px 28px rgba(105,25,30,.08); }
+    .article-image { display:block; width:100%; height:175px; margin:0 0 15px; border-radius:11px; object-fit:cover; background:#edf1f4; }
     .article-meta { display:flex; align-items:center; justify-content:space-between; gap:10px; margin-bottom:11px; color:var(--muted); font-size:.82rem; }
     .source { display:inline-flex; max-width:70%; overflow:hidden; padding:4px 9px; border:1px solid #f0c5c7; border-radius:999px; color:#9f1720; background:#fff5f5; text-overflow:ellipsis; white-space:nowrap; }
     .article h3 { margin:0 0 10px; font-size:1.12rem; line-height:1.35; letter-spacing:-.015em; }
@@ -121,9 +122,9 @@
   <main class="wrap" id="inicio">
     <section class="hero" aria-labelledby="page-title">
       <div>
-        <div class="eyebrow">Inteligencia práctica · Enfoque defensivo</div>
-        <h1 id="page-title">Ciberseguridad al día.</h1>
-        <p class="intro">Noticias recientes, contexto y recomendaciones para ayudarte a proteger tus cuentas, dispositivos y sistemas.</p>
+        <div class="eyebrow">Tecnología, ciencia e innovación · Resumen semanal</div>
+        <h1 id="page-title">Tecnología al día.</h1>
+        <p class="intro">Noticias sobre inteligencia artificial, dispositivos, software, ciencia y cultura digital, explicadas con contexto y sus fuentes originales.</p>
       </div>
     </section>
 
@@ -135,8 +136,8 @@
 
     <section class="report" aria-labelledby="report-title" id="informe">
       <div>
-        <h2 id="report-title">Informe semanal</h2>
-        <p>Descarga el resumen semanal en PDF con recomendaciones defensivas.</p>
+        <h2 id="report-title">Boletín semanal</h2>
+        <p>Descarga el boletín semanal en PDF con las noticias, tendencias e ilustraciones de tecnología.</p>
       </div>
       <a class="button" id="report-link" href="./informe.pdf" download hidden>Descargar informe PDF</a>
     </section>
@@ -144,8 +145,8 @@
     <section aria-labelledby="articles-title">
       <div class="section-head">
         <div>
-          <h2 id="articles-title">Noticias recientes</h2>
-          <p>Publicaciones recopiladas durante los últimos siete días.</p>
+          <h2 id="articles-title">Noticias de tecnología</h2>
+          <p>Novedades de software, inteligencia artificial, dispositivos, ciencia e innovación.</p>
         </div>
       </div>
       <div class="filters" role="search">
@@ -160,13 +161,13 @@
 
     <section class="sources" id="fuentes" aria-labelledby="sources-title">
       <h2 id="sources-title">Fuentes monitoreadas</h2>
-      <p>CISA, NIST, OWASP, The Hacker News y Krebs on Security. Los artículos enlazan a sus publicaciones originales; consulta la fuente para obtener contexto y detalles completos.</p>
+      <p>Xataka, Applesfera, MuyComputer e Hipertextual. Los artículos enlazan a sus publicaciones originales; consulta cada fuente para conocer el contexto y los detalles completos.</p>
     </section>
   </main>
 
   <footer>
     <div class="wrap footer-inner">
-      <span>CyberReport · Ciberseguridad defensiva</span>
+      <span>CyberReport · Boletín de tecnología</span>
       <span>Actualizado automáticamente desde las fuentes RSS del proyecto.</span>
     </div>
   </footer>
@@ -192,6 +193,18 @@
       function makeArticle(entry) {
         const card = document.createElement('article');
         card.className = 'article';
+
+        const imageUrl = safeHttpUrl(entry.image || '');
+        if (imageUrl) {
+          const image = document.createElement('img');
+          image.className = 'article-image';
+          image.src = imageUrl;
+          image.alt = entry.title ? `Imagen: ${entry.title}` : 'Imagen de la noticia';
+          image.loading = 'lazy';
+          image.referrerPolicy = 'no-referrer';
+          image.addEventListener('error', () => image.remove(), { once: true });
+          card.append(image);
+        }
 
         const meta = document.createElement('div');
         meta.className = 'article-meta';

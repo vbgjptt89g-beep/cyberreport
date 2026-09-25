@@ -31,7 +31,7 @@ def main() -> None:
 
     # GitHub Actions corre en UTC; Honduras permanece en UTC-6.
     local_date = (datetime.now(timezone.utc) - timedelta(hours=6)).date()
-    output_path = Path("reportes") / f"informe-ciberseguridad-{local_date:%Y-%m-%d}.pdf"
+    output_path = Path("reportes") / f"boletin-tecnologia-{local_date:%Y-%m-%d}.pdf"
     print("2/4 - Creando el PDF...")
     build_pdf(report_markdown, output_path)
     print(f"    -> PDF creado en {output_path}")

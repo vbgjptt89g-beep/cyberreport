@@ -1,4 +1,4 @@
-name: Informe semanal de ciberseguridad
+name: Boletín semanal de tecnología
 
 on:
   push:
@@ -62,7 +62,7 @@ jobs:
             python -u main.py report
             echo "generated=true" >> "$GITHUB_OUTPUT"
           else
-            echo "Recopilación diaria terminada. El PDF se genera los viernes por la noche en Honduras."
+            echo "Recopilación diaria terminada. El boletín PDF se genera los viernes por la noche en Honduras."
             echo "generated=false" >> "$GITHUB_OUTPUT"
           fi
         timeout-minutes: 10
@@ -71,7 +71,7 @@ jobs:
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: informe-semanal-ciberseguridad
+          name: boletin-semanal-tecnologia
           path: reportes/*.pdf
           if-no-files-found: ignore
           retention-days: 90
@@ -79,7 +79,7 @@ jobs:
       - name: Guardar publicaciones y el último informe
         run: |
           if [ "${{ steps.report.outputs.generated }}" = "true" ]; then
-            pdf_path="$(find reportes -maxdepth 1 -type f -name 'informe-ciberseguridad-*.pdf' -print | sort | tail -n 1)"
+            pdf_path="$(find reportes -maxdepth 1 -type f -name 'boletin-tecnologia-*.pdf' -print | sort | tail -n 1)"
             test -n "$pdf_path"
             cp "$pdf_path" site/informe.pdf
           fi
@@ -89,7 +89,7 @@ jobs:
           git add data/weekly_entries.json site/weekly_entries.json
           if [ -f site/informe.pdf ]; then git add site/informe.pdf; fi
           if ! git diff --cached --quiet; then
-            git commit -m "Actualiza publicaciones e informe semanal"
+            git commit -m "Actualiza publicaciones y boletín tecnológico"
             git push
           fi
         timeout-minutes: 2

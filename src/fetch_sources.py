@@ -9,19 +9,42 @@ from concurrent.futures import ThreadPoolExecutor
 from dataclasses import asdict, dataclass
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
+from urllib.parse import urlparse
 
 import feedparser
 from urllib.request import Request, urlopen
 
 SOURCES = {
-    "CISA - Alertas": "https://www.cisa.gov/cybersecurity-advisories/all.xml",
-    "CISA - Blog": "https://www.cisa.gov/news.xml",
-    "NIST - CSRC News": "https://csrc.nist.gov/news/rss",
-    "OWASP - Noticias": "https://owasp.org/feed.xml",
-    "The Hacker News": "https://feeds.feedburner.com/TheHackersNews",
-    "Krebs on Security": "https://krebsonsecurity.com/feed/",
+    "Xataka": "https://feeds.weblogssl.com/xataka2",
+    "Applesfera": "https://feeds.weblogssl.com/applesfera",
+    "MuyComputer": "https://www.muycomputer.com/feed/",
+    "Hipertextual": "https://hipertextual.com/feed/",
 }
 DATA_PATH = Path(__file__).resolve().parents[1] / "data" / "weekly_entries.json"
+TECH_TERMS = (
+    "tecnolog", "inteligencia artificial", " ia ", " ai ", "chatgpt", "gemini", "copilot", "openai",
+    "software", "aplicación", "app ", "sistema operativo", "windows", "macos", "ios", "android",
+    "apple", "iphone", "ipad", "macbook", "samsung", "google pixel", "nvidia", "microsoft",
+    "chip", "semiconductor", "procesador", "gpu", "cpu", "ordenador", "computadora", "portátil",
+    "smartphone", "móvil", "robot", "automatización", "ciencia", "espacio", "satélite", "nasa",
+    "telescopio", "física", "investigación", "innovación", "energía nuclear", "energía solar",
+    "batería", "vehículo eléctrico", "coche eléctrico", "coche autónomo", "videojuego", "consola",
+    "playstation", "xbox", "nintendo", "streaming", "televisor", "televisión", "redes sociales",
+    "tiktok", "instagram", "youtube", "whatsapp", "internet", "nube", "cloud", "5g", "6g",
+    "telecomunic", "realidad virtual", "realidad aumentada", "blockchain", "impresión 3d", "dron",
+)
+
+
+EXCLUDED_TERMS = (
+    "recesión sexual", "crisis de vivienda", "crisis de empleo", "celíaco", "celíaca", "alérgico",
+    "alérgica", "multa", "robando tanto cobre", "chollos", "ofertas de hoy", "phishing", "malware",
+    "antivirus", "ciberseguridad", "hackeo", "robo de cobre",
+)
+
+
+def _is_technology_entry(title: str, summary: str) -> bool:
+    text = f" {title} {summary} ".casefold()
+    return not any(term in text for term in EXCLUDED_TERMS) and any(term in text for term in TECH_TERMS)
 
 
 @dataclass
@@ -31,6 +54,7 @@ class Entry:
     link: str
     summary: str
     published: datetime
+    image: str = ""
 
 
 def _parse_date(entry) -> datetime:
@@ -46,10 +70,35 @@ def _clean_summary(value: str) -> str:
     return re.sub(r"\s+", " ", html.unescape(value)).strip()[:1200]
 
 
+def _entry_image(entry) -> str:
+    """Obtiene una imagen de portada declarada en el feed RSS, si existe."""
+    candidates = []
+    for key in ("media_content", "media_thumbnail", "enclosures"):
+        value = entry.get(key, []) or []
+        if isinstance(value, dict):
+            value = [value]
+        candidates.extend(value)
+    for item in candidates:
+        if not isinstance(item, dict):
+            continue
+        url = item.get("url") or item.get("href")
+        if not url and item.get("type", "").startswith("image/"):
+            url = item.get("href")
+        if url and urlparse(url).scheme in {"https", "http"} and urlparse(url).netloc:
+            return url
+    raw = entry.get("summary", entry.get("description", "")) or ""
+    match = re.search(r"<img[^>]+src=[\"']([^\"']+)", raw, re.IGNORECASE)
+    if match:
+        url = html.unescape(match.group(1))
+        if urlparse(url).scheme in {"https", "http"} and urlparse(url).netloc:
+            return url
+    return ""
+
+
 def _fetch_one_source(source_name: str, url: str, cutoff: datetime) -> list[Entry]:
     try:
         print(f"Consultando {source_name}...", flush=True)
-        request = Request(url, headers={"User-Agent": "cyberreport/1.0"})
+        request = Request(url, headers={"User-Agent": "technology-bulletin/1.0"})
         with urlopen(request, timeout=5) as response:
             payload = response.read(2_000_000)
         parsed = feedparser.parse(payload)
@@ -60,7 +109,7 @@ def _fetch_one_source(source_name: str, url: str, cutoff: datetime) -> list[Entr
                 continue
             link = item.get("link", "").strip()
             title = _clean_summary(item.get("title", "Sin título"))
-            if not link or not title:
+            if not link or not title or not _is_technology_entry(title, item.get("summary", item.get("description", ""))):
                 continue
             recent.append(Entry(
                 source=source_name,
@@ -68,6 +117,7 @@ def _fetch_one_source(source_name: str, url: str, cutoff: datetime) -> list[Entr
                 link=link,
                 summary=_clean_summary(item.get("summary", item.get("description", ""))),
                 published=published,
+                image=_entry_image(item),
             ))
         print(f"    -> {len(recent)} publicaciones recientes de {source_name}", flush=True)
         if parsed.bozo and not parsed.entries:
@@ -99,7 +149,7 @@ def collect_and_store_weekly_entries(days: int = 7) -> list[Entry]:
     combined.update({entry.link: entry for entry in fresh})
     cutoff = datetime.now(tz=timezone.utc) - timedelta(days=days)
     kept = sorted(
-        (entry for entry in combined.values() if entry.published >= cutoff),
+        (entry for entry in combined.values() if entry.published >= cutoff and _is_technology_entry(entry.title, entry.summary)),
         key=lambda entry: entry.published,
         reverse=True,
     )
@@ -128,10 +178,11 @@ def load_weekly_entries(days: int = 7, missing_ok: bool = False) -> list[Entry]:
         published = datetime.fromisoformat(item["published"])
         if published.tzinfo is None:
             published = published.replace(tzinfo=timezone.utc)
-        if published >= cutoff:
+        if published >= cutoff and item.get("source") in SOURCES and _is_technology_entry(item.get("title", ""), item.get("summary", "")):
             entries.append(Entry(
                 source=item["source"], title=item["title"], link=item["link"],
-                summary=item["summary"], published=published,
+                summary=item.get("summary", ""), published=published,
+                image=item.get("image", ""),
             ))
     return sorted(entries, key=lambda entry: entry.published, reverse=True)
 
@@ -139,3 +190,6 @@ def load_weekly_entries(days: int = 7, missing_ok: bool = False) -> list[Entry]:
 if __name__ == "__main__":
     for entry in collect_and_store_weekly_entries():
         print(f"[{entry.source}] {entry.title} ({entry.published:%Y-%m-%d})")
+
+
+
