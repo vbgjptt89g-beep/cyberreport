@@ -271,6 +271,7 @@ def _parse_recommendations(markdown: str) -> list[str]:
         match = re.match(r"\s*(?:\d+[.)]\s*|[-*]\s*)(.+)", line)
         if match:
             text = _plain(match.group(1))
+            text = re.sub(r"\s+(?:gu[ií]a|fuente):\s*https?://\S+", "", text, flags=re.IGNORECASE)
             if text:
                 recommendations.append(text)
     return recommendations[:4]
@@ -303,14 +304,6 @@ def _draw_header(pdf: ReportPDF, title: str, subtitle: str, page_number: int) ->
 
 
 def _draw_page_one(pdf: ReportPDF, markdown: str, publications: list[dict[str, str]]) -> None:
-    summary = _first_paragraph(
-        _section_lines(markdown, "resumen ejecutivo"),
-        "Consulta las publicaciones y aplica recomendaciones defensivas para proteger tus cuentas y dispositivos.",
-    )
-    threat = _first_paragraph(
-        _section_lines(markdown, "amenazas y vulnerabilidades destacadas"),
-        "No se atribuyen amenazas específicas sin evidencia suficiente. Revisa las fuentes originales.",
-    )
     recommendations = _parse_recommendations(markdown)
     if not recommendations:
         recommendations = [
@@ -323,42 +316,26 @@ def _draw_page_one(pdf: ReportPDF, markdown: str, publications: list[dict[str, s
     pdf.set_fill_color(*PALE)
     pdf.rect(0, 34, PAGE_W, PAGE_H - 34, style="F")
 
-    _panel(pdf, 10, 42, 74, 48, "Panorama de la semana", BLUE)
-    _write_text(pdf, 14, 55, 66, _truncate(summary, 175), 9.2, TEXT, line_height=4.4)
-
-    _panel(pdf, 10, 96, 74, 83, "Riesgo a vigilar", RED)
-    pdf.set_fill_color(255, 240, 220)
-    pdf.ellipse(15, 109, 13, 13, style="F")
-    pdf.set_xy(18.9, 111.7)
-    pdf.set_font("Helvetica", "B", 13)
-    pdf.set_text_color(*GOLD)
-    pdf.cell(5, 6, "!")
-    _write_text(pdf, 32, 108, 47, _truncate(threat, 185), 8.5, TEXT, line_height=4.1)
-    pdf.set_xy(15, 162)
-    pdf.set_font("Helvetica", "B", 7.5)
-    pdf.set_text_color(*RED)
-    pdf.cell(62, 4, "DETENTE - VERIFICA - REPORTA")
-
-    _panel(pdf, 90, 42, 112, 137, "Acciones prioritarias", GOLD)
+    _panel(pdf, 10, 42, 145, 137, "Acciones prioritarias", GOLD)
     row_y = 54
     for index, recommendation in enumerate(recommendations, 1):
         accent = (RED, BLUE, TEAL, GOLD)[(index - 1) % 4]
         pdf.set_fill_color(*accent)
-        pdf.ellipse(96, row_y + 1, 9, 9, style="F")
-        pdf.set_xy(96, row_y + 2.2)
+        pdf.ellipse(16, row_y + 1, 9, 9, style="F")
+        pdf.set_xy(16, row_y + 2.2)
         pdf.set_font("Helvetica", "B", 8)
         pdf.set_text_color(*WHITE)
         pdf.cell(9, 4, str(index), align="C")
-        _write_text(pdf, 109, row_y, 87, _truncate(recommendation, 110), 8.8, TEXT, bold=True, line_height=4.1)
+        _write_text(pdf, 29, row_y, 120, _truncate(recommendation, 150), 9.2, TEXT, bold=True, line_height=4.3)
         if index < len(recommendations):
             pdf.set_draw_color(*BORDER)
-            pdf.line(96, row_y + 23, 196, row_y + 23)
+            pdf.line(16, row_y + 23, 149, row_y + 23)
         row_y += 31
 
-    _panel(pdf, 208, 42, 79, 137, "Protege tu día a día", TEAL)
-    _draw_device_illustration(pdf, 212, 56)
+    _panel(pdf, 161, 42, 126, 137, "Protege tu día a día", TEAL)
+    _draw_device_illustration(pdf, 188, 56)
     pdf.set_draw_color(*BORDER)
-    pdf.line(213, 105, 282, 105)
+    pdf.line(167, 105, 281, 105)
     quick_tips = [
         ("1", "No abras enlaces inesperados."),
         ("2", "Confirma al remitente por otro canal."),
@@ -367,12 +344,12 @@ def _draw_page_one(pdf: ReportPDF, markdown: str, publications: list[dict[str, s
     tip_y = 111
     for number, tip in quick_tips:
         pdf.set_fill_color(*TEAL)
-        pdf.ellipse(214, tip_y, 7, 7, style="F")
-        pdf.set_xy(214, tip_y + 1.5)
+        pdf.ellipse(168, tip_y, 7, 7, style="F")
+        pdf.set_xy(168, tip_y + 1.5)
         pdf.set_font("Helvetica", "B", 7)
         pdf.set_text_color(*WHITE)
         pdf.cell(7, 4, number, align="C")
-        _write_text(pdf, 224, tip_y - 0.2, 57, tip, 7.8, TEXT, line_height=3.6)
+        _write_text(pdf, 178, tip_y - 0.2, 100, tip, 8.3, TEXT, line_height=3.8)
         tip_y += 21
 
     pdf.set_fill_color(*INK)
