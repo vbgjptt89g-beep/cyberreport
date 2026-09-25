@@ -20,7 +20,7 @@ TEAL = (24, 145, 111)
 BLUE = (71, 126, 160)
 CYAN = (74, 201, 210)
 PURPLE = (137, 115, 210)
-PALE = (244, 246, 248)
+PALE = (247, 232, 233)
 WHITE = (255, 255, 255)
 TEXT = (48, 54, 64)
 MUTED = (103, 111, 122)
@@ -342,3 +342,4 @@ def build_pdf(report_markdown: str, output_path: str | Path) -> Path:
     pdf.output(str(output_path))
     print("    -> Boletín tecnológico de una página escrito correctamente.", flush=True)
     return output_path
+
