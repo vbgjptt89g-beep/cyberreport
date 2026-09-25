@@ -120,6 +120,34 @@
     footer { padding:23px 0 35px; border-top:1px solid #eee2e2; color:var(--muted); font-size:.87rem; background:#fff; }
     .footer-inner { display:flex; justify-content:space-between; gap:14px; flex-wrap:wrap; }
     .error { color:var(--warning) !important; }
+    /* Composición semanal alineada con la referencia del boletín. */
+    .infographic-header { display:none; }
+    .infographic-overview { padding:0; border:1px solid #d9dde2; background:#fff; }
+    .infographic-overview h4, .infographic-band { margin:0; padding:10px 18px; background:#4b83a2; color:#fff; font-size:.95rem; font-weight:800; }
+    .infographic-overview p { margin:0; padding:12px 18px; color:#303944; font-size:.9rem; }
+    .infographic-columns { display:grid; grid-template-columns:minmax(0,1.75fr) minmax(300px,1fr); gap:22px; padding:16px 0 0; }
+    .infographic-news, .infographic-images { min-width:0; border:1px solid #d9dde2; background:#fff; }
+    .infographic-news .infographic-band { background:#e5a21d; }
+    .infographic-images .infographic-band { background:#8a73ce; }
+    .infographic-news-list { display:grid; gap:4px; padding:8px 18px 4px; }
+    .infographic-news-card { min-height:118px; padding:9px 15px; border:1px solid #e0e3e7; border-left:9px solid #d71920; background:#fff; }
+    .infographic-news-card.tone-1 { border-left-color:#4b83a2; }
+    .infographic-news-card.tone-2 { border-left-color:#15966f; }
+    .infographic-news-card.tone-3 { border-left-color:#e5a21d; }
+    .infographic-news-copy h4 { margin:0 0 2px; font-size:.88rem; line-height:1.35; }
+    .infographic-news-meta { margin:0 0 3px; color:#4b83a2; font-size:.75rem; font-weight:700; }
+    .infographic-news-meta span { color:#d71920; }
+    .infographic-news-copy > p:last-child { margin:0; color:#626b76; font-size:.8rem; line-height:1.4; }
+    .infographic-image-list { display:grid; gap:18px; padding:12px 16px; }
+    .infographic-image-card { display:grid; grid-template-columns:minmax(110px,42%) minmax(0,1fr); align-items:center; gap:14px; min-height:112px; }
+    .infographic-photo { display:block; width:100%; height:112px; object-fit:cover; background:#edf1f4; }
+    .infographic-image-card strong { color:#252a35; font-size:.72rem; }
+    .infographic-image-card p { margin:4px 0; color:#4f5966; font-size:.72rem; line-height:1.35; }
+    .infographic-image-card small { color:#4b83a2; font-size:.66rem; font-weight:700; }
+    .infographic-footer { display:flex; justify-content:space-between; gap:14px; margin-top:20px; padding:16px 22px; background:#262a35; color:#fff; font-size:.82rem; }
+    .infographic-footer strong { color:#f3bc42; }
+    .infographic-news-card, .infographic-image-card { break-inside:avoid; }
+    .button:disabled { cursor:wait; opacity:.58; }
     @media (max-width:700px) {
       main { padding-top:38px; }
       .hero { grid-template-columns:1fr; }
@@ -135,13 +163,9 @@
       .infographic-actions { width:100%; }
       .infographic-actions .button { flex:1; }
       .infographic-frame { padding:7px; }
-      .infographic-header { padding:13px 15px; }
-      .infographic-mark { width:58px; height:58px; }
-      .infographic-overview { padding:12px 15px; }
-      .infographic-grid { grid-template-columns:1fr !important; gap:10px; padding:10px; }
-      .infographic-card, .infographic.layout-feature .infographic-card:first-child, .infographic.layout-editorial .infographic-card { grid-column:auto; grid-template-columns:38% minmax(0,1fr); min-height:155px; }
-      .infographic-photo, .infographic.layout-feature .infographic-card:first-child .infographic-photo, .infographic.layout-mosaic .infographic-photo { height:100%; min-height:155px; }
-      .infographic-copy { padding:11px; }
+      .infographic-columns { grid-template-columns:1fr; gap:12px; }
+      .infographic-image-list { gap:10px; }
+      .infographic-footer { flex-direction:column; }
     }
     @media (max-width:460px) {
       .wrap { width:min(100% - 26px, 1120px); }
@@ -156,9 +180,14 @@
     @media print {
       body * { visibility:hidden !important; }
       #weekly-infographic, #weekly-infographic * { visibility:visible !important; }
-      #weekly-infographic { position:absolute; inset:0; width:100%; border:0; border-radius:0; box-shadow:none; }
-      #weekly-infographic .infographic-grid { gap:8px; padding:10px; }
-      #weekly-infographic .infographic-card { break-inside:avoid; }
+      #weekly-infographic { position:absolute; left:0; top:0; width:100%; border:0; border-radius:0; box-shadow:none; -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+      #weekly-infographic .infographic-columns { grid-template-columns:minmax(0,1.75fr) minmax(0,1fr); gap:12px; }
+      #weekly-infographic .infographic-news-list { gap:3px; padding:8px 12px; }
+      #weekly-infographic .infographic-news-card { min-height:0; padding:8px 11px; }
+      #weekly-infographic .infographic-image-list { gap:10px; padding:10px; }
+      #weekly-infographic .infographic-image-card { grid-template-columns:42% 1fr; min-height:95px; gap:9px; }
+      #weekly-infographic .infographic-photo { height:95px; }
+      #weekly-infographic .infographic-footer { margin-top:12px; }
       @page { size:A4 landscape; margin:8mm; }
     }
     @media (prefers-reduced-motion: reduce) { *,*::before,*::after { scroll-behavior:auto !important; transition:none !important; } }
@@ -194,20 +223,20 @@
     <section class="report" aria-labelledby="report-title" id="informe">
       <div>
         <h2 id="report-title">Boletín semanal</h2>
-        <p>Descarga el boletín semanal en PDF con las noticias, tendencias e ilustraciones de tecnología.</p>
+        <p>El PDF incluirá exactamente la última versión que quede en la vista previa.</p>
       </div>
-      <a class="button" id="report-link" href="./informe.pdf" download hidden>Descargar informe PDF</a>
+      <button class="button" id="report-link" type="button" disabled>Descargar esta infografía en PDF</button>
     </section>
 
     <section class="infographic-section" aria-labelledby="infographic-title">
       <div class="section-head">
         <div>
           <h2 id="infographic-title">Vista previa de la infografía</h2>
-          <p>Explora otra composición con las noticias e imágenes de esta semana.</p>
+          <p>Noticias destacadas y fotografías de tecnología en una sola página.</p>
         </div>
         <div class="infographic-actions">
           <button class="button" id="refresh-infographic" type="button">Generar otra versión</button>
-          <button class="button button-secondary" id="print-infographic" type="button">Guardar esta versión en PDF</button>
+          <button class="button button-secondary" id="print-infographic" type="button" disabled>Guardar esta versión en PDF</button>
         </div>
       </div>
       <div class="infographic-frame">
@@ -219,8 +248,18 @@
             </div>
             <img class="infographic-mark" src="./assets/logo-grupo-comidas-circular.png" alt="Logo de Grupo Comidas">
           </header>
-          <p class="infographic-overview" id="infographic-overview">Cargando noticias de la semana…</p>
-          <div class="infographic-grid" id="infographic-grid"></div>
+          <div class="infographic-overview"><h4>PANORAMA DE LA SEMANA</h4><p id="infographic-overview">Cargando noticias de la semana…</p></div>
+          <div class="infographic-columns">
+            <section class="infographic-news" aria-labelledby="infographic-news-title">
+              <h4 class="infographic-band" id="infographic-news-title">NOTICIAS DESTACADAS</h4>
+              <div class="infographic-news-list" id="infographic-news-list"></div>
+            </section>
+            <aside class="infographic-images" aria-labelledby="infographic-images-title">
+              <h4 class="infographic-band" id="infographic-images-title">TECNOLOGÍA EN IMÁGENES</h4>
+              <div class="infographic-image-list" id="infographic-image-list"></div>
+            </aside>
+          </div>
+          <footer class="infographic-footer"><strong>TECNOLOGÍA, CIENCIA E INNOVACIÓN</strong><span>Novedades explicadas con sus fuentes originales.</span></footer>
         </div>
       </div>
       <p id="infographic-status" role="status" aria-live="polite"></p>
@@ -263,16 +302,15 @@
       const search = document.getElementById('search');
       const sourceFilter = document.getElementById('source-filter');
       const infographic = document.getElementById('weekly-infographic');
-      const infographicGrid = document.getElementById('infographic-grid');
+      const infographicNewsList = document.getElementById('infographic-news-list');
+      const infographicImageList = document.getElementById('infographic-image-list');
       const infographicOverview = document.getElementById('infographic-overview');
       const infographicStatus = document.getElementById('infographic-status');
       const dateFormatter = new Intl.DateTimeFormat('es-HN', {
         day: 'numeric', month: 'short', year: 'numeric', timeZone: 'America/Tegucigalpa'
       });
       let entries = [];
-      let infographicVersion = 0;
       let previousInfographicLinks = new Set();
-      const infographicLayouts = ['feature', 'mosaic', 'editorial'];
 
       function safeHttpUrl(value) {
         try {
@@ -296,32 +334,14 @@
         return shuffled;
       }
 
-      function makeInfographicCard(entry) {
+      function makeInfographicNews(entry, index) {
         const card = document.createElement('article');
-        card.className = 'infographic-card';
-        const imageUrl = safeHttpUrl(entry.image || '');
-        if (imageUrl) {
-          const image = document.createElement('img');
-          image.className = 'infographic-photo';
-          image.src = imageUrl;
-          image.alt = entry.title ? `Fotografía relacionada: ${entry.title}` : 'Fotografía de tecnología';
-          image.loading = 'lazy';
-          image.referrerPolicy = 'no-referrer';
-          image.addEventListener('error', () => {
-            image.remove();
-            card.classList.add('without-photo');
-          }, { once: true });
-          card.append(image);
-        } else {
-          card.classList.add('without-photo');
-        }
-
+        card.className = `infographic-news-card tone-${index % 4}`;
         const copy = document.createElement('div');
-        copy.className = 'infographic-copy';
-        const meta = document.createElement('div');
-        meta.className = 'infographic-meta';
+        copy.className = 'infographic-news-copy';
+        const meta = document.createElement('p');
+        meta.className = 'infographic-news-meta';
         const source = document.createElement('span');
-        source.className = 'infographic-source';
         source.textContent = entry.source || 'Fuente tecnológica';
         const date = document.createElement('time');
         const published = new Date(entry.published);
@@ -329,24 +349,39 @@
           date.dateTime = published.toISOString();
           date.textContent = dateFormatter.format(published);
         }
-        meta.append(source, date);
-
         const heading = document.createElement('h4');
         heading.textContent = entry.title || 'Noticia de tecnología';
         const summary = document.createElement('p');
-        summary.textContent = shortText(entry.summary, 220);
-        copy.append(meta, heading, summary);
-        const articleUrl = safeHttpUrl(entry.link);
-        if (articleUrl) {
-          const link = document.createElement('a');
-          link.className = 'infographic-link';
-          link.href = articleUrl;
-          link.target = '_blank';
-          link.rel = 'noopener noreferrer';
-          link.textContent = 'Leer fuente original ↗';
-          copy.append(link);
-        }
+        summary.textContent = shortText(entry.summary, 210);
+        meta.append(source, document.createTextNode(' | '), date);
+        copy.append(heading, meta, summary);
         card.append(copy);
+        return card;
+      }
+
+      function makeInfographicImage(entry) {
+        const card = document.createElement('article');
+        card.className = 'infographic-image-card';
+        const image = document.createElement('img');
+        image.className = 'infographic-photo';
+        image.src = safeHttpUrl(entry.image);
+        image.alt = entry.title ? `Fotografía: ${entry.title}` : 'Fotografía de tecnología';
+        image.loading = 'eager';
+        image.referrerPolicy = 'no-referrer';
+        image.addEventListener('error', () => card.remove(), { once: true });
+        const copy = document.createElement('div');
+        const category = document.createElement('strong');
+        const topic = `${entry.title || ''} ${entry.summary || ''}`.toLocaleLowerCase('es');
+        category.textContent = /ia|inteligencia artificial|software|nvidia|google|microchip|chip/.test(topic) ? 'IA Y SOFTWARE'
+          : /teléfono|móvil|portátil|ordenador|dispositivo|auricular|consola|nintendo/.test(topic) ? 'DISPOSITIVOS'
+          : /espacio|espacial|satélite|ciencia|innovación|energía|planeta/.test(topic) ? 'CIENCIA E INNOVACIÓN'
+          : 'TECNOLOGÍA';
+        const caption = document.createElement('p');
+        caption.textContent = shortText(entry.title, 100);
+        const credit = document.createElement('small');
+        credit.textContent = `Foto: ${entry.source || 'fuente original'}`;
+        copy.append(category, caption, credit);
+        card.append(image, copy);
         return card;
       }
 
@@ -356,18 +391,27 @@
           return;
         }
         const unseen = entries.filter(entry => entry.link && !previousInfographicLinks.has(entry.link));
-        const candidates = unseen.length >= Math.min(4, entries.length) ? unseen : entries;
-        const selected = shuffle(candidates).slice(0, Math.min(4, candidates.length));
+        const unseenWithImages = unseen.filter(entry => safeHttpUrl(entry.image || ''));
+        const candidates = unseenWithImages.length >= Math.min(3, entries.filter(entry => safeHttpUrl(entry.image || '')).length) ? unseen : entries;
+        const selected = shuffle(candidates).slice(0, Math.min(7, candidates.length));
         previousInfographicLinks = new Set(selected.map(entry => entry.link).filter(Boolean));
-        const layout = infographicLayouts[infographicVersion % infographicLayouts.length];
-        infographic.classList.remove(...infographicLayouts.map(name => `layout-${name}`));
-        infographic.classList.add(`layout-${layout}`);
-        infographicGrid.replaceChildren(...selected.map(makeInfographicCard));
-        const weekDate = selected[0]?.published ? dateFormatter.format(new Date(selected[0].published)) : '';
-        infographicOverview.textContent = `Una mirada a los temas y novedades recientes de tecnología${weekDate ? ` · Noticias publicadas esta semana, hasta ${weekDate}` : ''}.`;
-        const labels = { feature: 'portada destacada', mosaic: 'mosaico fotográfico', editorial: 'diseño editorial' };
-        infographicStatus.textContent = `Nueva composición lista: ${labels[layout]}. Puedes generar otra o guardarla como PDF.`;
-        infographicVersion += 1;
+        const stories = selected.slice(0, 4);
+        const photos = selected.filter(entry => safeHttpUrl(entry.image || '')).slice(0, 3);
+        infographicNewsList.replaceChildren(...stories.map(makeInfographicNews));
+        infographicImageList.replaceChildren(...photos.map(makeInfographicImage));
+        const topics = stories.slice(0, 3).map(entry => shortText(entry.title, 95));
+        infographicOverview.textContent = topics.length
+          ? `Esta semana destacaron ${topics.length === 1 ? topics[0] : `${topics.slice(0, -1).join('; ')} y ${topics.at(-1)}`}.`
+          : 'Panorama semanal de tecnología, ciencia e innovación.';
+        infographicStatus.textContent = 'Vista previa actualizada. El PDF descargará esta misma versión.';
+        document.getElementById('report-link').disabled = false;
+        document.getElementById('print-infographic').disabled = false;
+      }
+
+      async function printInfographic() {
+        const images = [...infographic.querySelectorAll('img')];
+        await Promise.allSettled(images.map(image => image.decode()));
+        window.print();
       }
 
       function makeArticle(entry) {
@@ -490,10 +534,8 @@
       search.addEventListener('input', render);
       sourceFilter.addEventListener('change', render);
       document.getElementById('refresh-infographic').addEventListener('click', generateInfographic);
-      document.getElementById('print-infographic').addEventListener('click', () => window.print());
-      fetch('./informe.pdf', { method: 'HEAD', cache: 'no-store' })
-        .then(response => { if (response.ok) document.getElementById('report-link').hidden = false; })
-        .catch(() => {});
+      document.getElementById('print-infographic').addEventListener('click', printInfographic);
+      document.getElementById('report-link').addEventListener('click', printInfographic);
       loadEntries();
     })();
   </script>
