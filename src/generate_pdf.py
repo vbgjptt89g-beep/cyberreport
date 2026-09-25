@@ -11,7 +11,7 @@ from fpdf import FPDF
 PAGE_W = 297
 PAGE_H = 210
 MARGIN = 10
-LOGO_PATH = Path(__file__).resolve().parents[1] / "site" / "assets" / "cybernews-logo.jpeg"
+LOGO_PATH = Path(__file__).resolve().parents[1] / "site" / "assets" / "logo-grupo-comidas.png"
 INK = (38, 42, 53)
 INK_SOFT = (62, 72, 91)
 RED = (211, 35, 47)
@@ -20,7 +20,7 @@ TEAL = (24, 145, 111)
 BLUE = (71, 126, 160)
 CYAN = (74, 201, 210)
 PURPLE = (137, 115, 210)
-PALE = (247, 232, 233)
+PALE = (255, 255, 255)
 WHITE = (255, 255, 255)
 TEXT = (48, 54, 64)
 MUTED = (103, 111, 122)
@@ -342,4 +342,5 @@ def build_pdf(report_markdown: str, output_path: str | Path) -> Path:
     pdf.output(str(output_path))
     print("    -> Boletín tecnológico de una página escrito correctamente.", flush=True)
     return output_path
+
 
