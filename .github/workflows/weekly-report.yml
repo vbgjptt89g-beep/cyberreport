@@ -5,6 +5,7 @@ on:
     branches: [main]
     paths:
       - 'site/index.html'
+      - 'site/assets/**'
       - 'site/weekly_entries.json'
       - 'site/informe.pdf'
       - 'data/weekly_entries.json'
@@ -97,6 +98,7 @@ jobs:
           mkdir -p site-build
           cp site/index.html site-build/index.html
           cp data/weekly_entries.json site-build/weekly_entries.json
+          if [ -d site/assets ]; then cp -R site/assets site-build/assets; fi
           if [ -f site/informe.pdf ]; then cp site/informe.pdf site-build/informe.pdf; fi
         timeout-minutes: 1
 
