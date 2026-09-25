@@ -25,6 +25,8 @@ def _core_font_text(text: str) -> str:
 def _write_multicell(pdf: ReportPDF, height: float, text: str) -> None:
     """Usa ajuste por caracteres solo para enlaces o palabras sin espacios largas."""
     has_long_token = any(len(token) > 60 for token in text.split())
+    if pdf.w - pdf.r_margin - pdf.get_x() <= pdf.c_margin:
+        pdf.set_x(MARGIN)
     pdf.multi_cell(0, height, text, wrapmode="CHAR" if has_long_token else "WORD")
 
 class ReportPDF(FPDF):
