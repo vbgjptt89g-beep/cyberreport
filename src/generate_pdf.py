@@ -271,27 +271,24 @@ def _draw_space_illustration(pdf: ReportPDF, x: float, y: float, width: float, h
 
 
 def _draw_technology_panel(pdf: ReportPDF, markdown: str) -> None:
-    trends = _parse_trends(markdown)
     x, y, width = 188, 64, 99
     _panel(pdf, x, y, width, 115, "Tecnología en imágenes", PURPLE)
     topics = [
-        ("IA Y SOFTWARE", "ia", trends[0] if trends else "Nuevas herramientas y avances en software."),
-        ("DISPOSITIVOS", "devices", trends[1] if len(trends) > 1 else "Móviles, computadoras y nuevos productos."),
-        ("CIENCIA E INNOVACIÓN", "space", trends[2] if len(trends) > 2 else "Investigación, energía y exploración."),
+        ("IA Y SOFTWARE", "infografia-chip.jpg", "Jensen Huang, referente de NVIDIA y de la IA.", "Xataka · retrato editorial", "https://www.xataka.com/empresas-y-economia/no-puedes-pasar-dia-recibir-alguna-critica-modelo-liderazgo-jensen-huang-que-no-da-tregua-a-sus-empleados"),
+        ("DISPOSITIVOS", "infografia-dispositivos.jpg", "Teléfono y portátil en un espacio de trabajo.", "Dextar Vision · Unsplash", "https://unsplash.com/photos/a-close-up-of-a-cell-phone-on-a-keyboard-zWifu7m5nJA"),
+        ("EXPLORACIÓN ESPACIAL", "infografia-espacio.jpg", "El telescopio Hubble sobre la Tierra.", "NASA · Unsplash", "https://unsplash.com/photos/the-space-shuttle-is-flying-over-the-earth-WmbePYToF6c"),
     ]
     row_y = 76
-    for caption, kind, detail in topics:
-        image_x, image_y, image_w, image_h = x + 5, row_y, width - 10, 19
-        if kind == "ia":
-            _draw_ai_illustration(pdf, image_x, image_y, image_w, image_h)
-        elif kind == "devices":
-            _draw_device_illustration(pdf, image_x, image_y, image_w, image_h)
-        else:
-            _draw_space_illustration(pdf, image_x, image_y, image_w, image_h)
-        _write_text(pdf, x + 5, row_y + 20, width - 10, caption, 6.5, INK, True, 2.8)
-        _write_text(pdf, x + 5, row_y + 23, width - 10, _truncate(detail, 85), 6.4, MUTED, False, 2.7)
+    for caption, filename, detail, credit, source_url in topics:
+        image_x, image_y, image_w, image_h = x + 5, row_y, 39, 27
+        image_path = Path(__file__).resolve().parents[1] / "site" / "assets" / filename
+        if image_path.exists():
+            pdf.image(str(image_path), x=image_x, y=image_y, w=image_w, h=image_h)
+        text_x, text_w = x + 47, width - 52
+        _write_text(pdf, text_x, row_y + 1, text_w, caption, 6.3, INK, True, 2.7)
+        _write_text(pdf, text_x, row_y + 5, text_w, detail, 6.0, MUTED, False, 2.6)
+        _write_text(pdf, text_x, row_y + 20.5, text_w, f"Foto: {credit}", 5.6, BLUE, True, 2.4, source_url)
         row_y += 34
-
 
 def _draw_page(pdf: ReportPDF, markdown: str) -> None:
     summary = _first_paragraph(
@@ -340,6 +337,8 @@ def build_pdf(report_markdown: str, output_path: str | Path) -> Path:
     pdf.output(str(output_path))
     print("    -> Boletín tecnológico de una página escrito correctamente.", flush=True)
     return output_path
+
+
 
 
 
