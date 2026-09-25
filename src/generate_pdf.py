@@ -11,7 +11,7 @@ from fpdf import FPDF
 PAGE_W = 297
 PAGE_H = 210
 MARGIN = 10
-LOGO_PATH = Path(__file__).resolve().parents[1] / "site" / "assets" / "logo-grupo-comidas.png"
+LOGO_PATH = Path(__file__).resolve().parents[1] / "site" / "assets" / "logo-grupo-comidas-circular.png"
 INK = (38, 42, 53)
 INK_SOFT = (62, 72, 91)
 RED = (211, 35, 47)
@@ -157,10 +157,8 @@ def _draw_header(pdf: ReportPDF) -> None:
     pdf.set_font("Helvetica", "B", 9.2)
     pdf.set_text_color(245, 187, 59)
     pdf.cell(190, 6, "INNOVACIÓN - CIENCIA - DISPOSITIVOS Y SOFTWARE")
-    pdf.set_fill_color(*WHITE)
-    pdf.rect(238, 5, 49, 24, style="F")
     if LOGO_PATH.exists():
-        pdf.image(str(LOGO_PATH), x=240, y=7, w=45, h=20, keep_aspect_ratio=True)
+        pdf.image(str(LOGO_PATH), x=250, y=4, w=25, h=25)
     pdf.set_xy(257, 29)
     pdf.set_font("Helvetica", "", 7)
     pdf.set_text_color(220, 224, 230)
@@ -342,5 +340,8 @@ def build_pdf(report_markdown: str, output_path: str | Path) -> Path:
     pdf.output(str(output_path))
     print("    -> Boletín tecnológico de una página escrito correctamente.", flush=True)
     return output_path
+
+
+
 
 

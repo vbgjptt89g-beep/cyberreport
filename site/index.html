@@ -41,7 +41,7 @@
     .brand-mark { display:grid; place-items:center; width:40px; height:40px; border-radius:12px; background:var(--accent); color:var(--accent-dark); font-size:1.2rem; }
     .nav-link { margin-left:auto; color:var(--muted); text-decoration:none; font-size:.94rem; }
     .nav-link:hover { color:var(--accent); }
-    .brand-logo { display:block; width:min(280px, 26vw); min-width:170px; height:auto; margin-left:12px; border-radius:8px; }
+    .brand-logo { display:block; width:clamp(96px, 12vw, 132px); aspect-ratio:1; height:auto; margin-left:12px; object-fit:contain; border-radius:50%; filter:drop-shadow(0 3px 8px rgba(45,20,20,.16)); }
     main { padding:54px 0 64px; }
     .hero { display:grid; grid-template-columns:minmax(0, 1fr); align-items:end; gap:32px; }
     .eyebrow { color:var(--accent); font-size:.76rem; font-weight:800; letter-spacing:.16em; text-transform:uppercase; }
@@ -86,7 +86,7 @@
     @media (max-width:700px) {
       main { padding-top:38px; }
       .hero { grid-template-columns:1fr; }
-      .brand-logo { width:150px; min-width:0; margin-left:4px; }
+      .brand-logo { width:84px; min-width:0; margin-left:4px; }
       .stats { gap:9px; }
       .stat { min-height:92px; padding:14px; }
       .stat strong { font-size:1.5rem; }
@@ -115,7 +115,7 @@
         <span>CyberReport</span>
       </a>
       <a class="nav-link" href="#fuentes">Fuentes monitoreadas</a>
-      <img class="brand-logo" src="./assets/logo-grupo-comidas.png" alt="Logo de Grupo Comidas">
+      <img class="brand-logo" src="./assets/logo-grupo-comidas-circular.png" alt="Logo de Grupo Comidas">
     </div>
   </header>
 
@@ -316,5 +316,6 @@
   </script>
 </body>
 </html>
+
 
 
